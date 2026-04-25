@@ -1318,12 +1318,20 @@
     pricingMode = mode;
     document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
     document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
+    const stripeLinks = {
+      bronze: { monthly: 'https://buy.stripe.com/cNi9AT6nyabj0sJ2rt9sk0D', annual: 'https://buy.stripe.com/dRmfZh9zK0AJ6R7c239sk0G' },
+      silver: { monthly: 'https://buy.stripe.com/5kQaEX5ju97f1wN9TV9sk0E', annual: 'https://buy.stripe.com/eVq9ATbHSabj0sJgij9sk0H' },
+      gold:   { monthly: 'https://buy.stripe.com/3cI14nfY8cjrejzeab9sk0F', annual: 'https://buy.stripe.com/5kQ28rbHSbfn8Zf0jl9sk0I' }
+    };
     ['bronze','silver','gold'].forEach(tier => {
       const el = document.getElementById('price-' + tier);
       const numEl = el ? el.querySelector('.num') : null;
       if (numEl) numEl.textContent = prices[mode][tier].toLocaleString();
       const btn = document.getElementById('btn-' + tier);
-      if (btn) btn.setAttribute('data-price-id', priceIds[tier][mode]);
+      if (btn) {
+        btn.setAttribute('data-price-id', priceIds[tier][mode]);
+        btn.href = stripeLinks[tier][mode];  // ← fix: update actual href
+      }
     });
     document.querySelectorAll('.price-amount + span').forEach(span => {
       span.textContent = mode === 'monthly' ? '/mo' : '/yr';
