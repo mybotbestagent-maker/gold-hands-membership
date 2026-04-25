@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Handyman Gold Hands</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid #8B5CF6;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(139,92,246,.08);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #8B5CF6;
+    }
+    .nav-logo span { color: #1a1a2e; }
+    .nav-back {
+      background: #8B5CF6;
+      color: #fff;
+      text-decoration: none;
+      padding: .45rem 1.2rem;
+      border-radius: 6px;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .nav-back:hover { background: #7c3aed; }
+
+    /* HERO BANNER */
+    .page-hero {
+      background: linear-gradient(135deg, #8B5CF6 0%, #a78bfa 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1rem 3rem;
+    }
+    .page-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: .5rem; }
+    .page-hero p { font-size: 1rem; opacity: .88; }
+
+    /* CONTENT */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .effective-date {
+      display: inline-block;
+      background: #f3f0ff;
+      color: #6d28d9;
+      font-size: .85rem;
+      font-weight: 600;
+      padding: .3rem .9rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #6d28d9;
+      margin: 2rem 0 .6rem;
+      padding-left: .75rem;
+      border-left: 4px solid #8B5CF6;
+    }
+    p { margin-bottom: .9rem; color: #374151; }
+    ul { margin: .4rem 0 1rem 1.4rem; color: #374151; }
+    ul li { margin-bottom: .4rem; }
+    a { color: #8B5CF6; }
+    a:hover { color: #6d28d9; }
+
+    /* PLAN CARDS */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0 1.5rem;
+    }
+    .plan-card {
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      transition: border-color .2s;
+    }
+    .plan-card:hover { border-color: #8B5CF6; }
+    .plan-card.featured { border-color: #8B5CF6; background: #f3f0ff; }
+    .plan-name { font-weight: 800; font-size: 1.05rem; color: #1a1a2e; }
+    .plan-price { font-size: 1.6rem; font-weight: 800; color: #8B5CF6; margin: .3rem 0; }
+    .plan-price span { font-size: .85rem; font-weight: 400; color: #6b7280; }
+    .plan-features { font-size: .85rem; color: #6b7280; text-align: left; margin-top: .6rem; }
+    .plan-features li { margin-bottom: .25rem; list-style: none; padding-left: 0; }
+    .plan-features li::before { content: "✓ "; color: #8B5CF6; font-weight: 700; }
+
+    .info-box {
+      background: #f3f0ff;
+      border-left: 4px solid #8B5CF6;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .info-box p { margin: 0; color: #4c1d95; font-size: .95rem; }
+
+    .warning-box {
+      background: #fff7ed;
+      border-left: 4px solid #f97316;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .warning-box p { margin: 0; color: #7c2d12; font-size: .95rem; }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a2e;
+      color: #d1d5db;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: .9rem;
+    }
+    footer a { color: #a78bfa; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: #a78bfa; margin-bottom: .4rem; }
+    .footer-links { margin: .8rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://mybotbestagent-maker.github.io/gold-hands-membership/">
+    🔨 <span>Gold Hands</span>&nbsp;Membership
+  </a>
+  <a class="nav-back" href="https://mybotbestagent-maker.github.io/gold-hands-membership/">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <h1>Terms of Service</h1>
+  <p>Please read these terms carefully before joining any Handyman Gold Hands membership plan.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+  <span class="effective-date">Effective Date: April 25, 2026</span>
+
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("Member," "you," or "your") and <strong>Handyman Gold Hands LLC</strong> ("Company," "we," "us," or "our"), governing your access to and use of our membership plans and handyman services. By enrolling in any membership plan or booking a service, you agree to these Terms.</p>
+
+  <h2>1. Membership Plans & Subscriptions</h2>
+  <p>Handyman Gold Hands LLC offers three membership tiers billed on a recurring monthly basis:</p>
+
+  <div class="plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">🥉 Bronze</div>
+      <div class="plan-price">$49<span>/mo</span></div>
+      <ul class="plan-features">
+        <li>2 service visits/month</li>
+        <li>Basic repairs &amp; fixes</li>
+        <li>Email support</li>
+        <li>5% discount on add-ons</li>
+        <li>48-hr scheduling</li>
+      </ul>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-name">🥈 Silver</div>
+      <div class="plan-price">$99<span>/mo</span></div>
+      <ul class="plan-features">
+        <li>4 service visits/month</li>
+        <li>All Bronze services</li>
+        <li>Priority scheduling</li>
+        <li>10% discount on add-ons</li>
+        <li>Phone &amp; email support</li>
+      </ul>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">🥇 Gold</div>
+      <div class="plan-price">$199<span>/mo</span></div>
+      <ul class="plan-features">
+        <li>Unlimited visits/month</li>
+        <li>All Silver services</li>
+        <li>Same-day scheduling</li>
+        <li>20% discount on add-ons</li>
+        <li>Dedicated account manager</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Annual billing options may be offered at a discounted rate. Specific inclusions for each plan (visit caps, covered service types, and response times) are described on the membership sign-up page and may be updated with 30 days' notice.</p>
+
+  <h2>2. Scope of Handyman Services</h2>
+  <p>Our services cover a broad range of general home repairs and maintenance tasks, including but not limited to:</p>
+  <ul>
+    <li>TV mounting and furniture assembly</li>
+    <li>Minor plumbing fixes (faucet replacement, leak repairs, toilet adjustments)</li>
+    <li>Minor electrical work (outlet replacements, light fixture installation, switch swaps)</li>
+    <li>Interior and exterior painting</li>
+    <li>Drywall patching and touch-ups</li>
+    <li>Door and window adjustments</li>
+    <li>Caulking, weatherstripping, and general maintenance</li>
+    <li>Flooring repairs and tile grout</li>
+  </ul>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>Important Scope Limitation:</strong> Handyman Gold Hands LLC is a general handyman service and is <strong>NOT a licensed electrical contractor or licensed plumbing contractor.</strong> We do not perform work requiring licensed contractor permits, such as panel upgrades, new circuit installation, gas line work, sewer line replacement, or any work subject to permit pull requirements under local building codes. For such work, we will refer you to an appropriate licensed contractor.</p>
+  </div>
+
+  <h2>3. Service Area</h2>
+  <p>Our services are currently available in <strong>8 US cities</strong>. Service area cities are listed on our main website at <a href="https://handymangoldhands.com" target="_blank" rel="noopener">handymangoldhands.com</a>. Membership benefits are only redeemable at your registered service address within our covered service areas. We reserve the right to expand or modify our service area with notice.</p>
+  <p>If you move or your service address is outside our coverage area, please contact us. Memberships are non-transferable to addresses outside our service area without prior written approval.</p>
+
+  <h2>4. Payment Terms</h2>
+  <p>All membership fees are billed on a recurring basis through <strong>Stripe</strong>, our secure payment processor. By enrolling, you authorize Handyman Gold Hands LLC to charge your payment method on file at the start of each billing cycle.</p>
+  <ul>
+    <li><strong>Billing cycle:</strong> Monthly (or annual if selected), beginning on your enrollment date.</li>
+    <li><strong>Processing fee:</strong> A <strong>3% payment processing fee</strong> applies to all transactions to cover Stripe's processing costs. This fee is included in your displayed plan price.</li>
+    <li><strong>Failed payments:</strong> If a payment fails, we will attempt to charge your card up to 3 times over 7 days. If payment is not received, your membership and service access may be suspended until the outstanding balance is resolved.</li>
+    <li><strong>Price changes:</strong> We may adjust membership pricing with at least 30 days' written notice. Your continued membership after the effective date of a price change constitutes acceptance of the new price.</li>
+  </ul>
+
+  <h2>5. Cancellation Policy</h2>
+  <p>You may cancel your membership at any time with no long-term commitment or cancellation penalty.</p>
+  <ul>
+    <li><strong>Cancel anytime:</strong> Cancellations take effect at the end of the current billing period. You retain access to your membership benefits through the end of the paid period.</li>
+    <li><strong>30-day money-back guarantee:</strong> New members who are dissatisfied for any reason may request a full refund within 30 days of their first charge. This guarantee applies only to your first month and does not apply to subsequent renewals.</li>
+    <li><strong>No partial refunds:</strong> After the 30-day window, we do not prorate or refund partial months for mid-cycle cancellations.</li>
+    <li><strong>Annual plans:</strong> Annual memberships may be cancelled within the 30-day guarantee window for a full refund. After 30 days, annual plans may be cancelled with no further charges, but the remaining balance of the annual term is non-refundable.</li>
+  </ul>
+  <p>To cancel, email us at <a href="mailto:handymangoldhands@gmail.com">handymangoldhands@gmail.com</a> or call <a href="tel:+17375308110">(737) 530-8110</a>.</p>
+
+  <h2>6. Scheduling & Appointments</h2>
+  <ul>
+    <li>Service appointments are scheduled based on plan tier (same-day, priority, or standard 48-hr window).</li>
+    <li>Members must be present or have an authorized adult (18+) at the service location during the appointment.</li>
+    <li>Cancellations or reschedules with less than 24 hours' notice may count as a used visit for that billing cycle.</li>
+    <li>Unused visits do not roll over to the next billing cycle unless otherwise stated in your plan description.</li>
+  </ul>
+
+  <h2>7. Member Responsibilities</h2>
+  <ul>
+    <li>Provide accurate service address, contact information, and a clear description of the work needed.</li>
+    <li>Ensure the work area is accessible, reasonably clear, and safe for our technicians.</li>
+    <li>Inform us of any known hazards (mold, asbestos, structural issues) prior to the appointment.</li>
+    <li>Obtain any necessary HOA or landlord approvals before scheduling services in rental or association-governed properties.</li>
+  </ul>
+
+  <h2>8. Limitation of Liability</h2>
+  <p>To the fullest extent permitted by applicable law:</p>
+  <ul>
+    <li>Handyman Gold Hands LLC's total liability to you for any claim arising from these Terms or our services shall not exceed the total membership fees paid by you in the 3 months preceding the claim.</li>
+    <li>We are not liable for pre-existing conditions, hidden defects, or damage caused by factors outside our technicians' reasonable control.</li>
+    <li>We are not liable for indirect, incidental, consequential, special, or punitive damages, including loss of use, loss of revenue, or property damage resulting from such pre-existing conditions.</li>
+    <li>Our liability for damage directly caused by our technicians during a service visit is limited to reasonable repair or replacement of the affected item, not to exceed $500 per incident, unless a separate written agreement provides otherwise.</li>
+  </ul>
+
+  <h2>9. Indemnification</h2>
+  <p>You agree to indemnify and hold harmless Handyman Gold Hands LLC, its officers, employees, and contractors from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from: (a) your breach of these Terms; (b) your misrepresentation of the scope or nature of work requested; or (c) any hazardous conditions at your property not disclosed to us prior to service.</p>
+
+  <h2>10. Dispute Resolution</h2>
+  <p>We hope to resolve any concerns directly and promptly. Please contact us first:</p>
+  <div class="info-box">
+    <p>📧 <a href="mailto:handymangoldhands@gmail.com">handymangoldhands@gmail.com</a> &nbsp;|&nbsp; 📞 <a href="tel:+17375308110">(737) 530-8110</a></p>
+  </div>
+  <p>If a dispute cannot be resolved informally within 30 days, both parties agree to submit to <strong>binding arbitration</strong> administered under the rules of the American Arbitration Association (AAA), with proceedings conducted in Miami, FL or via videoconference. Each party shall bear its own arbitration costs unless the arbitrator awards otherwise. <strong>You waive any right to a jury trial or to participate in a class-action lawsuit.</strong></p>
+  <p>Nothing in this section prevents either party from seeking emergency injunctive relief from a court of competent jurisdiction in Miami-Dade County, Florida.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of <strong>Florida</strong>, without regard to its conflict-of-law provisions. Any court proceedings (not subject to arbitration) shall be brought exclusively in Miami-Dade County, Florida.</p>
+
+  <h2>12. Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. We will notify active members of material changes via email at least 30 days before they take effect. Continued use of your membership after the effective date of updated Terms constitutes acceptance. If you do not agree to updated Terms, you may cancel your membership before the effective date.</p>
+
+  <h2>13. Termination by Company</h2>
+  <p>We reserve the right to suspend or terminate your membership immediately, without refund, if you: (a) engage in abusive, threatening, or harassing behavior toward our staff; (b) provide fraudulent information; (c) use your membership in violation of these Terms; or (d) fail to pay any amounts owed.</p>
+
+  <h2>14. Contact Us</h2>
+  <div class="info-box">
+    <p>
+      <strong>Handyman Gold Hands LLC</strong><br />
+      Miami, FL (serving 8 US cities)<br />
+      📧 <a href="mailto:handymangoldhands@gmail.com">handymangoldhands@gmail.com</a><br />
+      📞 <a href="tel:+17375308110">(737) 530-8110</a><br />
+      🌐 <a href="https://handymangoldhands.com" target="_blank" rel="noopener">handymangoldhands.com</a>
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🔨 Handyman Gold Hands LLC</div>
+  <p>Miami, FL · (737) 530-8110 · <a href="mailto:handymangoldhands@gmail.com">handymangoldhands@gmail.com</a></p>
+  <div class="footer-links">
+    <a href="https://mybotbestagent-maker.github.io/gold-hands-membership/">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="https://handymangoldhands.com" target="_blank" rel="noopener">Main Website</a>
+  </div>
+  <p style="margin-top:.8rem;font-size:.8rem;opacity:.6;">© 2026 Handyman Gold Hands LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
