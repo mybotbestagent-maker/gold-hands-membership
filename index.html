@@ -8,6 +8,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gold Hands Membership — Your Home, Always Ready</title>
   <meta name="description" content="Gold Hands Membership — Premium home maintenance subscription. Plans from $49/month. Serving Miami, Austin, Atlanta, Philadelphia, Charlotte, Washington DC, Chicago &amp; Raleigh." />
+  <link rel="canonical" href="https://mybotbestagent-maker.github.io/gold-hands-membership/" />
+  <link rel="alternate" hreflang="en-US" href="https://mybotbestagent-maker.github.io/gold-hands-membership/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gold Hands Membership — Your Home, Always Ready" />
+  <meta property="og:description" content="Premium home maintenance subscription. Plans from $49/mo. Serving 8 US cities. Same-day response. No contracts." />
+  <meta property="og:url" content="https://mybotbestagent-maker.github.io/gold-hands-membership/" />
+  <meta property="og:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <meta property="og:site_name" content="Gold Hands" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gold Hands Membership — Your Home, Always Ready" />
+  <meta name="twitter:description" content="Premium home maintenance subscription. Plans from $49/mo. Serving 8 US cities." />
+  <meta name="twitter:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+
+  <!-- Preload hero image for fast first paint -->
+  <link rel="preload" as="image" href="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+
+  <!-- JSON-LD: LocalBusiness (Miami home base) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://mybotbestagent-maker.github.io/gold-hands-membership/#business",
+    "name": "Gold Hands Home Maintenance",
+    "image": "https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg",
+    "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/",
+    "telephone": "(737) 530-8110",
+    "priceRange": "$49–$199/mo",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.7617,
+      "longitude": -80.1918
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Miami, FL"},
+      {"@type": "City", "name": "Austin, TX"},
+      {"@type": "City", "name": "Atlanta, GA"},
+      {"@type": "City", "name": "Philadelphia, PA"},
+      {"@type": "City", "name": "Charlotte, NC"},
+      {"@type": "City", "name": "Washington, DC"},
+      {"@type": "City", "name": "Chicago, IL"},
+      {"@type": "City", "name": "Raleigh, NC"}
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Home Maintenance Membership",
+    "provider": {"@id": "https://mybotbestagent-maker.github.io/gold-hands-membership/#business"},
+    "areaServed": [
+      {"@type": "City", "name": "Miami, FL"},
+      {"@type": "City", "name": "Austin, TX"},
+      {"@type": "City", "name": "Atlanta, GA"},
+      {"@type": "City", "name": "Philadelphia, PA"},
+      {"@type": "City", "name": "Charlotte, NC"},
+      {"@type": "City", "name": "Washington, DC"},
+      {"@type": "City", "name": "Chicago, IL"},
+      {"@type": "City", "name": "Raleigh, NC"}
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Repair & Maintenance Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "TV Mounting & Furniture Assembly"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drywall & Minor Repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plumbing Fixes"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Painting & Touch-Ups"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrical & Lighting"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Filters & Seasonal Maintenance"}}
+      ]
+    }
+  }
+  </script>
 
   <!-- Stripe.js v3 -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -483,8 +572,8 @@
       <div class="card reveal delay-100">
         <!-- Photo 1: Emergency repair -->
         <div class="mb-5" style="height:180px;border-radius:14px;overflow:hidden;">
-          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_repair.jpg" 
-               alt="Emergency repair" style="width:100%;height:100%;object-fit:cover;"/>
+          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_repair.jpg"
+               alt="Emergency repair" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
         </div>
         <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Repairs Hit Without Warning</h3>
         <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
@@ -496,8 +585,8 @@
       <!-- Photo 2: Hard to find help -->
       <div class="card reveal delay-200">
         <div class="mb-5" style="height:180px;border-radius:14px;overflow:hidden;">
-          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_finding_help.jpg" 
-               alt="Finding good help" style="width:100%;height:100%;object-fit:cover;"/>
+          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_finding_help.jpg"
+               alt="Finding good help" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
         </div>
         <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Finding Good Help is a Nightmare</h3>
         <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
@@ -509,8 +598,8 @@
       <!-- Photo 3: Ignored maintenance -->
       <div class="card reveal delay-300">
         <div class="mb-5" style="height:180px;border-radius:14px;overflow:hidden;">
-          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_maintenance.jpg" 
-               alt="Home maintenance" style="width:100%;height:100%;object-fit:cover;"/>
+          <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_maintenance.jpg"
+               alt="Home maintenance" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
         </div>
         <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Maintenance Gets Ignored</h3>
         <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
@@ -764,7 +853,7 @@
       <div class="flex justify-center reveal delay-200 mt-8 md:mt-0">
         <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(107,33,168,0.15);width:100%;max-width:480px;">
           <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_properties.jpg"
-               alt="Multiple properties" style="width:100%;height:auto;display:block;"/>
+               alt="Multiple properties" loading="lazy" style="width:100%;height:auto;display:block;"/>
         </div>
             </div>
     </div>
@@ -975,14 +1064,14 @@
     <div class="mt-16 reveal text-center">
       <p class="text-xs font-semibold tracking-widest uppercase mb-5" style="color:#9CA3AF;">Cities We Serve</p>
       <div class="flex flex-wrap justify-center gap-3">
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Miami, FL</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Austin, TX</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Atlanta, GA</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Philadelphia, PA</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Charlotte, NC</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Washington, DC</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Chicago, IL</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Raleigh, NC</span>
+        <a href="cities/miami.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Miami, FL</a>
+        <a href="cities/austin.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Austin, TX</a>
+        <a href="cities/atlanta.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Atlanta, GA</a>
+        <a href="cities/philadelphia.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Philadelphia, PA</a>
+        <a href="cities/charlotte.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Charlotte, NC</a>
+        <a href="cities/washington-dc.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Washington, DC</a>
+        <a href="cities/chicago.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Chicago, IL</a>
+        <a href="cities/raleigh.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s;" onmouseover="this.style.background='#EDE9FE';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#F8F5FF';this.style.transform='translateY(0)'">📍 Raleigh, NC</a>
       </div>
     </div>
 
@@ -1247,8 +1336,8 @@
           <li><a href="#testimonials" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Testimonials</a></li>
           <li><a href="#faq" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">FAQ</a></li>
           <li><a href="#contact" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Contact Us</a></li>
-          <li><a href="#" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
-          <li><a href="#" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
+          <li><a href="privacy.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+          <li><a href="terms.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
         </ul>
       </div>
 
