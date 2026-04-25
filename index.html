@@ -107,8 +107,11 @@
       padding: 110px 24px 80px;
       position: relative; overflow: hidden;
     }
+    @media (max-width: 767px) {
+      #hero { min-height: auto; padding: 90px 20px 56px; }
+    }
     .hero-title {
-      font-size: clamp(2.6rem, 7vw, 6rem);
+      font-size: clamp(2.4rem, 7vw, 6rem);
       font-weight: 900; line-height: 1.05;
       letter-spacing: -0.03em; color: #1A1A2E;
     }
@@ -384,7 +387,7 @@
       </div>
 
       <!-- Right: Hero — Real photo -->
-      <div class="hidden md:flex items-center justify-center relative float-anim">
+      <div class="flex items-center justify-center relative float-anim mt-8 md:mt-0">
         <!-- Main photo -->
         <div style="position:relative;width:100%;max-width:520px;">
           <!-- Photo container with rounded corners and shadow -->
@@ -758,7 +761,7 @@
         <a href="#contact" class="btn-primary">Talk to Us About Multi-Property</a>
       </div>
       <!-- Visual -->
-      <div class="hidden md:flex justify-center reveal delay-200">
+      <div class="flex justify-center reveal delay-200 mt-8 md:mt-0">
         <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(107,33,168,0.15);width:100%;max-width:480px;">
           <img src="https://mybotbestagent-maker.github.io/gold-hands-membership/img_properties.jpg"
                alt="Multiple properties" style="width:100%;height:auto;display:block;"/>
