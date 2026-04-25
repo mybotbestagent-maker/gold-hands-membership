@@ -4,25 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gold Hands Membership — Your Home, Always Ready</title>
-  <meta name="description" content="Gold Hands Membership — Premium home maintenance subscription in Miami, FL. Licensed & insured handyman service. Plans from $49/month." />
+  <meta name="description" content="Gold Hands Membership — Premium home maintenance subscription. Plans from $49/month. Serving Miami, Austin, Atlanta, Philadelphia, Charlotte, Washington DC, Chicago &amp; Raleigh." />
+
+  <!-- Stripe.js v3 -->
+  <script src="https://js.stripe.com/v3/"></script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            'gh-bg':       '#0F0A1F',
-            'gh-purple':   '#4A1D7A',
-            'gh-accent':   '#8B5CF6',
-            'gh-highlight':'#C4B5FD',
-            'gh-text':     '#F5F0FF',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
       }
     }
@@ -34,50 +27,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    /* =============================================
-       BASE & CUSTOM STYLES
-    ============================================= */
     *, *::before, *::after { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: #0F0A1F;
-      color: #F5F0FF;
+      background-color: #FFFFFF;
+      color: #1A1A2E;
       font-family: 'Inter', system-ui, sans-serif;
       overflow-x: hidden;
     }
 
-    /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0F0A1F; }
-    ::-webkit-scrollbar-thumb { background: #4A1D7A; border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: #F8F5FF; }
+    ::-webkit-scrollbar-thumb { background: #8B5CF6; border-radius: 3px; }
 
-    /* ---- ANIMATION CLASSES ---- */
+    /* ---- ANIMATIONS ---- */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s cubic-bezier(.25,.46,.45,.94),
-                  transform 0.7s cubic-bezier(.25,.46,.45,.94);
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(.25,.46,.45,.94), transform 0.65s cubic-bezier(.25,.46,.45,.94);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-    /* Stagger delay helpers */
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .delay-100 { transition-delay: 0.1s !important; }
     .delay-200 { transition-delay: 0.2s !important; }
     .delay-300 { transition-delay: 0.3s !important; }
@@ -87,341 +57,205 @@
     /* ---- NAV ---- */
     #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      transition: background 0.4s, box-shadow 0.4s;
+      background: #FFFFFF;
+      transition: box-shadow 0.3s;
     }
-    #navbar.scrolled {
-      background: rgba(15, 10, 31, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 rgba(196, 181, 253, 0.1);
-    }
-
-    /* ---- HERO ---- */
-    #hero {
-      min-height: 100vh;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,92,246,0.25) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 80% 50%, rgba(74,29,122,0.3) 0%, transparent 60%),
-        #0F0A1F;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.8rem, 8vw, 7rem);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      background: linear-gradient(135deg, #F5F0FF 0%, #C4B5FD 60%, #8B5CF6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
-      color: rgba(245,240,255,0.7);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, #4A1D7A, #8B5CF6);
-      color: #F5F0FF;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 16px 36px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.3s, opacity 0.2s;
-      box-shadow: 0 0 32px rgba(139,92,246,0.4);
-      text-decoration: none;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 0 48px rgba(139,92,246,0.65);
-    }
-    .btn-primary:active { transform: scale(0.98); }
-
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent;
-      color: #C4B5FD;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 14px 28px;
-      border-radius: 50px;
-      border: 1.5px solid rgba(196,181,253,0.35);
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      text-decoration: none;
-    }
-    .btn-ghost:hover {
-      background: rgba(139,92,246,0.12);
-      border-color: #C4B5FD;
-      color: #F5F0FF;
-    }
+    #navbar.scrolled { box-shadow: 0 2px 20px rgba(107,33,168,0.1); }
 
     /* ---- SECTION LABEL ---- */
     .section-label {
       display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #8B5CF6;
-      background: rgba(139,92,246,0.12);
-      border: 1px solid rgba(139,92,246,0.3);
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 16px;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #6B21A8; background: #F3E8FF;
+      border: 1px solid #DDD6FE;
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 16px;
     }
+
+    /* ---- BUTTONS ---- */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #8B5CF6; color: #FFFFFF;
+      font-weight: 700; font-size: 1rem;
+      padding: 15px 32px; border-radius: 50px; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(139,92,246,0.3);
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: #7C3AED; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139,92,246,0.4); }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FFFFFF; color: #6B21A8;
+      font-weight: 700; font-size: 1rem;
+      padding: 14px 30px; border-radius: 50px;
+      border: 2px solid #DDD6FE; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn-secondary:hover { border-color: #8B5CF6; background: #F8F5FF; transform: translateY(-2px); }
+
+    /* ---- HERO ---- */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #FFFFFF 0%, #F8F5FF 55%, #EDE9FE 100%);
+      display: flex; align-items: center;
+      padding: 110px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-title {
+      font-size: clamp(2.6rem, 7vw, 6rem);
+      font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.03em; color: #1A1A2E;
+    }
+    .hero-title .accent { color: #6B21A8; }
 
     /* ---- CARDS ---- */
     .card {
-      background: rgba(139,92,246,0.08);
-      border: 1px solid rgba(196,181,253,0.12);
-      border-radius: 20px;
-      padding: 32px;
+      background: #FFFFFF; border: 1px solid #E5E7EB;
+      border-radius: 20px; padding: 28px;
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover {
-      border-color: rgba(196,181,253,0.35);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(139,92,246,0.15);
-    }
-
-    /* ---- ICON WRAP ---- */
-    .icon-wrap {
-      width: 56px; height: 56px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(74,29,122,0.6), rgba(139,92,246,0.4));
-      border: 1px solid rgba(196,181,253,0.2);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .card:hover { border-color: #8B5CF6; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(139,92,246,0.12); }
 
     /* ---- PRICING ---- */
     .pricing-card {
-      background: rgba(139,92,246,0.06);
-      border: 1px solid rgba(196,181,253,0.12);
-      border-radius: 24px;
-      padding: 36px 28px;
-      position: relative;
+      background: #FFFFFF; border: 1.5px solid #E5E7EB;
+      border-radius: 24px; padding: 36px 28px; position: relative;
       transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card:hover { border-color: #8B5CF6; transform: translateY(-4px); box-shadow: 0 16px 48px rgba(139,92,246,0.13); }
     .pricing-card.popular {
-      background: rgba(139,92,246,0.12);
-      border-color: rgba(139,92,246,0.5);
-      box-shadow: 0 0 48px rgba(139,92,246,0.25), inset 0 1px 0 rgba(196,181,253,0.2);
+      border-color: #8B5CF6;
+      box-shadow: 0 8px 40px rgba(139,92,246,0.18);
+      background: linear-gradient(145deg, #FAFAFF 0%, #F3E8FF 100%);
     }
-    .pricing-card.popular:hover {
-      box-shadow: 0 0 72px rgba(139,92,246,0.4), inset 0 1px 0 rgba(196,181,253,0.3);
-    }
+    .pricing-card.popular:hover { box-shadow: 0 20px 56px rgba(139,92,246,0.28); }
     .popular-badge {
       position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, #4A1D7A, #8B5CF6);
-      color: #F5F0FF;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 18px;
-      border-radius: 50px;
-      white-space: nowrap;
-      box-shadow: 0 4px 16px rgba(139,92,246,0.4);
+      background: linear-gradient(135deg, #6B21A8, #8B5CF6);
+      color: #FFFFFF; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 50px; white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(139,92,246,0.35);
     }
     .price-amount {
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: #F5F0FF;
-      line-height: 1;
-      letter-spacing: -0.03em;
+      font-size: 3.5rem; font-weight: 900;
+      color: #1A1A2E; line-height: 1; letter-spacing: -0.03em;
     }
-    .price-amount sup { font-size: 1.5rem; font-weight: 700; vertical-align: super; }
-    .price-amount .cents { font-size: 1.4rem; }
-
+    .price-amount sup { font-size: 1.4rem; font-weight: 700; vertical-align: super; }
     .feature-check {
       display: flex; align-items: flex-start; gap: 10px;
-      font-size: 0.9rem;
-      color: rgba(245,240,255,0.8);
-      margin-bottom: 10px;
+      font-size: 0.875rem; color: #374151; margin-bottom: 10px; line-height: 1.5;
     }
-    .feature-check svg { flex-shrink: 0; margin-top: 1px; }
+    .feature-check svg { flex-shrink: 0; margin-top: 2px; }
+    .feature-x {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.875rem; color: #9CA3AF; margin-bottom: 10px;
+    }
 
     /* ---- TOGGLE ---- */
     .toggle-wrap {
-      display: inline-flex;
-      background: rgba(139,92,246,0.1);
-      border: 1px solid rgba(196,181,253,0.2);
-      border-radius: 50px;
-      padding: 4px;
-      gap: 4px;
+      display: inline-flex; background: #F3F4F6;
+      border-radius: 50px; padding: 4px; gap: 4px;
     }
     .toggle-btn {
-      padding: 8px 22px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      color: rgba(245,240,255,0.6);
-      background: transparent;
-      border: none;
-      white-space: nowrap;
+      padding: 8px 20px; border-radius: 50px;
+      font-weight: 600; font-size: 0.875rem; cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      color: #6B7280; background: transparent; border: none; white-space: nowrap;
     }
-    .toggle-btn.active {
-      background: linear-gradient(135deg, #4A1D7A, #8B5CF6);
-      color: #F5F0FF;
-      box-shadow: 0 2px 12px rgba(139,92,246,0.4);
-    }
+    .toggle-btn.active { background: #FFFFFF; color: #6B21A8; box-shadow: 0 2px 8px rgba(107,33,168,0.15); }
 
     /* ---- STATS ---- */
     .stat-num {
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, #C4B5FD, #8B5CF6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
+      font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900;
+      letter-spacing: -0.04em; color: #6B21A8; line-height: 1;
     }
 
     /* ---- TESTIMONIALS ---- */
     .testimonial-card {
-      background: rgba(139,92,246,0.07);
-      border: 1px solid rgba(196,181,253,0.1);
-      border-radius: 20px;
-      padding: 32px;
-      transition: border-color 0.3s, transform 0.3s;
+      background: #FFFFFF; border: 1px solid #E5E7EB;
+      border-radius: 20px; padding: 28px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .testimonial-card:hover {
-      border-color: rgba(196,181,253,0.3);
-      transform: translateY(-3px);
-    }
-    .stars { color: #8B5CF6; font-size: 1.1rem; letter-spacing: 2px; }
+    .testimonial-card:hover { border-color: #8B5CF6; transform: translateY(-3px); box-shadow: 0 10px 32px rgba(139,92,246,0.1); }
+    .stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 2px; }
 
     /* ---- FAQ ---- */
-    .faq-item {
-      border-bottom: 1px solid rgba(196,181,253,0.1);
-    }
+    .faq-item { border-bottom: 1px solid #E5E7EB; }
     .faq-question {
-      width: 100%; text-align: left;
-      padding: 20px 0;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #F5F0FF;
-      background: transparent;
-      border: none;
-      cursor: pointer;
+      width: 100%; text-align: left; padding: 20px 0;
+      font-weight: 600; font-size: 1rem; color: #1A1A2E;
+      background: transparent; border: none; cursor: pointer;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       transition: color 0.2s;
     }
-    .faq-question:hover { color: #C4B5FD; }
+    .faq-question:hover { color: #6B21A8; }
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
+      max-height: 0; overflow: hidden;
       transition: max-height 0.4s cubic-bezier(.25,.46,.45,.94), padding 0.3s;
-      color: rgba(245,240,255,0.65);
-      font-size: 0.95rem;
-      line-height: 1.7;
+      color: #6B7280; font-size: 0.95rem; line-height: 1.7;
     }
-    .faq-answer.open { max-height: 300px; padding-bottom: 20px; }
+    .faq-answer.open { max-height: 320px; padding-bottom: 20px; }
     .faq-icon {
       width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(139,92,246,0.15);
-      border: 1px solid rgba(196,181,253,0.2);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      background: #F3E8FF; border: 1px solid #DDD6FE;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
       transition: background 0.2s, transform 0.3s;
     }
-    .faq-item.open .faq-icon {
-      background: rgba(139,92,246,0.35);
-      transform: rotate(45deg);
-    }
+    .faq-item.open .faq-icon { background: #8B5CF6; transform: rotate(45deg); }
+    .faq-item.open .faq-icon svg { stroke: #FFFFFF; }
 
-    /* ---- HOW IT WORKS STEPS ---- */
-    .step-line {
-      position: absolute; top: 28px; left: calc(50% + 28px);
-      right: calc(-50% + 28px);
-      height: 1px;
-      background: linear-gradient(90deg, rgba(196,181,253,0.4), rgba(196,181,253,0.05));
+    /* ---- MOBILE MENU ---- */
+    #mobile-menu {
+      display: none; position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(20px); z-index: 200;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
     }
-
-    /* ---- FOOTER ---- */
-    footer a { color: rgba(245,240,255,0.5); text-decoration: none; transition: color 0.2s; }
-    footer a:hover { color: #C4B5FD; }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a { font-size: 1.5rem; font-weight: 700; color: #1A1A2E; text-decoration: none; transition: color 0.2s; }
+    #mobile-menu a:hover { color: #6B21A8; }
 
     /* ---- DIVIDER ---- */
-    .section-divider {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(196,181,253,0.15), transparent);
-      margin: 0;
-    }
+    .section-divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, #E5E7EB, transparent); margin: 0; }
 
-    /* ---- HERO PARTICLES (CSS only) ---- */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139,92,246,0.6), transparent);
-      animation: float linear infinite;
-      pointer-events: none;
+    /* ---- FORM ---- */
+    .form-input {
+      width: 100%; padding: 14px 18px;
+      border: 1.5px solid #E5E7EB; border-radius: 12px;
+      font-size: 1rem; color: #1A1A2E; background: #FFFFFF;
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+      font-family: 'Inter', sans-serif;
     }
-    @keyframes float {
-      0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.4; }
-      50%  { transform: translateY(-60px) translateX(20px) scale(1.1); opacity: 0.7; }
-      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.4; }
-    }
-
-    /* ---- GRADIENT LINE SECTION BG ---- */
-    .section-glow {
-      background:
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74,29,122,0.2) 0%, transparent 70%),
-        transparent;
-    }
+    .form-input:focus { border-color: #8B5CF6; box-shadow: 0 0 0 3px rgba(139,92,246,0.12); }
+    .form-input::placeholder { color: #9CA3AF; }
 
     /* ---- ANNUAL BADGE ---- */
     .annual-badge {
-      display: inline-block;
-      background: rgba(139,92,246,0.25);
-      color: #C4B5FD;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 50px;
-      border: 1px solid rgba(196,181,253,0.3);
-      margin-left: 8px;
+      display: inline-block; background: #F0FDF4; color: #10B981;
+      font-size: 0.68rem; font-weight: 700; padding: 2px 8px;
+      border-radius: 50px; border: 1px solid #A7F3D0; margin-left: 6px;
     }
 
-    /* Mobile menu */
-    #mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15,10,31,0.97);
-      backdrop-filter: blur(20px);
-      z-index: 200;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
+    /* ---- BG ALT ---- */
+    .bg-alt { background-color: #F8F5FF; }
+
+    @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .float-anim { animation: float-slow 4.5s ease-in-out infinite; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* Rating stars */
+    .rating-star { color: #F59E0B; }
+
+    /* Service card icon bubble */
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
     }
-    #mobile-menu.open { display: flex; }
-    #mobile-menu a {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: rgba(245,240,255,0.8);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    #mobile-menu a:hover { color: #C4B5FD; }
   </style>
 </head>
 <body>
@@ -429,187 +263,386 @@
 <!-- =============================================
      NAVIGATION
 ============================================= -->
-<!-- TODO: Spanish translation for nav links -->
 <nav id="navbar" class="w-full py-4 px-6">
   <div class="max-w-6xl mx-auto flex items-center justify-between">
 
     <!-- Logo -->
-    <a href="#hero" class="flex items-center gap-3 group">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg,#4A1D7A,#8B5CF6);">
-        <!-- Hammer icon -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5F0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <a href="#hero" class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg,#6B21A8,#8B5CF6);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/>
           <path d="M17.64 15L22 10.64"/>
           <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/>
         </svg>
       </div>
-      <span class="font-black text-lg tracking-tight" style="color:#F5F0FF;">Gold<span style="color:#8B5CF6;">Hands</span></span>
+      <span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span>
     </a>
 
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="#how-it-works" class="text-sm font-medium transition-colors" style="color:rgba(245,240,255,0.6);" onmouseover="this.style.color='#C4B5FD'" onmouseout="this.style.color='rgba(245,240,255,0.6)'">How It Works</a>
-      <a href="#pricing" class="text-sm font-medium transition-colors" style="color:rgba(245,240,255,0.6);" onmouseover="this.style.color='#C4B5FD'" onmouseout="this.style.color='rgba(245,240,255,0.6)'">Pricing</a>
-      <a href="#faq" class="text-sm font-medium transition-colors" style="color:rgba(245,240,255,0.6);" onmouseover="this.style.color='#C4B5FD'" onmouseout="this.style.color='rgba(245,240,255,0.6)'">FAQ</a>
-      <!-- TODO: Spanish toggle button — wire up translation logic -->
-      <button id="lang-toggle" class="text-xs font-bold px-3 py-1.5 rounded-full border transition-all" style="color:rgba(245,240,255,0.5);border-color:rgba(196,181,253,0.2);background:transparent;" onmouseover="this.style.borderColor='rgba(196,181,253,0.5)';this.style.color='#C4B5FD'" onmouseout="this.style.borderColor='rgba(196,181,253,0.2)';this.style.color='rgba(245,240,255,0.5)'">🇪🇸 ES</button>
+      <a href="#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
+      <a href="#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
+      <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="#faq" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">FAQ</a>
+      <a href="tel:+17372854072" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 285-4072</a>
       <a href="#pricing" class="btn-primary" style="padding:10px 24px;font-size:0.875rem;">Get Started</a>
     </div>
 
     <!-- Mobile hamburger -->
     <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.add('open')">
-      <span class="block w-6 h-0.5 rounded" style="background:#C4B5FD;"></span>
-      <span class="block w-6 h-0.5 rounded" style="background:#C4B5FD;"></span>
-      <span class="block w-4 h-0.5 rounded" style="background:#C4B5FD;"></span>
+      <span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span>
+      <span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span>
+      <span class="block w-4 h-0.5 rounded" style="background:#6B21A8;"></span>
     </button>
   </div>
 </nav>
 
 <!-- Mobile menu -->
 <div id="mobile-menu">
-  <button class="absolute top-6 right-6 text-3xl" style="color:#C4B5FD;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <button class="absolute top-6 right-6 text-3xl" style="color:#6B21A8;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
   <a href="#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
   <a href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
   <a href="#faq" onclick="document.getElementById('mobile-menu').classList.remove('open')">FAQ</a>
-  <!-- TODO: Spanish translation toggle -->
-  <button style="font-size:1rem;color:rgba(245,240,255,0.6);background:none;border:1px solid rgba(196,181,253,0.3);padding:8px 20px;border-radius:50px;cursor:pointer;">🇪🇸 Switch to Spanish</button>
+  <a href="tel:+17372854072" style="color:#6B21A8;font-size:1.1rem;" onclick="document.getElementById('mobile-menu').classList.remove('open')">📞 (737) 285-4072</a>
   <a href="#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
 </div>
 
 
 <!-- =============================================
-     1. HERO SECTION
+     1. HERO
 ============================================= -->
-<!-- TODO: Spanish — "Tu Hogar. Siempre Listo." -->
-<section id="hero" style="position:relative;overflow:hidden;">
+<section id="hero">
+  <!-- Decorative blobs -->
+  <div style="position:absolute;width:480px;height:480px;top:-120px;right:-80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;width:320px;height:320px;bottom:60px;left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none;"></div>
 
-  <!-- Decorative particles -->
-  <div class="particle" style="width:400px;height:400px;top:-100px;left:-100px;opacity:0.08;animation-duration:12s;"></div>
-  <div class="particle" style="width:300px;height:300px;bottom:0;right:-50px;opacity:0.07;animation-duration:15s;animation-delay:2s;"></div>
-  <div class="particle" style="width:200px;height:200px;top:40%;left:70%;opacity:0.06;animation-duration:10s;animation-delay:1s;"></div>
+  <div class="max-w-6xl mx-auto w-full relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
 
-  <div class="relative z-10 max-w-4xl mx-auto">
+      <!-- Left: Copy -->
+      <div>
+        <div class="reveal mb-5">
+          <span class="section-label">🏠 Home Maintenance Membership</span>
+        </div>
 
-    <!-- Eyebrow label -->
-    <div class="reveal mb-6" style="transition-delay:0s;">
-      <span class="section-label">🏠 Miami's #1 Home Membership</span>
+        <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">
+          Your Home.<br/><span class="accent">Always Ready.</span>
+        </h1>
+
+        <p class="reveal mb-8 text-lg" style="transition-delay:0.2s;color:#6B7280;max-width:480px;line-height:1.7;">
+          One subscription. One trusted team. Zero surprises. We handle everything — from plumbing and HVAC to painting and electrical — so you can just enjoy your home.
+        </p>
+
+        <!-- Social proof line -->
+        <div class="reveal flex items-center gap-4 mb-8" style="transition-delay:0.25s;">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold" style="background:#8B5CF6;color:white;">MR</div>
+            <div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold" style="background:#6B21A8;color:white;">JT</div>
+            <div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold" style="background:#F59E0B;color:white;">AP</div>
+            <div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold" style="background:#10B981;color:white;">LS</div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span class="rating-star">★★★★★</span>
+              <span class="font-bold text-sm" style="color:#1A1A2E;">4.9/5</span>
+            </div>
+            <p class="text-xs" style="color:#6B7280;">Trusted by 500+ homeowners</p>
+          </div>
+        </div>
+
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:0.3s;">
+          <a href="#pricing" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            View Membership Plans
+          </a>
+          <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="reveal flex flex-wrap gap-4 mt-8" style="transition-delay:0.4s;">
+          <div class="flex items-center gap-2 text-sm" style="color:#6B7280;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            No contracts
+          </div>
+          <div class="flex items-center gap-2 text-sm" style="color:#6B7280;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Cancel anytime
+          </div>
+          <div class="flex items-center gap-2 text-sm" style="color:#6B7280;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            24/7 support
+          </div>
+          <div class="flex items-center gap-2 text-sm" style="color:#6B7280;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            30-day money-back
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Hero Illustration (DoorDash-style flat 3D cartoon) -->
+      <div class="hidden md:flex items-center justify-center float-anim">
+        <svg viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;">
+          <!-- Ground shadow -->
+          <ellipse cx="210" cy="370" rx="185" ry="14" fill="#E5E7EB" opacity="0.6"/>
+
+          <!-- House body -->
+          <rect x="70" y="160" width="260" height="180" rx="10" fill="#F3E8FF"/>
+          <!-- House body side shadow -->
+          <rect x="290" y="165" width="40" height="175" rx="0" fill="#DDD6FE" opacity="0.5"/>
+
+          <!-- Roof -->
+          <polygon points="50,162 210,65 370,162" fill="#6B21A8"/>
+          <!-- Roof ridge / highlight -->
+          <polygon points="50,162 210,75 210,65 210,75 370,162 350,162 210,85 70,162" fill="#4C1D95" opacity="0.35"/>
+          <!-- Roof right side 3D shadow -->
+          <polygon points="210,65 370,162 370,170 210,73" fill="#3B0764" opacity="0.25"/>
+
+          <!-- Chimney -->
+          <rect x="270" y="80" width="28" height="60" rx="4" fill="#7C3AED"/>
+          <rect x="264" y="76" width="40" height="12" rx="4" fill="#6B21A8"/>
+          <!-- Smoke -->
+          <circle cx="280" cy="62" r="10" fill="#E5E7EB" opacity="0.7"/>
+          <circle cx="290" cy="50" r="8" fill="#E5E7EB" opacity="0.5"/>
+          <circle cx="285" cy="38" r="6" fill="#E5E7EB" opacity="0.3"/>
+
+          <!-- Window Left -->
+          <rect x="92" y="185" width="72" height="60" rx="8" fill="#BFDBFE"/>
+          <rect x="92" y="185" width="72" height="60" rx="8" fill="none" stroke="#93C5FD" stroke-width="2"/>
+          <line x1="128" y1="185" x2="128" y2="245" stroke="#93C5FD" stroke-width="2"/>
+          <line x1="92" y1="215" x2="164" y2="215" stroke="#93C5FD" stroke-width="2"/>
+          <!-- Window Left ledge -->
+          <rect x="86" y="243" width="84" height="7" rx="4" fill="#C4B5FD"/>
+
+          <!-- Window Right -->
+          <rect x="236" y="185" width="72" height="60" rx="8" fill="#BFDBFE"/>
+          <rect x="236" y="185" width="72" height="60" rx="8" fill="none" stroke="#93C5FD" stroke-width="2"/>
+          <line x1="272" y1="185" x2="272" y2="245" stroke="#93C5FD" stroke-width="2"/>
+          <line x1="236" y1="215" x2="308" y2="215" stroke="#93C5FD" stroke-width="2"/>
+          <rect x="230" y="243" width="84" height="7" rx="4" fill="#C4B5FD"/>
+
+          <!-- Door -->
+          <rect x="175" y="235" width="70" height="105" rx="8" fill="#8B5CF6"/>
+          <rect x="175" y="235" width="70" height="105" rx="8" fill="none" stroke="#7C3AED" stroke-width="2"/>
+          <!-- Door arch top -->
+          <path d="M175,250 Q210,225 245,250" fill="#7C3AED"/>
+          <!-- Door handle -->
+          <circle cx="236" cy="290" r="5" fill="#F59E0B"/>
+          <!-- Door mat -->
+          <rect x="168" y="338" width="84" height="10" rx="5" fill="#A78BFA" opacity="0.6"/>
+
+          <!-- Mailbox -->
+          <rect x="330" y="295" width="30" height="22" rx="6" fill="#F59E0B"/>
+          <rect x="328" y="288" width="34" height="10" rx="5" fill="#D97706"/>
+          <rect x="340" y="295" width="6" height="22" fill="#B45309" opacity="0.3"/>
+
+          <!-- Tree left -->
+          <rect x="32" y="280" width="10" height="60" rx="4" fill="#92400E"/>
+          <circle cx="37" cy="250" r="36" fill="#10B981"/>
+          <circle cx="20" cy="265" r="22" fill="#059669"/>
+          <circle cx="54" cy="265" r="22" fill="#059669"/>
+
+          <!-- Handyman character -->
+          <!-- Shadow under character -->
+          <ellipse cx="345" cy="368" rx="30" ry="8" fill="#D1D5DB" opacity="0.6"/>
+          <!-- Legs -->
+          <rect x="323" y="298" width="16" height="50" rx="7" fill="#1E40AF"/>
+          <rect x="342" y="298" width="16" height="50" rx="7" fill="#1E40AF"/>
+          <!-- Shoes -->
+          <ellipse cx="331" cy="349" rx="14" ry="8" fill="#1F2937"/>
+          <ellipse cx="350" cy="349" rx="14" ry="8" fill="#1F2937"/>
+          <!-- Body (shirt) -->
+          <rect x="315" y="233" width="54" height="68" rx="12" fill="#F59E0B"/>
+          <!-- Tool belt -->
+          <rect x="315" y="292" width="54" height="10" rx="5" fill="#92400E"/>
+          <circle cx="342" cy="297" r="4" fill="#F59E0B"/>
+          <!-- Chest logo -->
+          <rect x="329" y="248" width="26" height="20" rx="4" fill="#D97706" opacity="0.6"/>
+          <!-- Arms -->
+          <rect x="290" y="238" width="28" height="14" rx="7" fill="#F59E0B"/>
+          <rect x="366" y="238" width="28" height="14" rx="7" fill="#F59E0B"/>
+          <!-- Left hand holding toolbox -->
+          <rect x="272" y="248" width="32" height="26" rx="6" fill="#8B5CF6"/>
+          <rect x="278" y="243" width="20" height="8" rx="4" fill="#6B21A8"/>
+          <circle cx="288" cy="261" r="4" fill="#F59E0B"/>
+          <!-- Right hand holding wrench -->
+          <rect x="390" y="236" width="8" height="30" rx="4" fill="#9CA3AF" transform="rotate(20,394,251)"/>
+          <ellipse cx="397" cy="234" rx="9" ry="6" fill="#9CA3AF"/>
+          <ellipse cx="397" cy="266" rx="9" ry="6" fill="#9CA3AF"/>
+          <!-- Neck -->
+          <rect x="332" y="218" width="20" height="18" rx="6" fill="#FCD34D"/>
+          <!-- Head -->
+          <circle cx="342" cy="205" r="26" fill="#FCD34D"/>
+          <!-- Helmet -->
+          <path d="M316,202 Q342,168 368,202" fill="#F59E0B"/>
+          <rect x="313" y="198" width="58" height="10" rx="5" fill="#D97706"/>
+          <!-- Face: eyes -->
+          <circle cx="333" cy="205" r="4" fill="#1F2937"/>
+          <circle cx="351" cy="205" r="4" fill="#1F2937"/>
+          <!-- Eye shine -->
+          <circle cx="335" cy="203" r="1.5" fill="white"/>
+          <circle cx="353" cy="203" r="1.5" fill="white"/>
+          <!-- Smile -->
+          <path d="M331,215 Q342,224 353,215" stroke="#1F2937" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Eyebrows -->
+          <path d="M329,198 Q333,195 337,198" stroke="#92400E" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M347,198 Q351,195 355,198" stroke="#92400E" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+          <!-- Sparkles -->
+          <text x="46" y="155" font-size="18" fill="#F59E0B" opacity="0.8">✦</text>
+          <text x="375" y="140" font-size="14" fill="#10B981" opacity="0.8">✦</text>
+          <text x="30" y="235" font-size="10" fill="#8B5CF6" opacity="0.7">●</text>
+          <text x="390" y="280" font-size="10" fill="#F59E0B" opacity="0.7">●</text>
+        </svg>
+      </div>
+
     </div>
-
-    <!-- Main headline -->
-    <!-- TODO: Spanish — "Tu Hogar. Siempre Listo." -->
-    <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">
-      Your Home.<br />Always Ready.
-    </h1>
-
-    <!-- Subheadline -->
-    <!-- TODO: Spanish subheadline -->
-    <p class="hero-sub reveal mb-10" style="transition-delay:0.2s;">
-      A home maintenance membership that keeps your property in perfect shape — year round.
-      Licensed, insured, and always a call away.
-    </p>
-
-    <!-- CTA Buttons -->
-    <div class="reveal flex flex-wrap gap-4 justify-center" style="transition-delay:0.3s;">
-      <a href="#pricing" class="btn-primary">
-        <!-- Arrow icon -->
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        View Membership Plans
-      </a>
-      <a href="#how-it-works" class="btn-ghost">See How It Works</a>
-    </div>
-
-    <!-- Trust badges -->
-    <div class="reveal flex flex-wrap gap-6 justify-center mt-14" style="transition-delay:0.4s;">
-      <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.5);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Licensed &amp; Insured
-      </div>
-      <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.5);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        3+ Years Experience
-      </div>
-      <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.5);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-        30-Day Money Back
-      </div>
-      <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.5);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        500+ Happy Clients
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal" style="transition-delay:0.6s;">
-    <span class="text-xs font-medium" style="color:rgba(245,240,255,0.3);">SCROLL</span>
-    <div class="w-px h-8 rounded-full" style="background:linear-gradient(180deg,rgba(196,181,253,0.4),transparent);"></div>
   </div>
 </section>
+
+<!-- =============================================
+     2. TRUST BAR
+============================================= -->
+<div style="background:#F8F5FF;border-top:1px solid #EDE9FE;border-bottom:1px solid #EDE9FE;padding:20px 24px;">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="flex flex-col items-center gap-1">
+        <div class="text-2xl font-black" style="color:#6B21A8;">500+</div>
+        <div class="text-xs font-semibold" style="color:#6B7280;">Happy Members</div>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="flex items-center gap-1">
+          <span class="text-2xl font-black" style="color:#6B21A8;">4.9</span>
+          <span class="text-lg" style="color:#F59E0B;">★</span>
+        </div>
+        <div class="text-xs font-semibold" style="color:#6B7280;">Average Rating</div>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="text-2xl font-black" style="color:#6B21A8;">8</div>
+        <div class="text-xs font-semibold" style="color:#6B7280;">Cities Served</div>
+      </div>
+      <div class="flex flex-col items-center gap-1">
+        <div class="text-2xl font-black" style="color:#6B21A8;">24/7</div>
+        <div class="text-xs font-semibold" style="color:#6B7280;">Support Available</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <hr class="section-divider" />
 
 
 <!-- =============================================
-     2. PROBLEM SECTION
+     3. PROBLEM SECTION
 ============================================= -->
-<!-- TODO: Spanish section heading: "El Problema" -->
 <section id="problem" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
 
     <div class="text-center mb-16 reveal">
       <span class="section-label">The Problem</span>
-      <!-- TODO: Spanish: "La realidad de ser dueño de casa" -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
-        Home ownership shouldn't<br class="hidden md:block" /> feel like a gamble.
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">
+        Home ownership shouldn't<br class="hidden md:block"/> feel like a gamble.
       </h2>
-      <p class="text-lg max-w-xl mx-auto" style="color:rgba(245,240,255,0.55);">
+      <p class="text-lg max-w-xl mx-auto" style="color:#6B7280;">
         Most homeowners face the same painful cycle. We built Gold Hands to break it.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Pain 1 -->
-      <!-- TODO: Spanish card -->
+      <!-- Pain 1: Broken Pipe -->
       <div class="card reveal delay-100">
-        <div class="icon-wrap mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        <!-- Cartoon: Broken pipe + water drops -->
+        <div class="mb-5 flex items-center justify-center" style="height:100px;">
+          <svg viewBox="0 0 120 100" width="120" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pipe horizontal left -->
+            <rect x="8" y="40" width="42" height="20" rx="10" fill="#BFDBFE"/>
+            <rect x="8" y="40" width="42" height="20" rx="10" fill="none" stroke="#93C5FD" stroke-width="2"/>
+            <!-- Pipe horizontal right -->
+            <rect x="70" y="40" width="42" height="20" rx="10" fill="#BFDBFE"/>
+            <rect x="70" y="40" width="42" height="20" rx="10" fill="none" stroke="#93C5FD" stroke-width="2"/>
+            <!-- Broken section -->
+            <path d="M48,38 L52,50 L58,44 L62,58 L68,42" stroke="#EF4444" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Water drops -->
+            <ellipse cx="52" cy="72" rx="5" ry="8" fill="#3B82F6" opacity="0.8"/>
+            <ellipse cx="64" cy="80" rx="4" ry="6" fill="#3B82F6" opacity="0.65"/>
+            <ellipse cx="75" cy="70" rx="3" ry="5" fill="#60A5FA" opacity="0.5"/>
+            <ellipse cx="44" cy="82" rx="3" ry="5" fill="#3B82F6" opacity="0.55"/>
+            <!-- Drip lines -->
+            <line x1="52" y1="62" x2="52" y2="64" stroke="#93C5FD" stroke-width="2"/>
+            <line x1="64" y1="62" x2="64" y2="72" stroke="#93C5FD" stroke-width="2"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">Repairs Hit Without Warning</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
-          A leaking pipe or broken AC unit can cost thousands — and it always happens at the worst time.
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Repairs Hit Without Warning</h3>
+        <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
+          A leaking pipe or broken AC can cost thousands — and it always happens at the worst possible time.
           Emergency repair bills blindside even the most prepared homeowners.
         </p>
       </div>
 
-      <!-- Pain 2 -->
-      <!-- TODO: Spanish card -->
+      <!-- Pain 2: Calendar Stress -->
       <div class="card reveal delay-200">
-        <div class="icon-wrap mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <div class="mb-5 flex items-center justify-center" style="height:100px;">
+          <svg viewBox="0 0 120 100" width="120" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Calendar body -->
+            <rect x="14" y="20" width="92" height="70" rx="10" fill="#FEF3C7"/>
+            <rect x="14" y="20" width="92" height="70" rx="10" fill="none" stroke="#FCD34D" stroke-width="2"/>
+            <!-- Header -->
+            <rect x="14" y="20" width="92" height="26" rx="10" fill="#F59E0B"/>
+            <rect x="14" y="36" width="92" height="10" fill="#F59E0B"/>
+            <!-- Binding pegs -->
+            <rect x="32" y="12" width="8" height="18" rx="4" fill="#92400E"/>
+            <rect x="80" y="12" width="8" height="18" rx="4" fill="#92400E"/>
+            <!-- Calendar title -->
+            <rect x="42" y="26" width="36" height="8" rx="4" fill="#FFFBEB" opacity="0.5"/>
+            <!-- Grid cells with X marks -->
+            <text x="22" y="64" font-family="sans-serif" font-size="14" font-weight="bold" fill="#EF4444">✕</text>
+            <text x="44" y="64" font-family="sans-serif" font-size="14" font-weight="bold" fill="#EF4444">✕</text>
+            <text x="66" y="64" font-family="sans-serif" font-size="14" font-weight="bold" fill="#EF4444">✕</text>
+            <text x="88" y="64" font-family="sans-serif" font-size="14" font-weight="bold" fill="#EF4444">✕</text>
+            <text x="22" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#EF4444">✕</text>
+            <text x="44" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#FCD34D">?</text>
+            <text x="66" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9CA3AF">○</text>
+            <!-- Stressed face -->
+            <circle cx="96" cy="14" r="13" fill="#FCD34D"/>
+            <line x1="90" y1="10" x2="92" y2="14" stroke="#1F2937" stroke-width="2"/>
+            <line x1="99" y1="10" x2="101" y2="14" stroke="#1F2937" stroke-width="2"/>
+            <path d="M89,19 Q96,16 103,19" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">Finding Good Help is a Nightmare</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Finding Good Help is a Nightmare</h3>
+        <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
           Unreliable contractors, no-shows, hidden fees, unverified workers. The average homeowner wastes
-          hours searching for a trustworthy handyman — every single time.
+          hours finding a trustworthy handyman — every single time something breaks.
         </p>
       </div>
 
-      <!-- Pain 3 -->
-      <!-- TODO: Spanish card -->
+      <!-- Pain 3: Expensive Bill -->
       <div class="card reveal delay-300">
-        <div class="icon-wrap mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        <div class="mb-5 flex items-center justify-center" style="height:100px;">
+          <svg viewBox="0 0 120 100" width="120" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bill paper -->
+            <rect x="22" y="8" width="64" height="84" rx="8" fill="#F9FAFB"/>
+            <rect x="22" y="8" width="64" height="84" rx="8" fill="none" stroke="#E5E7EB" stroke-width="2"/>
+            <!-- Bill lines -->
+            <rect x="30" y="24" width="48" height="6" rx="3" fill="#E5E7EB"/>
+            <rect x="30" y="36" width="36" height="5" rx="2.5" fill="#E5E7EB"/>
+            <!-- Big dollar amount -->
+            <text x="30" y="68" font-family="sans-serif" font-size="26" font-weight="900" fill="#6B21A8">$$$</text>
+            <rect x="30" y="74" width="48" height="5" rx="2.5" fill="#E5E7EB"/>
+            <rect x="30" y="84" width="32" height="4" rx="2" fill="#E5E7EB"/>
+            <!-- Shocked face badge -->
+            <circle cx="95" cy="20" r="18" fill="#FEF3C7"/>
+            <circle cx="95" cy="20" r="18" fill="none" stroke="#FCD34D" stroke-width="2"/>
+            <circle cx="89" cy="17" r="3" fill="#1F2937"/>
+            <circle cx="100" cy="17" r="3" fill="#1F2937"/>
+            <ellipse cx="95" cy="26" rx="5" ry="6" fill="#1F2937"/>
+            <!-- Eyebrow sweat -->
+            <text x="104" y="10" font-family="sans-serif" font-size="10" fill="#3B82F6">💧</text>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">Maintenance Gets Ignored</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Maintenance Gets Ignored</h3>
+        <p style="color:#6B7280;line-height:1.7;font-size:0.95rem;">
           Small issues become big problems when left unattended. Without a regular maintenance schedule,
           your home quietly deteriorates — and so does its value.
         </p>
@@ -623,72 +656,77 @@
 
 
 <!-- =============================================
-     3. SOLUTION SECTION
+     4. SERVICES COVERED
 ============================================= -->
-<!-- TODO: Spanish section heading: "La Solución" -->
-<section id="solution" class="py-24 px-6 section-glow">
+<section id="services" class="py-24 px-6 bg-alt">
   <div class="max-w-6xl mx-auto">
 
-    <div class="text-center mb-16 reveal">
-      <span class="section-label">The Solution</span>
-      <!-- TODO: Spanish: "Así es como lo arreglamos" -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
-        Your home on<br class="hidden md:block" /> autopilot.
+    <div class="text-center mb-14 reveal">
+      <span class="section-label">Services Covered</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">
+        Everything your home needs.<br class="hidden md:block"/> One membership.
       </h2>
-      <p class="text-lg max-w-xl mx-auto" style="color:rgba(245,240,255,0.55);">
-        One membership. One trusted team. Zero surprises.
+      <p class="text-lg max-w-xl mx-auto" style="color:#6B7280;">
+        From routine maintenance to urgent repairs — your Gold Hands crew does it all.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
 
-      <!-- Solution 1 -->
-      <!-- TODO: Spanish card -->
-      <div class="card reveal delay-100" style="border-color:rgba(139,92,246,0.25);">
-        <div class="icon-wrap mb-5" style="background:linear-gradient(135deg,rgba(139,92,246,0.4),rgba(196,181,253,0.2));">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
+      <div class="card reveal delay-100">
+        <div class="svc-icon mb-4" style="background:#EFF6FF;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">Predictable Monthly Cost</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
-          Flat monthly membership means no more surprise bills. Discounts on all labor, free estimates,
-          and priority scheduling keep your budget intact all year long.
-        </p>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">HVAC &amp; AC</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">Filter replacements, tune-ups, inspections, and repairs to keep you cool year-round.</p>
       </div>
 
-      <!-- Solution 2 -->
-      <!-- TODO: Spanish card -->
-      <div class="card reveal delay-200" style="border-color:rgba(139,92,246,0.25);">
-        <div class="icon-wrap mb-5" style="background:linear-gradient(135deg,rgba(139,92,246,0.4),rgba(196,181,253,0.2));">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-          </svg>
+      <div class="card reveal delay-150">
+        <div class="svc-icon mb-4" style="background:#EFF6FF;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9a7 7 0 0114 0c0 5-7 13-7 13S5 14 5 9z"/><circle cx="12" cy="9" r="3"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">One Trusted, Dedicated Team</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
-          We know your home like the back of our hand. No strangers, no vetting every time —
-          just your reliable Gold Hands crew, licensed, insured, and background-checked.
-        </p>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Plumbing</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">Leaks, clogs, fixture installs, water heaters — fast professional response.</p>
       </div>
 
-      <!-- Solution 3 -->
-      <!-- TODO: Spanish card -->
-      <div class="card reveal delay-300" style="border-color:rgba(139,92,246,0.25);">
-        <div class="icon-wrap mb-5" style="background:linear-gradient(135deg,rgba(139,92,246,0.4),rgba(196,181,253,0.2));">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-          </svg>
+      <div class="card reveal delay-200">
+        <div class="svc-icon mb-4" style="background:#FFFBEB;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-3">Proactive Maintenance Schedule</h3>
-        <p style="color:rgba(245,240,255,0.6);line-height:1.7;font-size:0.95rem;">
-          Regular check-up visits catch small issues before they become costly disasters. We keep a
-          maintenance log of your home so nothing slips through the cracks.
-        </p>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Electrical</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">Outlets, fixtures, switches, panels — safe, certified electrical work.</p>
+      </div>
+
+      <div class="card reveal delay-250">
+        <div class="svc-icon mb-4" style="background:#F0FDF4;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">General Repairs</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">Doors, drywall, flooring, cabinets — no job too small or too varied.</p>
+      </div>
+
+      <div class="card reveal delay-300">
+        <div class="svc-icon mb-4" style="background:#FDF4FF;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V8l7-6 7 6v12"/><path d="M9 20v-6h6v6"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Painting</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">Interior and exterior painting, touch-ups, and full room refreshes.</p>
+      </div>
+
+      <div class="card reveal delay-350">
+        <div class="svc-icon mb-4" style="background:#FFF7ED;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">TV Mounting &amp; Assembly</h3>
+        <p class="text-sm" style="color:#6B7280;line-height:1.6;">TV mounting, furniture assembly, smart home setup, and more.</p>
       </div>
 
     </div>
+
+    <p class="text-center mt-10 text-sm reveal" style="color:#6B7280;">
+      …and much more. <a href="tel:+17372854072" style="color:#6B21A8;font-weight:600;">Call us</a> if you don't see your specific need — we almost certainly cover it.
+    </p>
+
   </div>
 </section>
 
@@ -696,87 +734,120 @@
 
 
 <!-- =============================================
-     4. HOW IT WORKS
+     5. HOW IT WORKS
 ============================================= -->
-<!-- TODO: Spanish section: "¿Cómo funciona?" -->
 <section id="how-it-works" class="py-24 px-6">
   <div class="max-w-5xl mx-auto">
 
     <div class="text-center mb-16 reveal">
       <span class="section-label">How It Works</span>
-      <!-- TODO: Spanish: "Tres pasos simples" -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">
         Simple as 1, 2, 3.
       </h2>
-      <p class="text-lg max-w-lg mx-auto" style="color:rgba(245,240,255,0.55);">
-        From sign-up to a perfectly maintained home in less time than you think.
+      <p class="text-lg max-w-lg mx-auto" style="color:#6B7280;">
+        From sign-up to a perfectly maintained home in less than 24 hours.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 relative">
 
       <!-- Connector lines (desktop) -->
-      <div class="hidden md:block absolute top-10 left-1/3 right-1/3 h-px" style="background:linear-gradient(90deg,rgba(196,181,253,0.3),rgba(196,181,253,0.3));"></div>
+      <div class="hidden md:block absolute top-12 left-1/3 right-1/3 h-0.5" style="background:linear-gradient(90deg,#DDD6FE,#DDD6FE);"></div>
 
       <!-- Step 1 -->
-      <!-- TODO: Spanish step -->
       <div class="text-center reveal delay-100">
-        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 mx-auto" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);box-shadow:0 0 32px rgba(139,92,246,0.4);">
-          <span class="text-3xl font-black" style="color:#F5F0FF;">1</span>
-          <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center" style="background:rgba(196,181,253,0.2);border:1px solid rgba(196,181,253,0.4);">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <!-- Cartoon phone/subscribe illustration -->
+        <div class="flex items-center justify-center mb-6">
+          <div style="position:relative;width:90px;height:90px;">
+            <svg viewBox="0 0 90 90" width="90" height="90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background circle -->
+              <circle cx="45" cy="45" r="42" fill="#F3E8FF"/>
+              <!-- Phone body -->
+              <rect x="26" y="18" width="38" height="54" rx="8" fill="#6B21A8"/>
+              <rect x="29" y="22" width="32" height="42" rx="4" fill="#BFDBFE"/>
+              <!-- Screen content: checkmark -->
+              <circle cx="45" cy="43" r="10" fill="#10B981"/>
+              <polyline points="40,43 44,47 52,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Home button -->
+              <circle cx="45" cy="68" r="3" fill="#4C1D95"/>
+              <!-- Step number -->
+              <circle cx="72" cy="18" r="12" fill="#F59E0B"/>
+              <text x="68" y="23" font-family="sans-serif" font-size="13" font-weight="900" fill="white">1</text>
+            </svg>
           </div>
         </div>
-        <h3 class="text-xl font-bold mb-3">Subscribe Online</h3>
-        <p style="color:rgba(245,240,255,0.6);font-size:0.95rem;line-height:1.7;">
-          Pick the plan that fits your home and budget. Secure checkout in under 2 minutes.
-          Cancel any time, no contracts.
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Subscribe Online</h3>
+        <p style="color:#6B7280;font-size:0.95rem;line-height:1.7;">
+          Pick your plan and complete secure checkout in under 2 minutes. No contracts, cancel any time.
         </p>
       </div>
 
       <!-- Step 2 -->
-      <!-- TODO: Spanish step -->
       <div class="text-center reveal delay-200">
-        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 mx-auto" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);box-shadow:0 0 32px rgba(139,92,246,0.4);">
-          <span class="text-3xl font-black" style="color:#F5F0FF;">2</span>
+        <div class="flex items-center justify-center mb-6">
+          <div style="position:relative;width:90px;height:90px;">
+            <svg viewBox="0 0 90 90" width="90" height="90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45" cy="45" r="42" fill="#F3E8FF"/>
+              <!-- Calendar body -->
+              <rect x="18" y="24" width="54" height="46" rx="8" fill="#FFFFFF"/>
+              <rect x="18" y="24" width="54" height="46" rx="8" fill="none" stroke="#DDD6FE" stroke-width="2"/>
+              <!-- Calendar header -->
+              <rect x="18" y="24" width="54" height="16" rx="8" fill="#8B5CF6"/>
+              <rect x="18" y="32" width="54" height="8" fill="#8B5CF6"/>
+              <!-- Peg rings -->
+              <rect x="29" y="18" width="6" height="14" rx="3" fill="#6B21A8"/>
+              <rect x="55" y="18" width="6" height="14" rx="3" fill="#6B21A8"/>
+              <!-- Star/selected date -->
+              <circle cx="45" cy="55" r="10" fill="#F59E0B"/>
+              <text x="41" y="60" font-family="sans-serif" font-size="13" fill="white">✓</text>
+              <!-- Step number -->
+              <circle cx="72" cy="18" r="12" fill="#10B981"/>
+              <text x="68" y="23" font-family="sans-serif" font-size="13" font-weight="900" fill="white">2</text>
+            </svg>
+          </div>
         </div>
-        <h3 class="text-xl font-bold mb-3">Schedule Your First Visit</h3>
-        <p style="color:rgba(245,240,255,0.6);font-size:0.95rem;line-height:1.7;">
-          We'll reach out within 24 hours to book your first check-up at a time that works for you.
-          We come to you — always on time.
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Schedule Your Visit</h3>
+        <p style="color:#6B7280;font-size:0.95rem;line-height:1.7;">
+          We reach out within 24 hours to book your first check-up at a time that works for you.
         </p>
       </div>
 
       <!-- Step 3 -->
-      <!-- TODO: Spanish step -->
       <div class="text-center reveal delay-300">
-        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 mx-auto" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);box-shadow:0 0 32px rgba(139,92,246,0.4);">
-          <span class="text-3xl font-black" style="color:#F5F0FF;">3</span>
+        <div class="flex items-center justify-center mb-6">
+          <div style="position:relative;width:90px;height:90px;">
+            <svg viewBox="0 0 90 90" width="90" height="90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45" cy="45" r="42" fill="#F3E8FF"/>
+              <!-- Happy house -->
+              <!-- Roof -->
+              <polygon points="18,44 45,22 72,44" fill="#6B21A8"/>
+              <!-- House body -->
+              <rect x="24" y="43" width="42" height="30" rx="4" fill="#EDE9FE"/>
+              <!-- Door -->
+              <rect x="37" y="56" width="16" height="17" rx="3" fill="#8B5CF6"/>
+              <circle cx="50" cy="65" r="2" fill="#F59E0B"/>
+              <!-- Windows (happy eyes) -->
+              <circle cx="31" cy="52" rx="6" ry="6" r="5" fill="#BFDBFE"/>
+              <circle cx="59" cy="52" rx="6" ry="6" r="5" fill="#BFDBFE"/>
+              <circle cx="31" cy="52" r="2.5" fill="#3B82F6"/>
+              <circle cx="59" cy="52" r="2.5" fill="#3B82F6"/>
+              <!-- Smile on house (curved path below windows) -->
+              <path d="M29,60 Q45,68 61,60" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Sparkle -->
+              <text x="66" y="32" font-size="10" fill="#F59E0B">✦</text>
+              <!-- Step number -->
+              <circle cx="72" cy="18" r="12" fill="#8B5CF6"/>
+              <text x="68" y="23" font-family="sans-serif" font-size="13" font-weight="900" fill="white">3</text>
+            </svg>
+          </div>
         </div>
-        <h3 class="text-xl font-bold mb-3">Relax — We Handle It</h3>
-        <p style="color:rgba(245,240,255,0.6);font-size:0.95rem;line-height:1.7;">
-          Your home is in expert hands. We maintain, repair, and update you after every visit.
-          You just enjoy a worry-free home.
+        <h3 class="text-xl font-bold mb-3" style="color:#1A1A2E;">Relax — We Handle It</h3>
+        <p style="color:#6B7280;font-size:0.95rem;line-height:1.7;">
+          Your home is in expert hands. We maintain, fix, and report back after every visit. Worry-free.
         </p>
       </div>
 
     </div>
-
-    <!-- Services row -->
-    <div class="mt-16 reveal">
-      <p class="text-center text-sm font-semibold mb-5" style="color:rgba(245,240,255,0.4);letter-spacing:0.1em;text-transform:uppercase;">Services Covered</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <!-- TODO: Spanish service tags -->
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">🔧 Repairs</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">🚿 Plumbing</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">⚡ Electrical</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">🪑 Furniture Assembly</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">📺 TV Mounting</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">🎨 Painting</span>
-        <span style="background:rgba(139,92,246,0.1);border:1px solid rgba(196,181,253,0.15);color:rgba(245,240,255,0.7);padding:8px 18px;border-radius:50px;font-size:0.85rem;font-weight:500;">🏗️ Renovations</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -784,25 +855,96 @@
 
 
 <!-- =============================================
-     5. PRICING SECTION
+     6. INVESTOR / MULTI-PROPERTY
 ============================================= -->
-<!-- TODO: Spanish section: "Planes y Precios" -->
-<section id="pricing" class="py-24 px-6 section-glow">
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div class="reveal">
+        <span class="section-label">For Property Investors</span>
+        <h2 class="text-3xl md:text-4xl font-black mt-4 mb-5" style="letter-spacing:-0.03em;color:#1A1A2E;">
+          Works for multiple<br/>properties too.
+        </h2>
+        <p class="text-lg mb-6" style="color:#6B7280;line-height:1.7;">
+          Own rental properties, investment homes, or manage multiple units? Gold Hands is built for you. One trusted team. Multiple addresses. Consistent service across all your properties.
+        </p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-3 text-sm" style="color:#374151;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            Manage maintenance across all properties from one account
+          </li>
+          <li class="flex items-start gap-3 text-sm" style="color:#374151;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            Reduce tenant complaints with proactive maintenance
+          </li>
+          <li class="flex items-start gap-3 text-sm" style="color:#374151;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            Volume discounts available for 3+ properties
+          </li>
+          <li class="flex items-start gap-3 text-sm" style="color:#374151;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            Protect your investment — maintain property value year-round
+          </li>
+        </ul>
+        <a href="#contact" class="btn-primary">Talk to Us About Multi-Property</a>
+      </div>
+      <!-- Visual -->
+      <div class="hidden md:flex justify-center reveal delay-200">
+        <svg viewBox="0 0 320 260" width="320" height="260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- House 1 (left, back) -->
+          <g opacity="0.7">
+            <rect x="20" y="100" width="110" height="140" rx="8" fill="#EDE9FE"/>
+            <polygon points="10,102 75,50 140,102" fill="#8B5CF6"/>
+            <rect x="50" y="160" width="30" height="40" rx="5" fill="#7C3AED"/>
+            <rect x="28" y="120" width="34" height="28" rx="5" fill="#BFDBFE"/>
+            <rect x="88" y="120" width="34" height="28" rx="5" fill="#BFDBFE"/>
+          </g>
+          <!-- House 2 (center, front) -->
+          <rect x="100" y="90" width="120" height="150" rx="8" fill="#F3E8FF"/>
+          <polygon points="88,92 160,32 232,92" fill="#6B21A8"/>
+          <rect x="140" y="166" width="40" height="74" rx="6" fill="#8B5CF6"/>
+          <circle cx="173" cy="205" r="4" fill="#F59E0B"/>
+          <rect x="110" y="112" width="38" height="32" rx="6" fill="#BFDBFE"/>
+          <rect x="172" y="112" width="38" height="32" rx="6" fill="#BFDBFE"/>
+          <!-- House 3 (right, back) -->
+          <g opacity="0.7">
+            <rect x="190" y="108" width="110" height="130" rx="8" fill="#EDE9FE"/>
+            <polygon points="180,110 245,58 310,110" fill="#8B5CF6"/>
+            <rect x="218" y="168" width="30" height="40" rx="5" fill="#7C3AED"/>
+            <rect x="198" y="128" width="34" height="28" rx="5" fill="#BFDBFE"/>
+            <rect x="258" y="128" width="34" height="28" rx="5" fill="#BFDBFE"/>
+          </g>
+          <!-- Badge overlay -->
+          <rect x="96" y="22" width="128" height="36" rx="18" fill="#10B981" opacity="0.95"/>
+          <text x="160" y="45" font-family="sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">Multiple Properties ✓</text>
+          <!-- Ground -->
+          <ellipse cx="160" cy="248" rx="148" ry="12" fill="#E5E7EB" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+
+<!-- =============================================
+     7. PRICING
+============================================= -->
+<section id="pricing" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
 
     <div class="text-center mb-10 reveal">
       <span class="section-label">Membership Plans</span>
-      <!-- TODO: Spanish heading -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
-        Invest in your home.<br class="hidden md:block" /> Save in the long run.
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">
+        Invest in your home.<br class="hidden md:block"/> Save in the long run.
       </h2>
-      <p class="text-lg max-w-xl mx-auto mb-8" style="color:rgba(245,240,255,0.55);">
+      <p class="text-lg max-w-xl mx-auto mb-8" style="color:#6B7280;">
         No hidden fees. No long-term contracts. Cancel anytime.
       </p>
-
-      <!-- Annual/Monthly Toggle -->
+      <!-- Toggle -->
       <div class="toggle-wrap reveal">
-        <!-- TODO: Spanish toggle labels: "Mensual" / "Anual" -->
         <button class="toggle-btn active" id="toggle-monthly" onclick="setPricingMode('monthly')">Monthly</button>
         <button class="toggle-btn" id="toggle-annual" onclick="setPricingMode('annual')">
           Annual <span class="annual-badge">Save 2 months</span>
@@ -813,185 +955,93 @@
     <div class="grid md:grid-cols-3 gap-6 items-start mt-12">
 
       <!-- BRONZE -->
-      <!-- TODO: Spanish plan card -->
       <div class="pricing-card reveal delay-100">
-        <div class="mb-2">
-          <span class="text-xs font-bold tracking-widest uppercase" style="color:#C4B5FD;">Bronze</span>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">🥉</span>
+          <span class="text-sm font-bold tracking-widest uppercase" style="color:#92400E;">Bronze</span>
         </div>
-        <div class="flex items-end gap-1 mb-2">
-          <span class="price-amount" id="price-bronze">
-            <sup>$</sup><span class="num">49</span>
-          </span>
-          <span class="mb-2 text-sm font-medium" style="color:rgba(245,240,255,0.4);">/mo</span>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="price-amount" id="price-bronze"><sup>$</sup><span class="num">49</span></span>
+          <span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span>
         </div>
-        <p class="text-sm mb-6" style="color:rgba(245,240,255,0.5);">Essential protection for the budget-conscious homeowner.</p>
-
-        <!-- Features -->
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Essential protection for the budget-conscious homeowner.</p>
         <div class="mb-8">
-          <!-- TODO: Spanish feature labels -->
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            1 check-up visit per quarter
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            10% discount on all labor
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            24-hour priority response
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Free estimates on all work
-          </div>
-          <div class="feature-check" style="color:rgba(245,240,255,0.3);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Monthly visits
-          </div>
-          <div class="feature-check" style="color:rgba(245,240,255,0.3);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Service credit
-          </div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 check-up visit per quarter</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free estimates on all work</div>
+          <div class="feature-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Monthly visits</div>
+          <div class="feature-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Service credit</div>
         </div>
-
-        <!-- CTA -->
-        <!-- Stripe: replace price_1TPvy9IolrMJ9limc3NJ2CE6 / price_BRONZE_ANNUAL with real IDs -->
         <button
-          class="btn-ghost w-full justify-center"
+          class="btn-secondary w-full justify-center"
           id="btn-bronze"
           data-price-id="price_1TPvy9IolrMJ9limc3NJ2CE6"
           data-price-id-annual="price_BRONZE_ANNUAL"
           onclick="handleCheckout(this)"
-        >
-          <!-- TODO: Spanish: "Elegir Bronze" -->
-          Get Started with Bronze
-        </button>
+        >Get Started with Bronze</button>
       </div>
 
-
       <!-- SILVER — MOST POPULAR -->
-      <!-- TODO: Spanish plan card -->
       <div class="pricing-card popular reveal delay-200">
         <div class="popular-badge">✦ Most Popular</div>
-
-        <div class="mb-2 mt-2">
-          <span class="text-xs font-bold tracking-widest uppercase" style="color:#C4B5FD;">Silver</span>
+        <div class="flex items-center gap-2 mb-3 mt-2">
+          <span class="text-lg">🥈</span>
+          <span class="text-sm font-bold tracking-widest uppercase" style="color:#6B21A8;">Silver</span>
         </div>
-        <div class="flex items-end gap-1 mb-2">
-          <span class="price-amount" id="price-silver">
-            <sup>$</sup><span class="num">99</span>
-          </span>
-          <span class="mb-2 text-sm font-medium" style="color:rgba(245,240,255,0.4);">/mo</span>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="price-amount" id="price-silver"><sup>$</sup><span class="num">99</span></span>
+          <span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span>
         </div>
-        <p class="text-sm mb-6" style="color:rgba(245,240,255,0.5);">The sweet spot — complete coverage for most homeowners.</p>
-
-        <!-- Features -->
+        <p class="text-sm mb-6" style="color:#6B7280;">The sweet spot — complete coverage for most homeowners.</p>
         <div class="mb-8">
-          <!-- TODO: Spanish feature labels -->
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            1 visit per month (minor fixes included)
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            15% discount on all labor
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            12-hour priority response
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Full home audit on sign-up
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            1 emergency visit per quarter
-          </div>
-          <div class="feature-check" style="color:rgba(245,240,255,0.3);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Monthly service credit
-          </div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 visit per month (minor fixes included)</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>12-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full home audit on sign-up</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 emergency visit per quarter</div>
+          <div class="feature-x"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Monthly service credit</div>
         </div>
-
-        <!-- CTA -->
-        <!-- Stripe: replace price_1TPvy9IolrMJ9limbbM8hjLv / price_SILVER_ANNUAL with real IDs -->
         <button
           class="btn-primary w-full justify-center"
           id="btn-silver"
           data-price-id="price_1TPvy9IolrMJ9limbbM8hjLv"
           data-price-id-annual="price_SILVER_ANNUAL"
           onclick="handleCheckout(this)"
-        >
-          <!-- TODO: Spanish: "Elegir Silver" -->
-          Get Started with Silver
-        </button>
+        >Get Started with Silver</button>
       </div>
 
-
       <!-- GOLD -->
-      <!-- TODO: Spanish plan card -->
       <div class="pricing-card reveal delay-300">
-        <div class="mb-2">
-          <span class="text-xs font-bold tracking-widest uppercase" style="color:#C4B5FD;">Gold</span>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">🥇</span>
+          <span class="text-sm font-bold tracking-widest uppercase" style="color:#B45309;">Gold</span>
         </div>
-        <div class="flex items-end gap-1 mb-2">
-          <span class="price-amount" id="price-gold">
-            <sup>$</sup><span class="num">199</span>
-          </span>
-          <span class="mb-2 text-sm font-medium" style="color:rgba(245,240,255,0.4);">/mo</span>
+        <div class="flex items-end gap-1 mb-1">
+          <span class="price-amount" id="price-gold"><sup>$</sup><span class="num">199</span></span>
+          <span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span>
         </div>
-        <p class="text-sm mb-6" style="color:rgba(245,240,255,0.5);">Ultimate peace of mind for demanding homeowners.</p>
-
-        <!-- Features -->
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Ultimate peace of mind for demanding homeowners.</p>
         <div class="mb-8">
-          <!-- TODO: Spanish feature labels -->
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            2 visits per month
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            20% discount on all labor
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            4-hour emergency response
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            $100 monthly service credit
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Priority scheduling — always first
-          </div>
-          <div class="feature-check">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            VIP dedicated support line
-          </div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 visits per month</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4-hour emergency response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>$100 monthly service credit</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling — always first</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>VIP dedicated 24/7 support line</div>
         </div>
-
-        <!-- CTA -->
-        <!-- Stripe: replace price_1TPvyAIolrMJ9limQ4iWCqf8 / price_GOLD_ANNUAL with real IDs -->
         <button
-          class="btn-ghost w-full justify-center"
+          class="btn-secondary w-full justify-center"
           id="btn-gold"
           data-price-id="price_1TPvyAIolrMJ9limQ4iWCqf8"
           data-price-id-annual="price_GOLD_ANNUAL"
           onclick="handleCheckout(this)"
-        >
-          <!-- TODO: Spanish: "Elegir Gold" -->
-          Get Started with Gold
-        </button>
+        >Get Started with Gold</button>
       </div>
 
     </div>
 
-    <!-- Note -->
-    <p class="text-center text-sm mt-8 reveal" style="color:rgba(245,240,255,0.35);">
-      <!-- TODO: Spanish -->
+    <p class="text-center text-sm mt-8 reveal" style="color:#9CA3AF;">
       All plans include a 30-day money-back guarantee. No setup fees. Cancel anytime.
     </p>
 
@@ -1002,66 +1052,63 @@
 
 
 <!-- =============================================
-     6. TESTIMONIALS
+     8. TESTIMONIALS
 ============================================= -->
-<!-- TODO: Spanish section: "Lo que dicen nuestros clientes" -->
-<section id="testimonials" class="py-24 px-6">
+<section id="testimonials" class="py-24 px-6 bg-alt">
   <div class="max-w-6xl mx-auto">
 
     <div class="text-center mb-16 reveal">
       <span class="section-label">Testimonials</span>
-      <!-- TODO: Spanish -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
-        Miami homeowners<br class="hidden md:block" /> love Gold Hands.
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">
+        Homeowners across 8 cities<br class="hidden md:block"/> love Gold Hands.
       </h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="text-2xl font-black" style="color:#1A1A2E;">4.9</span>
+        <div class="stars text-xl">★★★★★</div>
+        <span class="text-sm" style="color:#6B7280;">from 500+ verified reviews</span>
+      </div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Testimonial 1 -->
-      <!-- TODO: Spanish testimonial -->
       <div class="testimonial-card reveal delay-100">
         <div class="stars mb-4">★★★★★</div>
-        <p class="mb-6" style="color:rgba(245,240,255,0.75);font-size:0.95rem;line-height:1.75;">
+        <p class="mb-6" style="color:#374151;font-size:0.95rem;line-height:1.75;">
           "Gold Hands has completely changed how I deal with home repairs. I used to dread anything breaking — now I just call my team and it's handled. Worth every penny."
         </p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);color:#F5F0FF;">MR</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);color:white;">MR</div>
           <div>
-            <p class="font-semibold text-sm">Maria Rodriguez</p>
-            <p class="text-xs" style="color:rgba(245,240,255,0.4);">Coral Gables, Miami · Silver Member</p>
+            <p class="font-semibold text-sm" style="color:#1A1A2E;">Maria Rodriguez</p>
+            <p class="text-xs" style="color:#9CA3AF;">Coral Gables, Miami · Silver Member</p>
           </div>
         </div>
       </div>
 
-      <!-- Testimonial 2 -->
-      <!-- TODO: Spanish testimonial -->
       <div class="testimonial-card reveal delay-200">
         <div class="stars mb-4">★★★★★</div>
-        <p class="mb-6" style="color:rgba(245,240,255,0.75);font-size:0.95rem;line-height:1.75;">
+        <p class="mb-6" style="color:#374151;font-size:0.95rem;line-height:1.75;">
           "The home audit they did when I signed up alone was worth the membership fee. They caught three issues I had no idea about. Super professional, always on time."
         </p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);color:#F5F0FF;">JT</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);color:white;">JT</div>
           <div>
-            <p class="font-semibold text-sm">James Thompson</p>
-            <p class="text-xs" style="color:rgba(245,240,255,0.4);">Brickell, Miami · Gold Member</p>
+            <p class="font-semibold text-sm" style="color:#1A1A2E;">James Thompson</p>
+            <p class="text-xs" style="color:#9CA3AF;">Brickell, Miami · Gold Member</p>
           </div>
         </div>
       </div>
 
-      <!-- Testimonial 3 -->
-      <!-- TODO: Spanish testimonial -->
       <div class="testimonial-card reveal delay-300">
         <div class="stars mb-4">★★★★★</div>
-        <p class="mb-6" style="color:rgba(245,240,255,0.75);font-size:0.95rem;line-height:1.75;">
+        <p class="mb-6" style="color:#374151;font-size:0.95rem;line-height:1.75;">
           "As a first-time homeowner I was overwhelmed. Gold Hands gave me confidence. They explain everything, never overcharge, and actually show up when they say they will."
         </p>
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);color:#F5F0FF;">AP</div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:white;">AP</div>
           <div>
-            <p class="font-semibold text-sm">Ashley Parker</p>
-            <p class="text-xs" style="color:rgba(245,240,255,0.4);">Wynwood, Miami · Silver Member</p>
+            <p class="font-semibold text-sm" style="color:#1A1A2E;">Ashley Parker</p>
+            <p class="text-xs" style="color:#9CA3AF;">Wynwood, Miami · Silver Member</p>
           </div>
         </div>
       </div>
@@ -1074,56 +1121,41 @@
 
 
 <!-- =============================================
-     7. STATS
+     9. STATS + CITIES
 ============================================= -->
-<!-- TODO: Spanish stat labels -->
-<section id="stats" class="py-24 px-6" style="background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(74,29,122,0.18) 0%, transparent 70%);">
+<section id="stats" class="py-24 px-6">
   <div class="max-w-5xl mx-auto">
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-
       <div class="reveal delay-100">
         <div class="stat-num mb-2">3+</div>
-        <!-- TODO: Spanish: "Años de experiencia" -->
-        <p class="text-sm font-semibold" style="color:rgba(245,240,255,0.5);">Years of Experience</p>
+        <p class="text-sm font-semibold" style="color:#6B7280;">Years of Experience</p>
       </div>
-
       <div class="reveal delay-200">
         <div class="stat-num mb-2">8</div>
-        <!-- TODO: Spanish: "Ciudades atendidas" -->
-        <p class="text-sm font-semibold" style="color:rgba(245,240,255,0.5);">Cities Served</p>
+        <p class="text-sm font-semibold" style="color:#6B7280;">Cities Served</p>
       </div>
-
       <div class="reveal delay-300">
         <div class="stat-num mb-2">500+</div>
-        <!-- TODO: Spanish: "Clientes satisfechos" -->
-        <p class="text-sm font-semibold" style="color:rgba(245,240,255,0.5);">Happy Clients</p>
+        <p class="text-sm font-semibold" style="color:#6B7280;">Happy Members</p>
       </div>
-
       <div class="reveal delay-400">
-        <div class="stat-num mb-2">98%</div>
-        <!-- TODO: Spanish: "Tasa de satisfacción" -->
-        <p class="text-sm font-semibold" style="color:rgba(245,240,255,0.5);">Satisfaction Rate</p>
+        <div class="stat-num mb-2">4.9★</div>
+        <p class="text-sm font-semibold" style="color:#6B7280;">Average Rating</p>
       </div>
-
     </div>
 
-    <!-- Cities -->
     <div class="mt-16 reveal text-center">
-      <p class="text-xs font-semibold tracking-widest uppercase mb-4" style="color:rgba(245,240,255,0.3);">
-        <!-- TODO: Spanish: "Ciudades que servimos" -->
-        Cities We Serve
-      </p>
+      <p class="text-xs font-semibold tracking-widest uppercase mb-5" style="color:#9CA3AF;">Cities We Serve</p>
       <div class="flex flex-wrap justify-center gap-3">
-        <!-- TODO: Spanish city labels if needed -->
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Miami, FL</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Austin, TX</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Atlanta, GA</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Philadelphia, PA</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Charlotte, NC</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Washington, DC</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Chicago, IL</span>
-        <span class="text-sm px-4 py-2 rounded-full" style="background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.12);color:rgba(245,240,255,0.6);">📍 Raleigh, NC</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Miami, FL</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Austin, TX</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Atlanta, GA</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Philadelphia, PA</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Charlotte, NC</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Washington, DC</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Chicago, IL</span>
+        <span class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;">📍 Raleigh, NC</span>
       </div>
     </div>
 
@@ -1134,136 +1166,100 @@
 
 
 <!-- =============================================
-     8. FAQ
+     10. FAQ
 ============================================= -->
-<!-- TODO: Spanish section: "Preguntas Frecuentes" -->
-<section id="faq" class="py-24 px-6">
+<section id="faq" class="py-24 px-6 bg-alt">
   <div class="max-w-3xl mx-auto">
 
     <div class="text-center mb-16 reveal">
       <span class="section-label">FAQ</span>
-      <!-- TODO: Spanish -->
-      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;">
-        Frequently Asked<br />Questions
-      </h2>
-      <p class="text-lg" style="color:rgba(245,240,255,0.55);">Everything you need to know about your membership.</p>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Frequently Asked<br/>Questions</h2>
+      <p class="text-lg" style="color:#6B7280;">Everything you need to know about your membership.</p>
     </div>
 
     <div class="reveal">
 
-      <!-- FAQ 1 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-1">
         <button class="faq-question" onclick="toggleFaq('faq-1')">
           <span>What's included in a check-up visit?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-1-answer">
-          Each check-up visit includes a thorough inspection of your home's key systems: plumbing, electrical fixtures, HVAC filters, doors, windows, and any areas you flag as concerns. We provide a written report after every visit and prioritize any issues found. Minor fixes (under 30 minutes) are completed on the spot for Silver and Gold members.
+          Each visit includes a thorough inspection of your home's key systems: plumbing, electrical fixtures, HVAC filters, doors, windows, and any areas you flag. We provide a written report after every visit. Minor fixes (under 30 min) are completed on the spot for Silver and Gold members.
         </div>
       </div>
 
-      <!-- FAQ 2 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-2">
         <button class="faq-question" onclick="toggleFaq('faq-2')">
           <span>Can I cancel anytime?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-2-answer">
-          Yes — absolutely. There are no long-term contracts or cancellation fees. You can cancel your membership at any time from your account dashboard, and you'll continue to have access until the end of your current billing period. We also offer a 30-day money-back guarantee for new members.
+          Yes — absolutely. No contracts or cancellation fees. Cancel any time from your account dashboard and you keep access until the end of your billing period. 30-day money-back guarantee for new members.
         </div>
       </div>
 
-      <!-- FAQ 3 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-3">
         <button class="faq-question" onclick="toggleFaq('faq-3')">
           <span>What if I need work beyond my monthly visit?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-3-answer">
-          No problem. Members receive a guaranteed discount on any additional labor — 10% for Bronze, 15% for Silver, and 20% for Gold. You'll always get free estimates before any project starts. Gold members also receive a $100 monthly service credit that can be applied toward additional work.
+          Members get a labor discount on all additional work — 10% Bronze, 15% Silver, 20% Gold. Free estimates always. Gold members also receive a $100 monthly service credit toward additional work.
         </div>
       </div>
 
-      <!-- FAQ 4 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-4">
         <button class="faq-question" onclick="toggleFaq('faq-4')">
           <span>Do you cover materials?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-4-answer">
-          The membership covers labor. Materials for repairs and projects are billed separately at cost — we never mark up materials. We'll always give you a clear materials estimate before starting any work so there are no surprises. For minor consumables (caulk, screws, small hardware) used during routine visits, we typically absorb the cost.
+          The membership covers labor. Materials are billed separately at cost — no markups. Clear estimate before any work starts. Minor consumables during routine visits are typically absorbed.
         </div>
       </div>
 
-      <!-- FAQ 5 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-5">
         <button class="faq-question" onclick="toggleFaq('faq-5')">
           <span>How fast do you respond to emergencies?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-5-answer">
-          Response times depend on your plan: Bronze members receive a 24-hour priority response, Silver members 12 hours, and Gold members 4 hours. For true emergencies (flooding, electrical hazards), Gold members receive our fastest available dispatch. All emergency visits are subject to availability — we recommend Gold for maximum peace of mind.
+          Bronze: 24-hour response. Silver: 12 hours. Gold: 4 hours. For true emergencies (flooding, electrical hazards), Gold gets our fastest available dispatch. All plans have 24/7 phone support.
         </div>
       </div>
 
-      <!-- FAQ 6 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-6">
         <button class="faq-question" onclick="toggleFaq('faq-6')">
-          <span>Is there a contract?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <span>Do you work on multiple properties?</span>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-6-answer">
-          No contracts. Ever. Gold Hands operates on a simple month-to-month subscription. We believe you should stay because you love the service — not because you're locked in. Annual plans offer a discount (equivalent to 2 free months) but can still be cancelled with a prorated refund for unused months.
+          Yes! We serve landlords, investors, and property managers. Separate memberships per property or ask about our multi-property volume discount (3+ properties). Call (737) 285-4072.
         </div>
       </div>
 
-      <!-- FAQ 7 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-7">
         <button class="faq-question" onclick="toggleFaq('faq-7')">
           <span>What cities do you serve?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-7-answer">
-          We currently serve 8 cities across the US: Miami FL, Austin TX, Atlanta GA, Philadelphia PA, Charlotte NC, Washington DC, Chicago IL, and Raleigh NC. We're expanding rapidly — if your city isn't listed, join our waitlist and we'll notify you when we arrive. Miami is our home base and flagship market.
+          8 cities: Miami FL, Austin TX, Atlanta GA, Philadelphia PA, Charlotte NC, Washington DC, Chicago IL, and Raleigh NC. Miami is our home base. Expanding fast — join our waitlist if your city isn't listed.
         </div>
       </div>
 
-      <!-- FAQ 8 -->
-      <!-- TODO: Spanish Q&A -->
       <div class="faq-item" id="faq-8" style="border-bottom:none;">
         <button class="faq-question" onclick="toggleFaq('faq-8')">
           <span>Do you offer annual plans?</span>
-          <div class="faq-icon">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </div>
+          <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-8-answer">
-          Yes! All three tiers are available as annual plans. When you pay annually, you save the equivalent of 2 months — that's a 16.7% discount. You can toggle between monthly and annual pricing on the pricing section above. Annual plans are billed once per year and include the same cancellation guarantee with a prorated refund policy.
+          Yes! All three tiers available as annual plans — saves you the equivalent of 2 months (16.7% off). Toggle monthly/annual on the pricing section above. Prorated refund policy applies.
         </div>
       </div>
 
-    </div><!-- end faq -->
+    </div>
   </div>
 </section>
 
@@ -1271,150 +1267,185 @@
 
 
 <!-- =============================================
-     9. FINAL CTA
+     11. FINAL CTA
 ============================================= -->
-<!-- TODO: Spanish section: "Empieza hoy" -->
-<section id="cta-final" class="py-24 px-6" style="background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(74,29,122,0.3) 0%, transparent 70%);">
+<section id="cta-final" class="py-24 px-6" style="background:linear-gradient(145deg,#F8F5FF 0%,#EDE9FE 100%);">
   <div class="max-w-4xl mx-auto text-center">
-
     <div class="reveal">
-      <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-6 px-4 py-2 rounded-full" style="color:#8B5CF6;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);">
+      <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase mb-6 px-4 py-2 rounded-full" style="color:#6B21A8;background:#FFFFFF;border:1px solid #DDD6FE;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         30-Day Money-Back Guarantee
       </div>
-
-      <!-- TODO: Spanish heading: "Empieza a proteger tu hogar hoy." -->
-      <h2 class="text-4xl md:text-6xl font-black mb-6" style="letter-spacing:-0.03em;background:linear-gradient(135deg,#F5F0FF 0%,#C4B5FD 60%,#8B5CF6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-        Start protecting your<br class="hidden md:block" /> home today.
+      <h2 class="text-4xl md:text-6xl font-black mb-6" style="letter-spacing:-0.03em;color:#1A1A2E;">
+        Start protecting your<br class="hidden md:block"/> home today.
       </h2>
-
-      <!-- TODO: Spanish -->
-      <p class="text-xl mb-10 max-w-xl mx-auto" style="color:rgba(245,240,255,0.6);">
-        Join 500+ homeowners across 8 cities who trust Gold Hands to keep their homes in perfect shape.
-        No contracts. No hassle. Just results.
+      <p class="text-xl mb-10 max-w-xl mx-auto" style="color:#6B7280;">
+        Join 500+ homeowners across 8 cities who trust Gold Hands. No contracts. No hassle. Just results.
       </p>
-
       <div class="flex flex-wrap gap-4 justify-center mb-8">
         <a href="#pricing" class="btn-primary" style="font-size:1.05rem;padding:18px 40px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <!-- TODO: Spanish: "Ver Planes" -->
           View Membership Plans
         </a>
-        <!-- TODO: Spanish: "Hablar con nosotros" -->
-        <a href="tel:+17375308110" class="btn-ghost">
+        <a href="tel:+17372854072" class="btn-secondary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-          Call Us: (737) 285-4072
+          Call: (737) 285-4072
         </a>
       </div>
-
-      <!-- Guarantee note -->
       <div class="flex flex-wrap justify-center gap-6">
-        <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.4);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          No contracts
-        </div>
-        <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.4);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Cancel anytime
-        </div>
-        <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.4);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Licensed &amp; insured
-        </div>
-        <div class="flex items-center gap-2 text-sm" style="color:rgba(245,240,255,0.4);">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          30-day money-back guarantee
-        </div>
+        <div class="flex items-center gap-2 text-sm" style="color:#6B7280;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No contracts</div>
+        <div class="flex items-center gap-2 text-sm" style="color:#6B7280;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel anytime</div>
+        <div class="flex items-center gap-2 text-sm" style="color:#6B7280;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 support</div>
+        <div class="flex items-center gap-2 text-sm" style="color:#6B7280;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day money-back</div>
       </div>
-
     </div>
   </div>
 </section>
 
+<hr class="section-divider" />
+
 
 <!-- =============================================
-     10. FOOTER
+     12. LEAD CAPTURE FORM
 ============================================= -->
-<!-- TODO: Spanish footer links -->
-<footer class="py-16 px-6" style="border-top:1px solid rgba(196,181,253,0.1);">
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Not ready to subscribe yet?</h2>
+      <p class="text-lg" style="color:#6B7280;">Leave your details and we'll reach out with a free home assessment — no commitment required.</p>
+    </div>
+    <div class="card reveal" style="padding:40px;">
+      <form id="lead-form" onsubmit="handleLeadForm(event)">
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2" style="color:#374151;">Your Name</label>
+            <input type="text" name="name" placeholder="John Smith" class="form-input" required />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2" style="color:#374151;">Phone Number</label>
+            <input type="tel" name="phone" placeholder="(555) 000-0000" class="form-input" required />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-2" style="color:#374151;">Email Address</label>
+          <input type="email" name="email" placeholder="you@email.com" class="form-input" required />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-semibold mb-2" style="color:#374151;">Your City</label>
+          <select name="city" class="form-input" style="cursor:pointer;">
+            <option value="">Select your city…</option>
+            <option>Miami, FL</option>
+            <option>Austin, TX</option>
+            <option>Atlanta, GA</option>
+            <option>Philadelphia, PA</option>
+            <option>Charlotte, NC</option>
+            <option>Washington, DC</option>
+            <option>Chicago, IL</option>
+            <option>Raleigh, NC</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold mb-2" style="color:#374151;">What do you need? <span style="color:#9CA3AF;font-weight:400;">(optional)</span></label>
+          <textarea name="message" placeholder="Tell us about your home or what services you're interested in…" rows="3" class="form-input" style="resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full justify-center" style="font-size:1rem;padding:16px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Request Free Assessment
+        </button>
+        <p class="text-center text-xs mt-4" style="color:#9CA3AF;">We'll get back to you within 24 hours. No spam, ever.</p>
+      </form>
+      <div id="form-success" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:3rem;">🎉</div>
+        <h3 class="font-bold text-xl mt-3 mb-2" style="color:#1A1A2E;">Got it! We'll be in touch soon.</h3>
+        <p style="color:#6B7280;">Expect a call or email within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+
+<!-- =============================================
+     13. FOOTER
+============================================= -->
+<footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
   <div class="max-w-6xl mx-auto">
 
     <div class="grid md:grid-cols-4 gap-10 mb-12">
 
-      <!-- Brand column -->
       <div class="md:col-span-1">
         <a href="#hero" class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#4A1D7A,#8B5CF6);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5F0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/>
               <path d="M17.64 15L22 10.64"/>
               <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/>
             </svg>
           </div>
-          <span class="font-black text-lg tracking-tight" style="color:#F5F0FF;">Gold<span style="color:#8B5CF6;">Hands</span></span>
+          <span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span>
         </a>
-        <p class="text-sm mb-4" style="color:rgba(245,240,255,0.45);line-height:1.7;">
-          Miami's premier home maintenance membership. Licensed, insured, and always ready.
-        </p>
-        <!-- Phone -->
-        <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#8B5CF6;">📞 (737) 285-4072</a>
+        <p class="text-sm mb-4" style="color:#6B7280;line-height:1.7;">Premium home maintenance membership. One trusted team across 8 cities.</p>
+        <a href="tel:+17372854072" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 285-4072</a>
       </div>
 
-      <!-- Services -->
       <div>
-        <!-- TODO: Spanish: "Servicios" -->
-        <h4 class="font-bold text-sm mb-4" style="color:#C4B5FD;letter-spacing:0.08em;text-transform:uppercase;">Services</h4>
+        <h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4>
         <ul class="space-y-2">
-          <!-- TODO: Spanish service links -->
-          <li><a href="#solution">Repairs &amp; Maintenance</a></li>
-          <li><a href="#solution">Plumbing</a></li>
-          <li><a href="#solution">Electrical</a></li>
-          <li><a href="#solution">TV Mounting</a></li>
-          <li><a href="#solution">Painting</a></li>
-          <li><a href="#solution">Renovations</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">HVAC &amp; AC</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Plumbing</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Electrical</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">General Repairs</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Painting</a></li>
+          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">TV Mounting</a></li>
         </ul>
       </div>
 
-      <!-- Membership -->
       <div>
-        <!-- TODO: Spanish: "Membresías" -->
-        <h4 class="font-bold text-sm mb-4" style="color:#C4B5FD;letter-spacing:0.08em;text-transform:uppercase;">Membership</h4>
+        <h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Membership</h4>
         <ul class="space-y-2">
-          <!-- TODO: Spanish plan links -->
-          <li><a href="#pricing">Bronze – $49/mo</a></li>
-          <li><a href="#pricing">Silver – $99/mo</a></li>
-          <li><a href="#pricing">Gold – $199/mo</a></li>
-          <li><a href="#pricing">Annual Plans</a></li>
+          <li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">🥉 Bronze – $49/mo</a></li>
+          <li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">🥈 Silver – $99/mo</a></li>
+          <li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">🥇 Gold – $199/mo</a></li>
+          <li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Annual Plans</a></li>
         </ul>
       </div>
 
-      <!-- Company -->
       <div>
-        <!-- TODO: Spanish: "Empresa" -->
-        <h4 class="font-bold text-sm mb-4" style="color:#C4B5FD;letter-spacing:0.08em;text-transform:uppercase;">Company</h4>
+        <h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Company</h4>
         <ul class="space-y-2">
-          <!-- TODO: Spanish company links -->
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#stats">Coverage Areas</a></li>
-          <!-- Placeholder links -->
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#how-it-works" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
+          <li><a href="#testimonials" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Testimonials</a></li>
+          <li><a href="#faq" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">FAQ</a></li>
+          <li><a href="#contact" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Contact Us</a></li>
+          <li><a href="#" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>
+          <li><a href="#" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Terms of Service</a></li>
         </ul>
       </div>
 
     </div>
 
-    <!-- Bottom bar -->
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid rgba(196,181,253,0.08);">
-      <p class="text-sm" style="color:rgba(245,240,255,0.3);">
-        <!-- TODO: Spanish copyright -->
-        © 2024 Handyman Gold Hands LLC. All rights reserved. Miami, FL.
-      </p>
-      <div class="flex items-center gap-4">
-        <span class="text-xs px-3 py-1 rounded-full" style="color:rgba(245,240,255,0.4);background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.1);">🔒 Licensed &amp; Insured</span>
-        <span class="text-xs px-3 py-1 rounded-full" style="color:rgba(245,240,255,0.4);background:rgba(139,92,246,0.08);border:1px solid rgba(196,181,253,0.1);">🛡️ Background Checked</span>
+    <div class="mb-10">
+      <p class="text-xs font-semibold tracking-widest uppercase mb-3" style="color:#9CA3AF;">Serving</p>
+      <div class="flex flex-wrap gap-x-3 gap-y-1">
+        <span style="font-size:0.8rem;color:#6B7280;">Miami, FL</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Austin, TX</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Atlanta, GA</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Philadelphia, PA</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Charlotte, NC</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Washington, DC</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Chicago, IL</span><span style="color:#DDD6FE;">·</span>
+        <span style="font-size:0.8rem;color:#6B7280;">Raleigh, NC</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid #EDE9FE;">
+      <p class="text-sm" style="color:#9CA3AF;">© 2024 Handyman Gold Hands LLC. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <span class="text-xs" style="color:#9CA3AF;">Payments secured by</span>
+        <svg height="20" viewBox="0 0 60 25" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="18" font-family="sans-serif" font-size="14" font-weight="700" fill="#635BFF">stripe</text></svg>
       </div>
     </div>
 
@@ -1426,19 +1457,11 @@
      JAVASCRIPT
 ============================================= -->
 <script>
-  // ---- SCROLL NAV ----
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }, { passive: true });
+  // Initialize Stripe with live publishable key
+  const stripe = Stripe('pk_live_51QjokyIolrMJ9lim0DSSn04Uf5UsN8n07mJeZsWi9MdXoN1CTyB46pGG8Y4iTcMdieJV0bEZeY0dsBTE0PE0hlGf007lL4VTyo');
 
-
-  // ---- INTERSECTION OBSERVER: REVEAL ANIMATIONS ----
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  // ---- SCROLL REVEAL ----
+  const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1446,123 +1469,98 @@
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
 
-  // Also trigger hero items immediately (they may be already in view)
-  document.querySelectorAll('#hero .reveal').forEach(el => {
-    el.classList.add('visible');
+  // ---- NAVBAR SCROLL ----
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
   });
-
 
   // ---- PRICING TOGGLE ----
   let pricingMode = 'monthly';
-
   const prices = {
-    monthly: { bronze: 49,  silver: 99,  gold: 199  },
-    annual:  { bronze: 407, silver: 825, gold: 1657 } // 10 months × price (save 2 months)
+    monthly: { bronze: 49,  silver: 99,  gold: 199 },
+    annual:  { bronze: 407, silver: 825, gold: 1657 }
   };
-
   const priceIds = {
     bronze: { monthly: 'price_1TPvy9IolrMJ9limc3NJ2CE6', annual: 'price_BRONZE_ANNUAL' },
     silver: { monthly: 'price_1TPvy9IolrMJ9limbbM8hjLv', annual: 'price_SILVER_ANNUAL' },
-    gold:   { monthly: 'price_1TPvyAIolrMJ9limQ4iWCqf8',   annual: 'price_GOLD_ANNUAL'   },
+    gold:   { monthly: 'price_1TPvyAIolrMJ9limQ4iWCqf8', annual: 'price_GOLD_ANNUAL' },
   };
 
   function setPricingMode(mode) {
     pricingMode = mode;
-
-    // Toggle button states
     document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
     document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
-
-    // Update prices
     ['bronze','silver','gold'].forEach(tier => {
       const el = document.getElementById('price-' + tier);
       const numEl = el ? el.querySelector('.num') : null;
-      if (numEl) {
-        numEl.textContent = prices[mode][tier].toLocaleString();
-      }
-
-      // Update Stripe price IDs on checkout buttons
+      if (numEl) numEl.textContent = prices[mode][tier].toLocaleString();
       const btn = document.getElementById('btn-' + tier);
-      if (btn) {
-        btn.setAttribute('data-price-id', priceIds[tier][mode]);
-      }
+      if (btn) btn.setAttribute('data-price-id', priceIds[tier][mode]);
     });
-
-    // Update /mo vs /yr labels
     document.querySelectorAll('.price-amount + span').forEach(span => {
       span.textContent = mode === 'monthly' ? '/mo' : '/yr';
     });
   }
 
-
-  // ---- STRIPE CHECKOUT (PLACEHOLDER) ----
-  // TODO: Replace with actual Stripe.js integration
-  // Load Stripe.js: <script src="https://js.stripe.com/v3/"></script>
-  // Initialize: const stripe = Stripe('pk_live_YOUR_PUBLISHABLE_KEY');
+  // ---- STRIPE CHECKOUT ----
   function handleCheckout(button) {
     const priceId = button.getAttribute('data-price-id');
-    console.log('[Gold Hands] Checkout initiated for price:', priceId);
-
-    // TODO: Implement Stripe Checkout redirect:
-    // stripe.redirectToCheckout({
-    //   lineItems: [{ price: priceId, quantity: 1 }],
-    //   mode: priceId.includes('ANNUAL') ? 'subscription' : 'subscription',
-    //   successUrl: window.location.origin + '/success',
-    //   cancelUrl: window.location.href,
-    // });
-
-    // Placeholder visual feedback
-    const originalText = button.innerHTML;
-    button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Redirecting...';
+    const originalHTML = button.innerHTML;
+    button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="animation:spin 0.8s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Redirecting…';
     button.disabled = true;
-    setTimeout(() => {
-      button.innerHTML = originalText;
+    stripe.redirectToCheckout({
+      lineItems: [{ price: priceId, quantity: 1 }],
+      mode: 'subscription',
+      successUrl: window.location.origin + '/success',
+      cancelUrl: window.location.href,
+    }).then(result => {
+      if (result.error) {
+        alert('Checkout error: ' + result.error.message);
+        button.innerHTML = originalHTML;
+        button.disabled = false;
+      }
+    }).catch(() => {
+      button.innerHTML = originalHTML;
       button.disabled = false;
-      alert('Stripe checkout integration pending.\n\nPrice ID: ' + priceId + '\n\nReplace handleCheckout() with real Stripe.js redirect.');
-    }, 1500);
+    });
   }
-
 
   // ---- FAQ ACCORDION ----
   function toggleFaq(id) {
     const item = document.getElementById(id);
     const answer = document.getElementById(id + '-answer');
     const isOpen = item.classList.contains('open');
-
-    // Close all
     document.querySelectorAll('.faq-item').forEach(el => {
       el.classList.remove('open');
       const ans = document.getElementById(el.id + '-answer');
       if (ans) ans.classList.remove('open');
     });
-
-    // Open clicked (if it was closed)
-    if (!isOpen) {
-      item.classList.add('open');
-      answer.classList.add('open');
-    }
+    if (!isOpen) { item.classList.add('open'); answer.classList.add('open'); }
   }
 
+  // ---- LEAD FORM ----
+  function handleLeadForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('lead-form');
+    const success = document.getElementById('form-success');
+    const btn = form.querySelector('button[type=submit]');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 0.8s linear infinite"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }, 1200);
+  }
 
-  // ---- SPANISH TOGGLE PLACEHOLDER ----
-  // TODO: Implement full EN/ES translation
-  // Replace all text nodes with Spanish equivalents using a translations object
-  document.getElementById('lang-toggle').addEventListener('click', () => {
-    alert('Spanish translation coming soon!\n\n// TODO: Implement i18n with translations object.\n// All Spanish copy is marked with // TODO comments throughout the HTML.');
-  });
-
-
-  // CSS animation for spinner
-  const style = document.createElement('style');
-  style.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
-  document.head.appendChild(style);
+  // ---- CSS ANIMATIONS ----
+  const styleEl = document.createElement('style');
+  styleEl.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+  document.head.appendChild(styleEl);
 </script>
 
 </body>
