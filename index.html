@@ -87,14 +87,31 @@
       "@type": "OfferCatalog",
       "name": "Home Repair & Maintenance Services",
       "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "TV Mounting & Furniture Assembly"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drywall & Minor Repairs"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plumbing Fixes"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Painting & Touch-Ups"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrical & Lighting"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Filters & Seasonal Maintenance"}}
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "TV Mounting & Furniture Assembly", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/tv-mounting.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drywall & Minor Repairs", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/drywall.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plumbing Fixes", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Painting & Touch-Ups", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/painting.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrical & Lighting", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Filters & Seasonal Maintenance", "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html"}}
       ]
     }
+  }
+  </script>
+
+  <!-- JSON-LD: Individual Services (each with URL) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Gold Hands Services",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/tv-mounting.html","name":"TV Mounting & Furniture Assembly"},
+      {"@type":"ListItem","position":2,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/drywall.html","name":"Drywall & Minor Repairs"},
+      {"@type":"ListItem","position":3,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html","name":"Plumbing Fixes"},
+      {"@type":"ListItem","position":4,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/painting.html","name":"Painting & Touch-Ups"},
+      {"@type":"ListItem","position":5,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html","name":"Electrical & Lighting"},
+      {"@type":"ListItem","position":6,"url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html","name":"AC Filters & Seasonal Maintenance"}
+    ]
   }
   </script>
 
@@ -378,6 +395,7 @@
       <a href="#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
       <a href="#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
       <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="blog/index.html" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Blog</a>
       <a href="#faq" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">FAQ</a>
       <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a>
       <a href="#pricing" class="btn-primary" style="padding:10px 24px;font-size:0.875rem;">Get Started</a>
@@ -398,6 +416,7 @@
   <a href="#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
   <a href="#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
   <a href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="blog/index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a>
   <a href="#faq" onclick="document.getElementById('mobile-menu').classList.remove('open')">FAQ</a>
   <a href="tel:+17375308110" style="color:#6B21A8;font-size:1.1rem;" onclick="document.getElementById('mobile-menu').classList.remove('open')">📞 (737) 530-8110</a>
   <a href="#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
@@ -633,53 +652,53 @@
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
 
-      <div class="card reveal delay-100">
+      <a href="services/tv-mounting.html" class="card reveal delay-100" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#EFF6FF;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">TV Mounting &amp; Furniture Assembly</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">TV on the wall, IKEA built, shelves installed, pictures hung — the stuff that sits in boxes for months. Done same day.</p>
-      </div>
+      </a>
 
-      <div class="card reveal delay-150">
+      <a href="services/drywall.html" class="card reveal delay-150" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#EFF6FF;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9a7 7 0 0114 0c0 5-7 13-7 13S5 14 5 9z"/><circle cx="12" cy="9" r="3"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Drywall &amp; Minor Repairs</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">Holes patched, doors rehung, baseboards fixed, caulking redone — your home looking sharp without the contractor markup.</p>
-      </div>
+      </a>
 
-      <div class="card reveal delay-200">
+      <a href="services/plumbing.html" class="card reveal delay-200" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#FFFBEB;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Plumbing Fixes</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">Dripping faucets, running toilets, clogged drains, and loose fixtures — the everyday plumbing every homeowner deals with.</p>
-      </div>
+      </a>
 
-      <div class="card reveal delay-250">
+      <a href="services/painting.html" class="card reveal delay-250" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#F0FDF4;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Painting &amp; Touch-Ups</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">Scuff marks, accent walls, full room repaints, and trim — professional finish, no mess left behind.</p>
-      </div>
+      </a>
 
-      <div class="card reveal delay-300">
+      <a href="services/electrical.html" class="card reveal delay-300" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#FDF4FF;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M5 20V8l7-6 7 6v12"/><path d="M9 20v-6h6v6"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">Electrical &amp; Lighting</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">Light fixtures swapped, ceiling fans installed, outlets replaced, dimmer switches added — safe, clean, professional work.</p>
-      </div>
+      </a>
 
-      <div class="card reveal delay-350">
+      <a href="services/hvac.html" class="card reveal delay-350" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon mb-4" style="background:#FFF7ED;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
         <h3 class="font-bold text-base mb-1" style="color:#1A1A2E;">AC Filters &amp; Seasonal Maintenance</h3>
         <p class="text-sm" style="color:#6B7280;line-height:1.6;">Filter changes, AC tune-ups, caulking windows, weatherstripping — the upkeep that protects your home year-round.</p>
-      </div>
+      </a>
 
     </div>
 
@@ -1285,6 +1304,57 @@
 
 
 <!-- =============================================
+     12.5. LATEST FROM THE BLOG
+============================================= -->
+<section id="blog-teaser" class="py-24 px-6 bg-alt">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <span class="section-label">Latest from the Blog</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Real maintenance, real numbers.</h2>
+      <p class="text-lg max-w-xl mx-auto" style="color:#6B7280;">Practical writing from the team that fixes homes every day. Climate-specific. Honest pricing. No fluff.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="blog/posts/2026-04-25-miami-homeowner-maintenance-checklist.html" class="card reveal delay-100" style="text-decoration:none;color:inherit;display:block;">
+        <div class="flex items-center gap-2 mb-4">
+          <span style="background:#F3E8FF;color:#6B21A8;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;">Miami</span>
+          <span style="color:#9CA3AF;font-size:.8rem;">Apr 25, 2026</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3" style="color:#1A1A2E;line-height:1.3;">10 Home Maintenance Tasks Every Miami Homeowner Forgets</h3>
+        <p class="text-sm mb-4" style="color:#6B7280;line-height:1.6;">From hurricane-window seals to condensate flushes — the climate-specific tasks that quietly cost Miami homeowners thousands.</p>
+        <div class="flex items-center gap-2" style="color:#6B21A8;font-weight:700;font-size:.85rem;">
+          Read more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <div class="card reveal delay-200" style="opacity:.55;border-style:dashed;">
+        <div class="flex items-center gap-2 mb-4">
+          <span style="background:#F3F4F6;color:#6B7280;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;">Coming Soon</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3" style="color:#9CA3AF;line-height:1.3;">More articles on the way</h3>
+        <p class="text-sm" style="color:#9CA3AF;line-height:1.6;">Climate-specific guides for Austin, Atlanta, Chicago, Philly, Charlotte, DC and Raleigh — each rolling out monthly.</p>
+      </div>
+
+      <div class="card reveal delay-300" style="opacity:.55;border-style:dashed;">
+        <div class="flex items-center gap-2 mb-4">
+          <span style="background:#F3F4F6;color:#6B7280;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px;">Coming Soon</span>
+        </div>
+        <h3 class="font-bold text-lg mb-3" style="color:#9CA3AF;line-height:1.3;">Subscribe for monthly updates</h3>
+        <p class="text-sm" style="color:#9CA3AF;line-height:1.6;">One email a month, climate-specific tasks for your city, no spam. Sign up on the <a href="blog/index.html" style="color:#6B21A8;text-decoration:underline;">blog page</a>.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-10 reveal">
+      <a href="blog/index.html" class="btn-secondary">Visit the Blog →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+
+<!-- =============================================
      13. FOOTER
 ============================================= -->
 <footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
@@ -1310,12 +1380,12 @@
       <div>
         <h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4>
         <ul class="space-y-2">
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">HVAC &amp; AC</a></li>
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Plumbing</a></li>
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Electrical</a></li>
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">General Repairs</a></li>
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Painting</a></li>
-          <li><a href="#services" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">TV Mounting</a></li>
+          <li><a href="services/hvac.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">HVAC &amp; AC</a></li>
+          <li><a href="services/plumbing.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Plumbing</a></li>
+          <li><a href="services/electrical.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Electrical</a></li>
+          <li><a href="services/drywall.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Drywall &amp; Repairs</a></li>
+          <li><a href="services/painting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Painting</a></li>
+          <li><a href="services/tv-mounting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">TV Mounting</a></li>
         </ul>
       </div>
 
@@ -1334,6 +1404,7 @@
         <ul class="space-y-2">
           <li><a href="#how-it-works" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">How It Works</a></li>
           <li><a href="#testimonials" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Testimonials</a></li>
+          <li><a href="blog/index.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Blog</a></li>
           <li><a href="#faq" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">FAQ</a></li>
           <li><a href="#contact" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Contact Us</a></li>
           <li><a href="privacy.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;" onmouseover="this.style.color='#6B21A8'" onmouseout="this.style.color='#6B7280'">Privacy Policy</a></li>

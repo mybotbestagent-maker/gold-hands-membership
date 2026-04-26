@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrical & Lighting | Gold Hands Membership</title>
+  <meta name="description" content="Light fixture swaps, ceiling fan installs, dimmers, smart switches, outlet replacements. Safe, code-aware electrical from $49/mo across 8 US cities." />
+  <link rel="canonical" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Electrical & Lighting | Gold Hands" />
+  <meta property="og:description" content="Fixtures, fans, dimmers, smart switches, outlet swaps — done by techs who actually know NEC." />
+  <meta property="og:url" content="https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html" />
+  <meta property="og:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <meta property="og:site_name" content="Gold Hands" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Electrical & Lighting | Gold Hands" />
+  <meta name="twitter:description" content="Fixtures, fans, dimmers, smart switches." />
+  <meta name="twitter:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <link rel="alternate" hreflang="en-US" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color:#FFFFFF; color:#1A1A2E; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#F8F5FF; } ::-webkit-scrollbar-thumb { background:#8B5CF6; border-radius:3px; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-100{transition-delay:.1s!important} .delay-200{transition-delay:.2s!important} .delay-300{transition-delay:.3s!important}
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:#FFFFFF; transition:box-shadow .3s; }
+    #navbar.scrolled { box-shadow:0 2px 20px rgba(107,33,168,0.1); }
+    .section-label { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#6B21A8; background:#F3E8FF; border:1px solid #DDD6FE; padding:5px 14px; border-radius:50px; margin-bottom:16px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:#8B5CF6; color:#FFFFFF; font-weight:700; font-size:1rem; padding:15px 32px; border-radius:50px; border:none; cursor:pointer; transition:background .2s, transform .2s, box-shadow .2s; box-shadow:0 4px 16px rgba(139,92,246,0.3); text-decoration:none; }
+    .btn-primary:hover { background:#7C3AED; transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,92,246,0.4); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#6B21A8; font-weight:700; font-size:1rem; padding:14px 30px; border-radius:50px; border:2px solid #DDD6FE; cursor:pointer; transition:border-color .2s, background .2s, transform .2s; text-decoration:none; }
+    .btn-secondary:hover { border-color:#8B5CF6; background:#F8F5FF; transform:translateY(-2px); }
+    #hero { background:linear-gradient(145deg,#FFFFFF 0%,#F8F5FF 55%,#EDE9FE 100%); padding:140px 24px 80px; position:relative; overflow:hidden; }
+    @media(max-width:767px){ #hero{padding:110px 20px 56px} }
+    .hero-title { font-size:clamp(2.2rem,6vw,4.5rem); font-weight:900; line-height:1.05; letter-spacing:-0.03em; color:#1A1A2E; }
+    .hero-title .accent { color:#6B21A8; }
+    .pricing-card { background:#FFFFFF; border:1.5px solid #E5E7EB; border-radius:24px; padding:36px 28px; position:relative; transition:border-color .3s, transform .3s, box-shadow .3s; }
+    .pricing-card:hover { border-color:#8B5CF6; transform:translateY(-4px); box-shadow:0 16px 48px rgba(139,92,246,.13); }
+    .pricing-card.popular { border-color:#8B5CF6; box-shadow:0 8px 40px rgba(139,92,246,.18); background:linear-gradient(145deg,#FAFAFF 0%,#F3E8FF 100%); }
+    .popular-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#6B21A8,#8B5CF6); color:#FFFFFF; font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 16px; border-radius:50px; white-space:nowrap; box-shadow:0 4px 12px rgba(139,92,246,.35); }
+    .price-amount { font-size:3.5rem; font-weight:900; color:#1A1A2E; line-height:1; letter-spacing:-0.03em; }
+    .price-amount sup { font-size:1.4rem; font-weight:700; vertical-align:super; }
+    .feature-check { display:flex; align-items:flex-start; gap:10px; font-size:.875rem; color:#374151; margin-bottom:10px; line-height:1.5; }
+    .feature-check svg { flex-shrink:0; margin-top:2px; }
+    .toggle-wrap { display:inline-flex; background:#F3F4F6; border-radius:50px; padding:4px; gap:4px; }
+    .toggle-btn { padding:8px 20px; border-radius:50px; font-weight:600; font-size:.875rem; cursor:pointer; transition:background .2s, color .2s, box-shadow .2s; color:#6B7280; background:transparent; border:none; white-space:nowrap; }
+    .toggle-btn.active { background:#FFFFFF; color:#6B21A8; box-shadow:0 2px 8px rgba(107,33,168,.15); }
+    .testimonial-card { background:#FFFFFF; border:1px solid #E5E7EB; border-radius:20px; padding:28px; }
+    .stars { color:#F59E0B; font-size:1.1rem; letter-spacing:2px; }
+    .annual-badge { display:inline-block; background:#F0FDF4; color:#10B981; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:50px; border:1px solid #A7F3D0; margin-left:6px; }
+    .bg-alt { background-color:#F8F5FF; }
+    .section-divider { border:none; height:1px; background:linear-gradient(90deg,transparent,#E5E7EB,transparent); margin:0; }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { font-size:1.5rem; font-weight:700; color:#1A1A2E; text-decoration:none; }
+    .body-prose p { color:#374151; line-height:1.8; font-size:1.02rem; margin-bottom:18px; }
+    .body-prose h3 { font-weight:800; font-size:1.35rem; color:#1A1A2E; margin-top:34px; margin-bottom:12px; letter-spacing:-0.01em; }
+    .body-prose ul { margin: 8px 0 18px 0; padding-left: 0; list-style: none; }
+    .body-prose ul li { color:#374151; line-height:1.75; font-size:1rem; margin-bottom:10px; padding-left:28px; position:relative; }
+    .body-prose ul li::before { content:""; position:absolute; left:6px; top:11px; width:8px; height:8px; border-radius:50%; background:#8B5CF6; }
+    .body-prose ul li strong { color:#1A1A2E; font-weight:700; }
+    .rating-star { color:#F59E0B; }
+    .faq-item { border-bottom:1px solid #E5E7EB; padding:16px 0; }
+    .faq-item h3 { font-weight:700; font-size:1.05rem; color:#1A1A2E; margin-bottom:8px; }
+    .faq-item p { color:#6B7280; font-size:.95rem; line-height:1.7; }
+    .alert-box { background:#FEE2E2; border:1px solid #FCA5A5; border-left:4px solid #DC2626; border-radius:8px; padding:16px 20px; margin:18px 0; color:#7F1D1D; font-size:.95rem; line-height:1.6; }
+    .alert-box strong { color:#991B1B; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Service","serviceType":"Electrical & Lighting","name":"Electrical & Lighting",
+    "description":"Light fixture replacement, ceiling fan installation, dimmer and smart-switch upgrades, outlet and switch replacement, USB receptacles, and other handyman-scope residential electrical work.",
+    "url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/electrical.html",
+    "image":"https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg",
+    "provider":{"@type":"LocalBusiness","@id":"https://mybotbestagent-maker.github.io/gold-hands-membership/#business","name":"Gold Hands Home Maintenance","telephone":"(737) 530-8110","priceRange":"$49–$199/mo","address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"}},
+    "areaServed":[{"@type":"City","name":"Miami, FL"},{"@type":"City","name":"Austin, TX"},{"@type":"City","name":"Atlanta, GA"},{"@type":"City","name":"Philadelphia, PA"},{"@type":"City","name":"Charlotte, NC"},{"@type":"City","name":"Washington, DC"},{"@type":"City","name":"Chicago, IL"},{"@type":"City","name":"Raleigh, NC"}]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What electrical work do you handle vs. when do I need a licensed electrician?","acceptedAnswer":{"@type":"Answer","text":"We handle the visible scope: light fixtures, ceiling fans, switches, outlets, USB receptacles, dimmers, smart-home switch swaps, doorbell transformers, and similar like-for-like replacements. We do not pull permits, run new circuits, work inside the breaker panel, or modify service entrance — those require a licensed electrician under the National Electrical Code (NEC) and your state's licensing rules. We tell you up front when a job needs licensed scope."}},
+      {"@type":"Question","name":"Can you install a smart switch like Lutron Caséta or Kasa?","acceptedAnswer":{"@type":"Answer","text":"Yes. Smart switches need a neutral wire at the box (most homes built after 1985 have this; many older homes don't). We test for neutral first, and if it's not present we either recommend a no-neutral switch like the Lutron Caséta Diva or refer to a licensed electrician for a wire pull. We also program the switch to your hub before we leave."}},
+      {"@type":"Question","name":"Will you install a ceiling fan where there's currently no ceiling box?","acceptedAnswer":{"@type":"Answer","text":"Like-for-like swap of an existing fan, yes. Adding a new ceiling fan where there's no box at all (or where the existing box isn't fan-rated) requires running new wire and that crosses into licensed-electrician scope. Most existing light-fixture boxes are NOT rated for fan loads — we always check the rating stamped on the box before mounting."}},
+      {"@type":"Question","name":"Why is my outlet warm to the touch?","acceptedAnswer":{"@type":"Answer","text":"That's a serious sign. A warm outlet means high resistance somewhere — usually a loose wire, a backstabbed connection that's failing, or an overloaded circuit. Stop using it immediately and call us. We can check and replace the outlet (often the fix), but if the heat traces back into the wall we hand off to a licensed electrician. Hot outlets cause house fires every year — this is not a wait-and-see issue."}},
+      {"@type":"Question","name":"Do you replace recessed lights with LED upgrades?","acceptedAnswer":{"@type":"Answer","text":"Yes — LED retrofit kits drop into existing recessed cans in 5 minutes per fixture. Single-switch dim controls work with most major brands (Lutron, Leviton, Lithonia). For homes still running old halogen recessed lights, the energy savings alone usually pay back the labor in 18–24 months."}},
+      {"@type":"Question","name":"Can you fix flickering lights?","acceptedAnswer":{"@type":"Answer","text":"It depends on cause. Most flickering is one of: bad bulb, dimmer/LED incompatibility, loose wire at the fixture, or worn switch. We diagnose and fix the first three. Flicker that's coming from the panel side (multiple rooms at once, or correlated with large appliance startup) means a service-entrance or panel issue and we refer to a licensed electrician — that's a safety call, not a punt."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav id="navbar" class="w-full py-4 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
+      <a href="../index.html#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
+      <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="../blog/index.html" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Blog</a>
+      <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a>
+      <a href="#pricing" class="btn-primary" style="padding:10px 24px;font-size:.875rem;">Get Started</a>
+    </div>
+    <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.add('open')"><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-4 h-0.5 rounded" style="background:#6B21A8;"></span></button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <button class="absolute top-6 right-6 text-3xl" style="color:#6B21A8;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="../index.html#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="../index.html#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
+  <a href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="../blog/index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a>
+  <a href="tel:+17375308110" style="color:#6B21A8;font-size:1.1rem;">📞 (737) 530-8110</a>
+  <a href="#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
+</div>
+
+<section id="hero">
+  <div style="position:absolute;width:480px;height:480px;top:-120px;right:-80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;width:320px;height:320px;bottom:60px;left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-5xl mx-auto w-full relative z-10 text-center">
+    <div class="reveal mb-5"><span class="section-label">💡 Service</span></div>
+    <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">Electrical &amp; Lighting —<br/><span class="accent">Done Right, First Time.</span></h1>
+    <p class="reveal mb-8 text-lg mx-auto" style="transition-delay:0.2s;color:#6B7280;max-width:680px;line-height:1.7;">Light fixtures swapped, ceiling fans hung, smart switches installed, outlets replaced — by techs who know the difference between line and load.</p>
+    <div class="reveal flex items-center justify-center gap-4 mb-8" style="transition-delay:0.25s;"><div class="flex items-center gap-2"><span class="rating-star">★★★★★</span><span class="font-bold text-sm" style="color:#1A1A2E;">4.9/5</span><span class="text-xs" style="color:#6B7280;">· 500+ homeowners</span></div></div>
+    <div class="reveal flex flex-wrap gap-4 justify-center" style="transition-delay:0.3s;"><a href="#pricing" class="btn-primary">View Membership Plans</a><a href="tel:+17375308110" class="btn-secondary">📞 (737) 530-8110</a></div>
+    <p class="reveal mt-6 text-sm" style="transition-delay:0.35s;color:#6B7280;">⚡ Same-day response · Vetted, insured techs · 8 cities</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal mb-10"><span class="section-label">Safety First</span><h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" style="letter-spacing:-0.03em;color:#1A1A2E;">Electrical is the one category where confidence kills people.</h2></div>
+
+    <div class="body-prose reveal delay-100">
+      <p>More than half the home electrical fires in the US start with a connection problem in a switch box, an outlet, or a fixture — wires that came loose, were backstabbed, or were wire-nutted dirty. We do this work every day, with proper torque settings on the screws, and we know which jobs are above our pay grade.</p>
+
+      <div class="alert-box"><strong>If you smell burning plastic or notice a warm switch/outlet:</strong> Turn off that breaker immediately, do not use the circuit, and call us for same-day diagnosis. This is a leading cause of house fires and is not a wait-until-tomorrow problem.</div>
+
+      <h3>The DIY pitfalls we see every week</h3>
+      <ul>
+        <li><strong>Backstabbed connections that fail under load.</strong> The "push-in" backstab holes on cheap outlets are a known failure point — they make a smaller contact patch than a screw terminal and they loosen over time, especially on circuits with hair dryers or heaters. We always wire to the screw terminals (or use a CO/ALR-rated outlet on aluminum wiring, which most pre-1972 homes have).</li>
+        <li><strong>Ceiling fans hung from light-fixture boxes that aren't fan-rated.</strong> A standard light-fixture box is rated for 35 lb static — a fan with motor torque doubles that effective load. The result is a fan that wobbles, then drops out of the ceiling. The box has to be a fan-rated box stamped accordingly. We always check before mounting.</li>
+        <li><strong>Dimmers paired with non-dimmable LED bulbs.</strong> The buzzing, flickering, and partial-on behavior that drives people insane is almost always a compatibility mismatch. Modern LED dimmers (Lutron Maestro, Caséta) work with most LEDs but you still have to confirm the bulb is dimmable. Standard wall dimmers from 1995 won't work with modern LED loads at all.</li>
+        <li><strong>Aluminum wiring assumed to be copper.</strong> Homes built between 1965 and 1973 often have aluminum branch wiring, which oxidizes and creates resistance at every connection. Standard outlets and switches are not rated for aluminum — you need CO/ALR rated devices or AlumiConn lugs. Mismatched outlets on aluminum wire is a known fire hazard.</li>
+        <li><strong>The "neutral isn't really hot" assumption.</strong> Wiring is hot whenever a circuit upstream is closed. Neutrals can carry current. Ground wires can become hot under fault conditions. We always test every wire with a non-contact tester and a multimeter before touching anything, even if "we're sure" the breaker is off.</li>
+      </ul>
+
+      <h3>Tools and skills required</h3>
+      <p>Doing electrical work safely needs: a non-contact AC voltage tester (Klein NCVT-3 or Fluke), a multimeter, lineman's pliers, wire strippers calibrated for solid and stranded copper, a torque screwdriver (yes — outlet terminal screws have a torque spec, around 12 in-lb), wire nuts in red/orange/yellow with the right gauge mapping, and electrical tape rated 600V. The skill part: knowing how to identify the line, load, traveler, and neutral on a 3-way switch (the wires are the same color from the wall — you have to test); knowing when to stop and call a licensed electrician (anything that needs a permit or a panel-side change); and knowing every state's rules on what handyman-scope vs. licensed-scope work looks like.</p>
+
+      <h3>3 typical jobs we handle (with pricing context)</h3>
+      <ul>
+        <li><strong>Replace 2 ceiling-light fixtures + 1 dining chandelier (homeowner-supplied).</strong> 90 minutes. Members $190–$240; non-members $260–$340. Fan-rated box check at no extra cost.</li>
+        <li><strong>Swap 8 standard outlets to USB-A/USB-C combo outlets across kitchen + master.</strong> 2 hours. Members $260–$320; non-members $340–$430. Recommended for high-use areas.</li>
+        <li><strong>Install ceiling fan with light kit + replace wall switch with fan/light dimmer combo.</strong> 60–90 minutes assuming fan-rated box. Members $180–$240; non-members $260–$330.</li>
+      </ul>
+
+      <h3>Why a membership beats one-off pricing for this category</h3>
+      <p>Electrical jobs almost always come in batches — when a homeowner finally calls about the dead outlet, they remember they also want a dimmer in the dining room and a smart switch in the kitchen. One-off electrical visits charge a trip plus per-task minimums. With a Silver or Gold membership, the tech rolls up with everything in the truck and works through your list during your monthly visit. We've had members get 6–8 small electrical tasks done in a single 90-minute window — work that would have been four separate $180 visits.</p>
+
+      <h3>Code, licensing, and the line we don't cross</h3>
+      <p>This matters: every state we operate in (Florida, Texas, Georgia, Pennsylvania, North Carolina, DC, Illinois) requires a state electrical license for any work that involves running new circuits, modifying the panel, or pulling a permit. We are explicit about scope. We do like-for-like fixture and device replacement. We do not pull permits, do not work inside the breaker panel, do not modify service entrance, and do not run new wire through walls. When the right answer is a licensed electrician, we say so and connect you with a partner. Anything you read online suggesting handymen do panel work is somebody operating outside the law and probably without insurance — that's the work that burns houses down and voids homeowners insurance claims.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">Member Story</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">From a Gold member in Capitol Hill, Washington DC.</h2></div>
+    <div class="testimonial-card reveal" style="padding:36px;">
+      <div class="stars mb-4">★★★★★</div>
+      <p class="mb-6" style="color:#374151;font-size:1.05rem;line-height:1.75;font-style:italic;">"My 1920s rowhouse still had two-prong outlets in half the rooms and the most random light fixtures I've ever seen. Joined Gold mostly because I was tired of explaining the same backstory to a new electrician every six weeks. The Gold Hands tech knocked out a checklist of like 14 things over two visits — outlets, dimmers, two ceiling fans — and was honest about which ones needed a licensed electrician (we needed one for a panel-side problem he found and he set the appointment for me). It's exactly what I wished a contractor had been doing this whole time."</p>
+      <div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);color:white;">EA</div><div><p class="font-semibold text-base" style="color:#1A1A2E;">Member of Gold Hands</p><p class="text-sm" style="color:#9CA3AF;">Capitol Hill, Washington DC · Gold Member</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section id="pricing" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <span class="section-label">Membership Plans</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Lights working.<br class="hidden md:block"/>Plus everything else, every month.</h2>
+      <p class="text-lg max-w-xl mx-auto mb-8" style="color:#6B7280;">No hidden fees. No long-term contracts. Cancel anytime.</p>
+      <div class="toggle-wrap reveal"><button class="toggle-btn active" id="toggle-monthly" onclick="setPricingMode('monthly')">Monthly</button><button class="toggle-btn" id="toggle-annual" onclick="setPricingMode('annual')">Annual <span class="annual-badge">Save 2 months</span></button></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-start mt-12">
+      <div class="pricing-card reveal delay-100">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥉</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#92400E;">Bronze</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-bronze"><sup>$</sup><span class="num">49</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Essential protection for the budget-conscious homeowner.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 check-up visit per quarter</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free estimates on all work</div>
+        </div>
+        <a href="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_electrical" target="_blank" id="btn-bronze" data-monthly="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_electrical" data-annual="https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_electrical" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Bronze</button></a>
+      </div>
+      <div class="pricing-card popular reveal delay-200">
+        <div class="popular-badge">✦ Most Popular</div>
+        <div class="flex items-center gap-2 mb-3 mt-2"><span class="text-lg">🥈</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#6B21A8;">Silver</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-silver"><sup>$</sup><span class="num">99</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#6B7280;">The sweet spot — small electrical jobs absorbed into your monthly visit.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 visit per month (minor fixes included)</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>12-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full home audit on sign-up</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 emergency visit per quarter</div>
+        </div>
+        <a href="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_electrical" target="_blank" id="btn-silver" data-monthly="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_electrical" data-annual="https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_electrical" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Silver</button></a>
+      </div>
+      <div class="pricing-card reveal delay-300">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥇</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#B45309;">Gold</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-gold"><sup>$</sup><span class="num">199</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Ultimate peace of mind — full smart-home upgrades and outlet retrofits.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 visits per month</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4-hour emergency response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>$100 monthly service credit</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>VIP dedicated 24/7 support line</div>
+        </div>
+        <a href="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_electrical" target="_blank" id="btn-gold" data-monthly="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_electrical" data-annual="https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_electrical" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Gold</button></a>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-8 reveal" style="color:#9CA3AF;">All plans include a 30-day money-back guarantee. No setup fees. Cancel anytime.</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">FAQ</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Electrical Questions</h2></div>
+    <div class="reveal">
+      <div class="faq-item"><h3>What electrical work do you handle vs. when do I need a licensed electrician?</h3><p>We handle the visible scope: light fixtures, ceiling fans, switches, outlets, USB receptacles, dimmers, smart-home switch swaps, doorbell transformers, and similar like-for-like replacements. We do not pull permits, run new circuits, work inside the breaker panel, or modify service entrance — those require a licensed electrician under the National Electrical Code (NEC) and your state's licensing rules. We tell you up front when a job needs licensed scope.</p></div>
+      <div class="faq-item"><h3>Can you install a smart switch like Lutron Caséta or Kasa?</h3><p>Yes. Smart switches need a neutral wire at the box (most homes built after 1985 have this; many older homes don't). We test for neutral first, and if it's not present we either recommend a no-neutral switch like the Lutron Caséta Diva or refer to a licensed electrician for a wire pull. We also program the switch to your hub before we leave.</p></div>
+      <div class="faq-item"><h3>Will you install a ceiling fan where there's currently no ceiling box?</h3><p>Like-for-like swap of an existing fan, yes. Adding a new ceiling fan where there's no box at all (or where the existing box isn't fan-rated) requires running new wire and that crosses into licensed-electrician scope. Most existing light-fixture boxes are NOT rated for fan loads — we always check the rating stamped on the box before mounting.</p></div>
+      <div class="faq-item"><h3>Why is my outlet warm to the touch?</h3><p>That's a serious sign. A warm outlet means high resistance somewhere — usually a loose wire, a backstabbed connection that's failing, or an overloaded circuit. Stop using it immediately and call us. We can check and replace the outlet (often the fix), but if the heat traces back into the wall we hand off to a licensed electrician. Hot outlets cause house fires every year — this is not a wait-and-see issue.</p></div>
+      <div class="faq-item"><h3>Do you replace recessed lights with LED upgrades?</h3><p>Yes — LED retrofit kits drop into existing recessed cans in 5 minutes per fixture. Single-switch dim controls work with most major brands (Lutron, Leviton, Lithonia). For homes still running old halogen recessed lights, the energy savings alone usually pay back the labor in 18–24 months.</p></div>
+      <div class="faq-item"><h3>Can you fix flickering lights?</h3><p>It depends on cause. Most flickering is one of: bad bulb, dimmer/LED incompatibility, loose wire at the fixture, or worn switch. We diagnose and fix the first three. Flicker that's coming from the panel side (multiple rooms at once, or correlated with large appliance startup) means a service-entrance or panel issue and we refer to a licensed electrician — that's a safety call, not a punt.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-xs font-semibold tracking-widest uppercase mb-5" style="color:#9CA3AF;">Other Services We Handle</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-8" style="letter-spacing:-0.03em;color:#1A1A2E;">One team. Every job in your home.</h2>
+    <div class="flex flex-wrap justify-center gap-3 reveal">
+      <a href="tv-mounting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">📺 TV Mounting &amp; Furniture Assembly</a>
+      <a href="drywall.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🧱 Drywall &amp; Minor Repairs</a>
+      <a href="plumbing.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🚿 Plumbing Fixes</a>
+      <a href="painting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🎨 Painting &amp; Touch-Ups</a>
+      <a href="hvac.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">❄️ AC Filters &amp; Seasonal Maintenance</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1"><a href="../index.html" class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a><p class="text-sm mb-4" style="color:#6B7280;line-height:1.7;">Premium home maintenance membership. One trusted team across 8 cities.</p><a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4><ul class="space-y-2"><li><a href="tv-mounting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">TV Mounting</a></li><li><a href="drywall.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Drywall</a></li><li><a href="plumbing.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Plumbing</a></li><li><a href="painting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Painting</a></li><li><a href="electrical.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Electrical</a></li><li><a href="hvac.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">HVAC &amp; AC</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Membership</h4><ul class="space-y-2"><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥉 Bronze – $49/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥈 Silver – $99/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥇 Gold – $199/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Annual Plans</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Cities</h4><ul class="space-y-2"><li><a href="../cities/miami.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Miami, FL</a></li><li><a href="../cities/austin.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Austin, TX</a></li><li><a href="../cities/atlanta.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Atlanta, GA</a></li><li><a href="../cities/philadelphia.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Philadelphia, PA</a></li><li><a href="../cities/charlotte.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Charlotte, NC</a></li><li><a href="../cities/washington-dc.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Washington, DC</a></li><li><a href="../cities/chicago.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Chicago, IL</a></li><li><a href="../cities/raleigh.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Raleigh, NC</a></li></ul></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid #EDE9FE;"><p class="text-sm" style="color:#9CA3AF;">© 2024 Handyman Gold Hands LLC. All rights reserved.</p><div class="flex items-center gap-3"><a href="../privacy.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Privacy</a><a href="../terms.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+  let pricingMode = 'monthly';
+  const prices = { monthly: { bronze: 49, silver: 99, gold: 199 }, annual: { bronze: 490, silver: 990, gold: 1990 } };
+  const stripeLinks = {
+    bronze: { monthly: 'https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_electrical', annual: 'https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_electrical' },
+    silver: { monthly: 'https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_electrical', annual: 'https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_electrical' },
+    gold:   { monthly: 'https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_electrical', annual: 'https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_electrical' }
+  };
+  function setPricingMode(mode) {
+    pricingMode = mode;
+    document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
+    document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
+    ['bronze','silver','gold'].forEach(tier => {
+      const el = document.getElementById('price-' + tier);
+      const numEl = el ? el.querySelector('.num') : null;
+      if (numEl) numEl.textContent = prices[mode][tier].toLocaleString();
+      const btn = document.getElementById('btn-' + tier);
+      if (btn) btn.href = stripeLinks[tier][mode];
+    });
+    document.querySelectorAll('.price-amount + span').forEach(span => { span.textContent = mode === 'monthly' ? '/mo' : '/yr'; });
+  }
+</script>
+</body>
+</html>

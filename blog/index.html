@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Hands Blog — Home Maintenance Insights</title>
+  <meta name="description" content="Practical home-maintenance writing for homeowners across 8 US cities. Climate-specific checklists, repair guides, and money-saving advice from the Gold Hands team." />
+  <link rel="canonical" href="https://mybotbestagent-maker.github.io/gold-hands-membership/blog/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gold Hands Blog — Home Maintenance Insights" />
+  <meta property="og:description" content="Practical home-maintenance writing for homeowners across 8 US cities." />
+  <meta property="og:url" content="https://mybotbestagent-maker.github.io/gold-hands-membership/blog/index.html" />
+  <meta property="og:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <meta property="og:site_name" content="Gold Hands" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gold Hands Blog" />
+  <meta name="twitter:description" content="Practical home-maintenance writing for homeowners." />
+  <meta name="twitter:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <link rel="alternate" hreflang="en-US" href="https://mybotbestagent-maker.github.io/gold-hands-membership/blog/index.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color:#FFFFFF; color:#1A1A2E; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#F8F5FF; } ::-webkit-scrollbar-thumb { background:#8B5CF6; border-radius:3px; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:#FFFFFF; transition:box-shadow .3s; }
+    #navbar.scrolled { box-shadow:0 2px 20px rgba(107,33,168,0.1); }
+    .section-label { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#6B21A8; background:#F3E8FF; border:1px solid #DDD6FE; padding:5px 14px; border-radius:50px; margin-bottom:16px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:#8B5CF6; color:#FFFFFF; font-weight:700; font-size:1rem; padding:15px 32px; border-radius:50px; border:none; cursor:pointer; transition:background .2s, transform .2s, box-shadow .2s; box-shadow:0 4px 16px rgba(139,92,246,0.3); text-decoration:none; }
+    .btn-primary:hover { background:#7C3AED; transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,92,246,0.4); }
+    .blog-card { background:#FFFFFF; border:1px solid #E5E7EB; border-radius:20px; padding:32px; transition:border-color .3s, transform .3s, box-shadow .3s; display:block; text-decoration:none; }
+    .blog-card:hover { border-color:#8B5CF6; transform:translateY(-4px); box-shadow:0 12px 40px rgba(139,92,246,.12); }
+    #hero { background:linear-gradient(145deg,#FFFFFF 0%,#F8F5FF 55%,#EDE9FE 100%); padding:140px 24px 80px; position:relative; overflow:hidden; }
+    .hero-title { font-size:clamp(2.2rem,6vw,4.5rem); font-weight:900; line-height:1.05; letter-spacing:-0.03em; color:#1A1A2E; }
+    .hero-title .accent { color:#6B21A8; }
+    .form-input { width:100%; padding:14px 18px; border:1.5px solid #E5E7EB; border-radius:12px; font-size:1rem; color:#1A1A2E; background:#FFFFFF; transition:border-color .2s, box-shadow .2s; outline:none; font-family:'Inter',sans-serif; }
+    .form-input:focus { border-color:#8B5CF6; box-shadow:0 0 0 3px rgba(139,92,246,0.12); }
+    .form-input::placeholder { color:#9CA3AF; }
+    .bg-alt { background-color:#F8F5FF; }
+    .section-divider { border:none; height:1px; background:linear-gradient(90deg,transparent,#E5E7EB,transparent); margin:0; }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { font-size:1.5rem; font-weight:700; color:#1A1A2E; text-decoration:none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Gold Hands Blog",
+    "description": "Home maintenance insights, climate-specific checklists, and money-saving repair advice for homeowners across 8 US cities.",
+    "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/blog/index.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Gold Hands Home Maintenance",
+      "logo": {"@type":"ImageObject","url":"https://mybotbestagent-maker.github.io/gold-hands-membership/logo.png"}
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "10 Home Maintenance Tasks Every Miami Homeowner Forgets (And Why That Costs Thousands)",
+        "datePublished": "2026-04-25",
+        "url": "https://mybotbestagent-maker.github.io/gold-hands-membership/blog/posts/2026-04-25-miami-homeowner-maintenance-checklist.html",
+        "image": "https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg",
+        "author": {"@type":"Organization","name":"Gold Hands Team"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav id="navbar" class="w-full py-4 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
+      <a href="../index.html#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
+      <a href="../index.html#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Blog</a>
+      <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a>
+      <a href="../index.html#pricing" class="btn-primary" style="padding:10px 24px;font-size:.875rem;">Get Started</a>
+    </div>
+    <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.add('open')"><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-4 h-0.5 rounded" style="background:#6B21A8;"></span></button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <button class="absolute top-6 right-6 text-3xl" style="color:#6B21A8;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="../index.html#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="../index.html#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
+  <a href="../index.html#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a>
+  <a href="tel:+17375308110" style="color:#6B21A8;font-size:1.1rem;">📞 (737) 530-8110</a>
+  <a href="../index.html#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
+</div>
+
+<section id="hero">
+  <div style="position:absolute;width:480px;height:480px;top:-120px;right:-80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;width:320px;height:320px;bottom:60px;left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-4xl mx-auto w-full relative z-10 text-center">
+    <div class="reveal mb-5"><span class="section-label">📖 Blog</span></div>
+    <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">Gold Hands Blog —<br/><span class="accent">Home Maintenance Insights</span></h1>
+    <p class="reveal mb-2 text-lg mx-auto" style="transition-delay:0.2s;color:#6B7280;max-width:680px;line-height:1.7;">Practical writing from the people who fix homes every day. Climate-specific checklists. Honest pricing. Money-saving advice.</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-10 reveal"><span class="section-label">Latest Article</span></div>
+    <a href="posts/2026-04-25-miami-homeowner-maintenance-checklist.html" class="blog-card reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span style="background:#F3E8FF;color:#6B21A8;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:50px;">Miami</span>
+        <span style="color:#9CA3AF;font-size:.85rem;">April 25, 2026</span>
+        <span style="color:#9CA3AF;font-size:.85rem;">· 8 min read</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-black mb-4" style="color:#1A1A2E;letter-spacing:-0.02em;line-height:1.2;">10 Home Maintenance Tasks Every Miami Homeowner Forgets (And Why That Costs Thousands)</h2>
+      <p style="color:#6B7280;line-height:1.7;font-size:1rem;margin-bottom:16px;">From hurricane-window seal inspections to post-outage water heater flushes, the climate-specific tasks that quietly ruin Miami homes when ignored — and the simple checks that save five-figure repair bills.</p>
+      <div class="flex items-center gap-2" style="color:#6B21A8;font-weight:700;font-size:.95rem;">
+        Read more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-2xl mx-auto text-center">
+    <div class="reveal">
+      <span class="section-label">Newsletter</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" style="color:#1A1A2E;letter-spacing:-0.02em;">Get monthly home-maintenance tips.</h2>
+      <p class="mb-8" style="color:#6B7280;line-height:1.7;">One email a month. Climate-specific tasks for your city, no spam, unsubscribe anytime.</p>
+      <form action="#" method="post" style="display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;">
+        <input type="email" name="email" required placeholder="you@email.com" class="form-input" style="flex:1;min-width:200px;" />
+        <button type="submit" class="btn-primary" style="flex-shrink:0;">Subscribe</button>
+      </form>
+      <p class="text-xs mt-4" style="color:#9CA3AF;">By subscribing, you agree to receive occasional updates from Gold Hands. We never share your email.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1"><a href="../index.html" class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a><p class="text-sm mb-4" style="color:#6B7280;line-height:1.7;">Premium home maintenance membership. One trusted team across 8 cities.</p><a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4><ul class="space-y-2"><li><a href="../services/tv-mounting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">TV Mounting</a></li><li><a href="../services/drywall.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Drywall</a></li><li><a href="../services/plumbing.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Plumbing</a></li><li><a href="../services/painting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Painting</a></li><li><a href="../services/electrical.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Electrical</a></li><li><a href="../services/hvac.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">HVAC &amp; AC</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Membership</h4><ul class="space-y-2"><li><a href="../index.html#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥉 Bronze – $49/mo</a></li><li><a href="../index.html#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥈 Silver – $99/mo</a></li><li><a href="../index.html#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥇 Gold – $199/mo</a></li><li><a href="../index.html#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Annual Plans</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Cities</h4><ul class="space-y-2"><li><a href="../cities/miami.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Miami, FL</a></li><li><a href="../cities/austin.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Austin, TX</a></li><li><a href="../cities/atlanta.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Atlanta, GA</a></li><li><a href="../cities/philadelphia.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Philadelphia, PA</a></li><li><a href="../cities/charlotte.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Charlotte, NC</a></li><li><a href="../cities/washington-dc.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Washington, DC</a></li><li><a href="../cities/chicago.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Chicago, IL</a></li><li><a href="../cities/raleigh.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Raleigh, NC</a></li></ul></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid #EDE9FE;"><p class="text-sm" style="color:#9CA3AF;">© 2024 Handyman Gold Hands LLC. All rights reserved.</p><div class="flex items-center gap-3"><a href="../privacy.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Privacy</a><a href="../terms.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+</script>
+</body>
+</html>

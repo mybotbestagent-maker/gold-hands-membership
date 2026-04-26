@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plumbing Fixes | Gold Hands Membership</title>
+  <meta name="description" content="Dripping faucets, running toilets, clogged drains, leaky shutoffs — fixed by vetted handymen across 8 US cities. Membership from $49/mo. Same-day response." />
+  <link rel="canonical" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Plumbing Fixes | Gold Hands" />
+  <meta property="og:description" content="Faucets, toilets, drains, shutoff valves, supply lines. Members get same-day priority dispatch." />
+  <meta property="og:url" content="https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html" />
+  <meta property="og:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <meta property="og:site_name" content="Gold Hands" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plumbing Fixes | Gold Hands" />
+  <meta name="twitter:description" content="Faucets, toilets, drains, shutoffs — handled fast." />
+  <meta name="twitter:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <link rel="alternate" hreflang="en-US" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color:#FFFFFF; color:#1A1A2E; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#F8F5FF; } ::-webkit-scrollbar-thumb { background:#8B5CF6; border-radius:3px; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-100{transition-delay:.1s!important} .delay-200{transition-delay:.2s!important} .delay-300{transition-delay:.3s!important}
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:#FFFFFF; transition:box-shadow .3s; }
+    #navbar.scrolled { box-shadow:0 2px 20px rgba(107,33,168,0.1); }
+    .section-label { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#6B21A8; background:#F3E8FF; border:1px solid #DDD6FE; padding:5px 14px; border-radius:50px; margin-bottom:16px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:#8B5CF6; color:#FFFFFF; font-weight:700; font-size:1rem; padding:15px 32px; border-radius:50px; border:none; cursor:pointer; transition:background .2s, transform .2s, box-shadow .2s; box-shadow:0 4px 16px rgba(139,92,246,0.3); text-decoration:none; }
+    .btn-primary:hover { background:#7C3AED; transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,92,246,0.4); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#6B21A8; font-weight:700; font-size:1rem; padding:14px 30px; border-radius:50px; border:2px solid #DDD6FE; cursor:pointer; transition:border-color .2s, background .2s, transform .2s; text-decoration:none; }
+    .btn-secondary:hover { border-color:#8B5CF6; background:#F8F5FF; transform:translateY(-2px); }
+    #hero { background:linear-gradient(145deg,#FFFFFF 0%,#F8F5FF 55%,#EDE9FE 100%); padding:140px 24px 80px; position:relative; overflow:hidden; }
+    @media(max-width:767px){ #hero{padding:110px 20px 56px} }
+    .hero-title { font-size:clamp(2.2rem,6vw,4.5rem); font-weight:900; line-height:1.05; letter-spacing:-0.03em; color:#1A1A2E; }
+    .hero-title .accent { color:#6B21A8; }
+    .pricing-card { background:#FFFFFF; border:1.5px solid #E5E7EB; border-radius:24px; padding:36px 28px; position:relative; transition:border-color .3s, transform .3s, box-shadow .3s; }
+    .pricing-card:hover { border-color:#8B5CF6; transform:translateY(-4px); box-shadow:0 16px 48px rgba(139,92,246,.13); }
+    .pricing-card.popular { border-color:#8B5CF6; box-shadow:0 8px 40px rgba(139,92,246,.18); background:linear-gradient(145deg,#FAFAFF 0%,#F3E8FF 100%); }
+    .popular-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#6B21A8,#8B5CF6); color:#FFFFFF; font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 16px; border-radius:50px; white-space:nowrap; box-shadow:0 4px 12px rgba(139,92,246,.35); }
+    .price-amount { font-size:3.5rem; font-weight:900; color:#1A1A2E; line-height:1; letter-spacing:-0.03em; }
+    .price-amount sup { font-size:1.4rem; font-weight:700; vertical-align:super; }
+    .feature-check { display:flex; align-items:flex-start; gap:10px; font-size:.875rem; color:#374151; margin-bottom:10px; line-height:1.5; }
+    .feature-check svg { flex-shrink:0; margin-top:2px; }
+    .toggle-wrap { display:inline-flex; background:#F3F4F6; border-radius:50px; padding:4px; gap:4px; }
+    .toggle-btn { padding:8px 20px; border-radius:50px; font-weight:600; font-size:.875rem; cursor:pointer; transition:background .2s, color .2s, box-shadow .2s; color:#6B7280; background:transparent; border:none; white-space:nowrap; }
+    .toggle-btn.active { background:#FFFFFF; color:#6B21A8; box-shadow:0 2px 8px rgba(107,33,168,.15); }
+    .testimonial-card { background:#FFFFFF; border:1px solid #E5E7EB; border-radius:20px; padding:28px; }
+    .stars { color:#F59E0B; font-size:1.1rem; letter-spacing:2px; }
+    .annual-badge { display:inline-block; background:#F0FDF4; color:#10B981; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:50px; border:1px solid #A7F3D0; margin-left:6px; }
+    .bg-alt { background-color:#F8F5FF; }
+    .section-divider { border:none; height:1px; background:linear-gradient(90deg,transparent,#E5E7EB,transparent); margin:0; }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { font-size:1.5rem; font-weight:700; color:#1A1A2E; text-decoration:none; }
+    .body-prose p { color:#374151; line-height:1.8; font-size:1.02rem; margin-bottom:18px; }
+    .body-prose h3 { font-weight:800; font-size:1.35rem; color:#1A1A2E; margin-top:34px; margin-bottom:12px; letter-spacing:-0.01em; }
+    .body-prose ul { margin: 8px 0 18px 0; padding-left: 0; list-style: none; }
+    .body-prose ul li { color:#374151; line-height:1.75; font-size:1rem; margin-bottom:10px; padding-left:28px; position:relative; }
+    .body-prose ul li::before { content:""; position:absolute; left:6px; top:11px; width:8px; height:8px; border-radius:50%; background:#8B5CF6; }
+    .body-prose ul li strong { color:#1A1A2E; font-weight:700; }
+    .rating-star { color:#F59E0B; }
+    .faq-item { border-bottom:1px solid #E5E7EB; padding:16px 0; }
+    .faq-item h3 { font-weight:700; font-size:1.05rem; color:#1A1A2E; margin-bottom:8px; }
+    .faq-item p { color:#6B7280; font-size:.95rem; line-height:1.7; }
+    .alert-box { background:#FEF3C7; border:1px solid #FCD34D; border-left:4px solid #F59E0B; border-radius:8px; padding:16px 20px; margin:18px 0; color:#78350F; font-size:.95rem; line-height:1.6; }
+    .alert-box strong { color:#92400E; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Service","serviceType":"Plumbing Fixes","name":"Plumbing Fixes",
+    "description":"Faucet replacement, toilet repair, drain clearing, supply line and shutoff valve repair, garbage disposal install, and other residential handyman-level plumbing work.",
+    "url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/plumbing.html",
+    "image":"https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg",
+    "provider":{"@type":"LocalBusiness","@id":"https://mybotbestagent-maker.github.io/gold-hands-membership/#business","name":"Gold Hands Home Maintenance","telephone":"(737) 530-8110","priceRange":"$49–$199/mo","address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"}},
+    "areaServed":[{"@type":"City","name":"Miami, FL"},{"@type":"City","name":"Austin, TX"},{"@type":"City","name":"Atlanta, GA"},{"@type":"City","name":"Philadelphia, PA"},{"@type":"City","name":"Charlotte, NC"},{"@type":"City","name":"Washington, DC"},{"@type":"City","name":"Chicago, IL"},{"@type":"City","name":"Raleigh, NC"}]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What plumbing work do you handle vs. when do I need a licensed plumber?","acceptedAnswer":{"@type":"Answer","text":"We handle the full range of fixture-level work — faucets, toilets, supply lines, shutoffs, garbage disposals, P-traps, drain snaking, and similar. We don't open walls to repipe, we don't touch the main sewer line past the first cleanout, and we don't work on gas lines (gas is a licensed-plumber/licensed-installer scope by code in every state we serve). When a job crosses into licensed-plumber territory, we tell you up front and refer to a partner."}},
+      {"@type":"Question","name":"My toilet is running constantly — how much to fix?","acceptedAnswer":{"@type":"Answer","text":"Almost always a $20 part: either the flapper, the fill valve, or both. Replacement takes 15–25 minutes. As a member, this is the kind of fix that's typically absorbed into your monthly visit. Drop-in price is $80–$120 plus parts."}},
+      {"@type":"Question","name":"Can you snake a clogged drain?","acceptedAnswer":{"@type":"Answer","text":"Yes — bathroom sink, kitchen sink, tub, and shower. We carry a 25-foot hand auger and a 50-foot drum auger. If a clog is past 50 feet (main line) or there's evidence of a sewer-line break, we recommend a sewer-rooter specialist with a camera — that's outside the handyman scope."}},
+      {"@type":"Question","name":"Will you install my new faucet or showerhead?","acceptedAnswer":{"@type":"Answer","text":"Yes. Single-hole, three-hole, widespread, wall-mount — all of it. We also redo the water-supply braided lines if yours are older than 10 years (they fail catastrophically when they fail). Showerheads, hand-held sprayers, and bidet attachments — same. We bring teflon tape, plumber's putty, and a basin wrench."}},
+      {"@type":"Question","name":"What if I have a leak? Is that an emergency?","acceptedAnswer":{"@type":"Answer","text":"Active dripping or pooling water is an emergency. First step: shut off the supply at the angle stop or the main if needed, put towels down, and call. Gold members get 4-hour emergency dispatch, Silver 12-hour. We carry SharkBite couplings, PEX, and copper repair kits — most leaks under sinks or in accessible walls are fixed in one visit."}},
+      {"@type":"Question","name":"Do you replace water heaters?","acceptedAnswer":{"@type":"Answer","text":"For electric water heaters, yes — straightforward swap of a 40 or 50 gallon tank. For gas water heaters and tankless installations, we partner with a licensed plumber because gas connection and combustion-air requirements need a permit and a state-licensed installer. We coordinate the whole job either way."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav id="navbar" class="w-full py-4 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
+      <a href="../index.html#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
+      <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="../blog/index.html" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Blog</a>
+      <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a>
+      <a href="#pricing" class="btn-primary" style="padding:10px 24px;font-size:.875rem;">Get Started</a>
+    </div>
+    <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.add('open')"><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-4 h-0.5 rounded" style="background:#6B21A8;"></span></button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <button class="absolute top-6 right-6 text-3xl" style="color:#6B21A8;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="../index.html#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="../index.html#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
+  <a href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="../blog/index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a>
+  <a href="tel:+17375308110" style="color:#6B21A8;font-size:1.1rem;">📞 (737) 530-8110</a>
+  <a href="#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
+</div>
+
+<section id="hero">
+  <div style="position:absolute;width:480px;height:480px;top:-120px;right:-80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;width:320px;height:320px;bottom:60px;left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-5xl mx-auto w-full relative z-10 text-center">
+    <div class="reveal mb-5"><span class="section-label">🚿 Service</span></div>
+    <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">Plumbing Fixes —<br/><span class="accent">Done Right, First Time.</span></h1>
+    <p class="reveal mb-8 text-lg mx-auto" style="transition-delay:0.2s;color:#6B7280;max-width:680px;line-height:1.7;">Drips silenced, toilets sealed, drains opened, fixtures swapped — the everyday plumbing every homeowner deals with, handled before it becomes a flood.</p>
+    <div class="reveal flex items-center justify-center gap-4 mb-8" style="transition-delay:0.25s;"><div class="flex items-center gap-2"><span class="rating-star">★★★★★</span><span class="font-bold text-sm" style="color:#1A1A2E;">4.9/5</span><span class="text-xs" style="color:#6B7280;">· 500+ homeowners</span></div></div>
+    <div class="reveal flex flex-wrap gap-4 justify-center" style="transition-delay:0.3s;"><a href="#pricing" class="btn-primary">View Membership Plans</a><a href="tel:+17375308110" class="btn-secondary">📞 (737) 530-8110</a></div>
+    <p class="reveal mt-6 text-sm" style="transition-delay:0.35s;color:#6B7280;">⚡ Same-day response · Vetted, insured techs · 8 cities</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal mb-10">
+      <span class="section-label">Real Talk</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" style="letter-spacing:-0.03em;color:#1A1A2E;">Why "small" plumbing leaks become $8,000 mold remediation jobs.</h2>
+    </div>
+
+    <div class="body-prose reveal delay-100">
+      <p>The single most expensive lesson in homeownership is that a $1.50 rubber gasket, when ignored, becomes a $9,000 floor replacement. Plumbing has the worst leverage of any home system — small problem ignored, big problem inevitable. We catch the small ones on a schedule.</p>
+
+      <div class="alert-box"><strong>If you have an active leak right now:</strong> Shut the water off at the angle stop under the fixture (or at the main if you can't find the angle stop), put towels down, and call us. Members on Silver and Gold get priority dispatch; Bronze members and non-members can call for next-available.</div>
+
+      <h3>The DIY pitfalls we see every week</h3>
+      <ul>
+        <li><strong>Overtightened compression fittings, cracked porcelain.</strong> The biggest single mistake on toilet repairs is wrenching down on the supply line and cracking the toilet tank. Hand-tight plus a quarter-turn is the rule. We've replaced more than a few toilets that started as a $25 fill-valve job.</li>
+        <li><strong>10-year-old supply lines that failed during the night.</strong> Braided stainless supply lines have a finite life — typically 8–10 years. They fail explosively, full open, and a single failed line can dump 6 gallons per minute until somebody finds the shutoff. We replace them on a schedule for members and we tag the install date on the new ones.</li>
+        <li><strong>P-trap leaks reglued instead of replaced.</strong> If a P-trap is leaking at the slip nut, the washer is shot. Adding pipe dope or teflon tape doesn't fix it — replacing the trap kit ($6 at Home Depot, 10 minutes of labor) does.</li>
+        <li><strong>Faucet aerators full of mineral scale, blamed on "low water pressure."</strong> 80% of "my water pressure dropped" calls are aerators or cartridge filters in the supply, not actual pressure issues. Five-minute fix. People spend thousands on pressure-boost pumps that didn't need to exist.</li>
+        <li><strong>Garbage disposals run with the wrong food.</strong> Coffee grounds, fibrous vegetable peels, eggshells, and pasta are the four worst. We've cleared dozens of jammed disposals where the fix is a hex-wrench reset and a clean-out — no replacement needed.</li>
+      </ul>
+
+      <h3>Tools and skills required</h3>
+      <p>Real residential plumbing fixes need: a basin wrench (for the impossibly-placed nuts behind the sink), channel-lock pliers, a closet auger (toilet snake) for clogged toilets, a hand auger for sinks, teflon tape, plumber's putty, silicone, a torque-controlled approach to compression fittings, and the experience to know when something is past handyman scope. The diagnostic skill is the bigger piece: knowing whether a wet spot under a sink is a supply leak, a drain leak, a P-trap leak, or condensation from cold-water lines in a humid climate. They look identical to a homeowner; they're four different fixes.</p>
+
+      <h3>3 typical jobs we handle (with pricing context)</h3>
+      <ul>
+        <li><strong>Toilet running, fill valve + flapper replacement.</strong> 20–30 minutes plus parts ($15–25). Members $80–$110; non-members $130–$170. Silver/Gold members typically absorbed into monthly visit.</li>
+        <li><strong>Kitchen faucet replacement (single-hole, member supplies fixture).</strong> 45–75 minutes plus a $5 supply-line refresh. Members $130–$180; non-members $200–$280.</li>
+        <li><strong>Master bathroom drain clear (sink + shower) plus shutoff replacement.</strong> 60–90 minutes plus parts. Members $180–$240; non-members $260–$340.</li>
+      </ul>
+
+      <h3>Why a membership beats one-off pricing for this category</h3>
+      <p>Plumbing is the category where membership pays for itself fastest. A single emergency drop-in plumber visit — including the after-hours surcharge — runs $250–$400 in most of our cities just to walk in the door, before any work. With a Gold membership, the 4-hour emergency dispatch is included, the labor discount is 20%, and you've got a $100 monthly service credit toward parts. One avoided emergency call covers the membership for a year. More importantly: monthly visits catch the about-to-fail supply lines, the slowly-leaking P-traps, and the running toilets that quietly add $30 to your water bill every month — before they turn into floor damage.</p>
+
+      <h3>Safety, code, and licensing considerations</h3>
+      <p>This is where we draw a clear line. Every state we operate in regulates plumbing differently — Florida, Texas, Georgia, Pennsylvania, North Carolina, DC, and Illinois all require a state plumbing license for work past the fixture connection. We operate as a handyman service: we work on the visible, fixture-level scope (everything from the angle stop forward to the faucet/showerhead/toilet/disposal). Anything that requires opening a wall to re-pipe, soldering inside structural framing, sewer-main work, gas-line work, or water-heater gas connection — we either partner with or refer to a licensed plumber. We tell you up front, every time, so you're not surprised. If you ever hear a contractor offer to do gas work or main-line repipe without a permit, that's the moment to walk away.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">Member Story</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">From a Gold member in Edgewater, Miami.</h2></div>
+    <div class="testimonial-card reveal" style="padding:36px;">
+      <div class="stars mb-4">★★★★★</div>
+      <p class="mb-6" style="color:#374151;font-size:1.05rem;line-height:1.75;font-style:italic;">"I came home from a long weekend and there was water on the kitchen floor. I called Gold Hands and a tech was out in under three hours — turned out to be a failed supply line under the sink. He swapped both lines, dried the cabinet base, and showed me a quick photo of how to find the angle stops in case it ever happened again. The whole thing was done before I could even get a regular plumber to call me back."</p>
+      <div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);color:white;">JT</div><div><p class="font-semibold text-base" style="color:#1A1A2E;">Member of Gold Hands</p><p class="text-sm" style="color:#9CA3AF;">Edgewater, Miami · Gold Member</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section id="pricing" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <span class="section-label">Membership Plans</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Drips fixed.<br class="hidden md:block"/>Plus everything else, every month.</h2>
+      <p class="text-lg max-w-xl mx-auto mb-8" style="color:#6B7280;">No hidden fees. No long-term contracts. Cancel anytime.</p>
+      <div class="toggle-wrap reveal"><button class="toggle-btn active" id="toggle-monthly" onclick="setPricingMode('monthly')">Monthly</button><button class="toggle-btn" id="toggle-annual" onclick="setPricingMode('annual')">Annual <span class="annual-badge">Save 2 months</span></button></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-start mt-12">
+      <div class="pricing-card reveal delay-100">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥉</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#92400E;">Bronze</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-bronze"><sup>$</sup><span class="num">49</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Essential protection for the budget-conscious homeowner.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 check-up visit per quarter</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free estimates on all work</div>
+        </div>
+        <a href="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_plumbing" target="_blank" id="btn-bronze" data-monthly="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_plumbing" data-annual="https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_plumbing" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Bronze</button></a>
+      </div>
+      <div class="pricing-card popular reveal delay-200">
+        <div class="popular-badge">✦ Most Popular</div>
+        <div class="flex items-center gap-2 mb-3 mt-2"><span class="text-lg">🥈</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#6B21A8;">Silver</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-silver"><sup>$</sup><span class="num">99</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#6B7280;">The sweet spot — most plumbing fixes absorbed into your monthly visit.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 visit per month (minor fixes included)</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>12-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full home audit on sign-up</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 emergency visit per quarter</div>
+        </div>
+        <a href="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_plumbing" target="_blank" id="btn-silver" data-monthly="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_plumbing" data-annual="https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_plumbing" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Silver</button></a>
+      </div>
+      <div class="pricing-card reveal delay-300">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥇</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#B45309;">Gold</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-gold"><sup>$</sup><span class="num">199</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Ultimate peace of mind — emergency dispatch included for active leaks.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 visits per month</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4-hour emergency response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>$100 monthly service credit</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>VIP dedicated 24/7 support line</div>
+        </div>
+        <a href="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_plumbing" target="_blank" id="btn-gold" data-monthly="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_plumbing" data-annual="https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_plumbing" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Gold</button></a>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-8 reveal" style="color:#9CA3AF;">All plans include a 30-day money-back guarantee. No setup fees. Cancel anytime.</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">FAQ</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Plumbing Questions</h2></div>
+    <div class="reveal">
+      <div class="faq-item"><h3>What plumbing work do you handle vs. when do I need a licensed plumber?</h3><p>We handle the full range of fixture-level work — faucets, toilets, supply lines, shutoffs, garbage disposals, P-traps, drain snaking, and similar. We don't open walls to repipe, we don't touch the main sewer line past the first cleanout, and we don't work on gas lines (gas is a licensed-plumber/licensed-installer scope by code in every state we serve). When a job crosses into licensed-plumber territory, we tell you up front and refer to a partner.</p></div>
+      <div class="faq-item"><h3>My toilet is running constantly — how much to fix?</h3><p>Almost always a $20 part: either the flapper, the fill valve, or both. Replacement takes 15–25 minutes. As a member, this is the kind of fix that's typically absorbed into your monthly visit. Drop-in price is $80–$120 plus parts.</p></div>
+      <div class="faq-item"><h3>Can you snake a clogged drain?</h3><p>Yes — bathroom sink, kitchen sink, tub, and shower. We carry a 25-foot hand auger and a 50-foot drum auger. If a clog is past 50 feet (main line) or there's evidence of a sewer-line break, we recommend a sewer-rooter specialist with a camera — that's outside the handyman scope.</p></div>
+      <div class="faq-item"><h3>Will you install my new faucet or showerhead?</h3><p>Yes. Single-hole, three-hole, widespread, wall-mount — all of it. We also redo the water-supply braided lines if yours are older than 10 years (they fail catastrophically when they fail). Showerheads, hand-held sprayers, and bidet attachments — same. We bring teflon tape, plumber's putty, and a basin wrench.</p></div>
+      <div class="faq-item"><h3>What if I have a leak? Is that an emergency?</h3><p>Active dripping or pooling water is an emergency. First step: shut off the supply at the angle stop or the main if needed, put towels down, and call. Gold members get 4-hour emergency dispatch, Silver 12-hour. We carry SharkBite couplings, PEX, and copper repair kits — most leaks under sinks or in accessible walls are fixed in one visit.</p></div>
+      <div class="faq-item"><h3>Do you replace water heaters?</h3><p>For electric water heaters, yes — straightforward swap of a 40 or 50 gallon tank. For gas water heaters and tankless installations, we partner with a licensed plumber because gas connection and combustion-air requirements need a permit and a state-licensed installer. We coordinate the whole job either way.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-xs font-semibold tracking-widest uppercase mb-5" style="color:#9CA3AF;">Other Services We Handle</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-8" style="letter-spacing:-0.03em;color:#1A1A2E;">One team. Every job in your home.</h2>
+    <div class="flex flex-wrap justify-center gap-3 reveal">
+      <a href="tv-mounting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">📺 TV Mounting &amp; Furniture Assembly</a>
+      <a href="drywall.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🧱 Drywall &amp; Minor Repairs</a>
+      <a href="painting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🎨 Painting &amp; Touch-Ups</a>
+      <a href="electrical.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">💡 Electrical &amp; Lighting</a>
+      <a href="hvac.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">❄️ AC Filters &amp; Seasonal Maintenance</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1"><a href="../index.html" class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a><p class="text-sm mb-4" style="color:#6B7280;line-height:1.7;">Premium home maintenance membership. One trusted team across 8 cities.</p><a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4><ul class="space-y-2"><li><a href="tv-mounting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">TV Mounting</a></li><li><a href="drywall.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Drywall</a></li><li><a href="plumbing.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Plumbing</a></li><li><a href="painting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Painting</a></li><li><a href="electrical.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Electrical</a></li><li><a href="hvac.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">HVAC &amp; AC</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Membership</h4><ul class="space-y-2"><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥉 Bronze – $49/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥈 Silver – $99/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥇 Gold – $199/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Annual Plans</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Cities</h4><ul class="space-y-2"><li><a href="../cities/miami.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Miami, FL</a></li><li><a href="../cities/austin.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Austin, TX</a></li><li><a href="../cities/atlanta.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Atlanta, GA</a></li><li><a href="../cities/philadelphia.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Philadelphia, PA</a></li><li><a href="../cities/charlotte.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Charlotte, NC</a></li><li><a href="../cities/washington-dc.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Washington, DC</a></li><li><a href="../cities/chicago.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Chicago, IL</a></li><li><a href="../cities/raleigh.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Raleigh, NC</a></li></ul></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid #EDE9FE;"><p class="text-sm" style="color:#9CA3AF;">© 2024 Handyman Gold Hands LLC. All rights reserved.</p><div class="flex items-center gap-3"><a href="../privacy.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Privacy</a><a href="../terms.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+  let pricingMode = 'monthly';
+  const prices = { monthly: { bronze: 49, silver: 99, gold: 199 }, annual: { bronze: 490, silver: 990, gold: 1990 } };
+  const stripeLinks = {
+    bronze: { monthly: 'https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_plumbing', annual: 'https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_plumbing' },
+    silver: { monthly: 'https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_plumbing', annual: 'https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_plumbing' },
+    gold:   { monthly: 'https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_plumbing', annual: 'https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_plumbing' }
+  };
+  function setPricingMode(mode) {
+    pricingMode = mode;
+    document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
+    document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
+    ['bronze','silver','gold'].forEach(tier => {
+      const el = document.getElementById('price-' + tier);
+      const numEl = el ? el.querySelector('.num') : null;
+      if (numEl) numEl.textContent = prices[mode][tier].toLocaleString();
+      const btn = document.getElementById('btn-' + tier);
+      if (btn) btn.href = stripeLinks[tier][mode];
+    });
+    document.querySelectorAll('.price-amount + span').forEach(span => { span.textContent = mode === 'monthly' ? '/mo' : '/yr'; });
+  }
+</script>
+</body>
+</html>

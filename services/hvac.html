@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC Filters & Seasonal Maintenance | Gold Hands Membership</title>
+  <meta name="description" content="Monthly AC filter swaps, condensate flushes, weatherstripping, hurricane prep — seasonal maintenance that protects your home year-round. From $49/mo." />
+  <link rel="canonical" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AC Filters & Seasonal Maintenance | Gold Hands" />
+  <meta property="og:description" content="Filter swaps, condensate flushes, weatherstripping, seasonal prep — included in your membership." />
+  <meta property="og:url" content="https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html" />
+  <meta property="og:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <meta property="og:site_name" content="Gold Hands" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AC Filters & Seasonal Maintenance | Gold Hands" />
+  <meta name="twitter:description" content="Filter swaps, condensate flushes, seasonal prep." />
+  <meta name="twitter:image" content="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg" />
+  <link rel="alternate" hreflang="en-US" href="https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color:#FFFFFF; color:#1A1A2E; font-family:'Inter',system-ui,sans-serif; overflow-x:hidden; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#F8F5FF; } ::-webkit-scrollbar-thumb { background:#8B5CF6; border-radius:3px; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .delay-100{transition-delay:.1s!important} .delay-200{transition-delay:.2s!important} .delay-300{transition-delay:.3s!important}
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:#FFFFFF; transition:box-shadow .3s; }
+    #navbar.scrolled { box-shadow:0 2px 20px rgba(107,33,168,0.1); }
+    .section-label { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#6B21A8; background:#F3E8FF; border:1px solid #DDD6FE; padding:5px 14px; border-radius:50px; margin-bottom:16px; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:#8B5CF6; color:#FFFFFF; font-weight:700; font-size:1rem; padding:15px 32px; border-radius:50px; border:none; cursor:pointer; transition:background .2s, transform .2s, box-shadow .2s; box-shadow:0 4px 16px rgba(139,92,246,0.3); text-decoration:none; }
+    .btn-primary:hover { background:#7C3AED; transform:translateY(-2px); box-shadow:0 8px 28px rgba(139,92,246,0.4); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; color:#6B21A8; font-weight:700; font-size:1rem; padding:14px 30px; border-radius:50px; border:2px solid #DDD6FE; cursor:pointer; transition:border-color .2s, background .2s, transform .2s; text-decoration:none; }
+    .btn-secondary:hover { border-color:#8B5CF6; background:#F8F5FF; transform:translateY(-2px); }
+    #hero { background:linear-gradient(145deg,#FFFFFF 0%,#F8F5FF 55%,#EDE9FE 100%); padding:140px 24px 80px; position:relative; overflow:hidden; }
+    @media(max-width:767px){ #hero{padding:110px 20px 56px} }
+    .hero-title { font-size:clamp(2.2rem,6vw,4.5rem); font-weight:900; line-height:1.05; letter-spacing:-0.03em; color:#1A1A2E; }
+    .hero-title .accent { color:#6B21A8; }
+    .pricing-card { background:#FFFFFF; border:1.5px solid #E5E7EB; border-radius:24px; padding:36px 28px; position:relative; transition:border-color .3s, transform .3s, box-shadow .3s; }
+    .pricing-card:hover { border-color:#8B5CF6; transform:translateY(-4px); box-shadow:0 16px 48px rgba(139,92,246,.13); }
+    .pricing-card.popular { border-color:#8B5CF6; box-shadow:0 8px 40px rgba(139,92,246,.18); background:linear-gradient(145deg,#FAFAFF 0%,#F3E8FF 100%); }
+    .popular-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#6B21A8,#8B5CF6); color:#FFFFFF; font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 16px; border-radius:50px; white-space:nowrap; box-shadow:0 4px 12px rgba(139,92,246,.35); }
+    .price-amount { font-size:3.5rem; font-weight:900; color:#1A1A2E; line-height:1; letter-spacing:-0.03em; }
+    .price-amount sup { font-size:1.4rem; font-weight:700; vertical-align:super; }
+    .feature-check { display:flex; align-items:flex-start; gap:10px; font-size:.875rem; color:#374151; margin-bottom:10px; line-height:1.5; }
+    .feature-check svg { flex-shrink:0; margin-top:2px; }
+    .toggle-wrap { display:inline-flex; background:#F3F4F6; border-radius:50px; padding:4px; gap:4px; }
+    .toggle-btn { padding:8px 20px; border-radius:50px; font-weight:600; font-size:.875rem; cursor:pointer; transition:background .2s, color .2s, box-shadow .2s; color:#6B7280; background:transparent; border:none; white-space:nowrap; }
+    .toggle-btn.active { background:#FFFFFF; color:#6B21A8; box-shadow:0 2px 8px rgba(107,33,168,.15); }
+    .testimonial-card { background:#FFFFFF; border:1px solid #E5E7EB; border-radius:20px; padding:28px; }
+    .stars { color:#F59E0B; font-size:1.1rem; letter-spacing:2px; }
+    .annual-badge { display:inline-block; background:#F0FDF4; color:#10B981; font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:50px; border:1px solid #A7F3D0; margin-left:6px; }
+    .bg-alt { background-color:#F8F5FF; }
+    .section-divider { border:none; height:1px; background:linear-gradient(90deg,transparent,#E5E7EB,transparent); margin:0; }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(255,255,255,0.98); backdrop-filter:blur(20px); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    #mobile-menu.open { display:flex; }
+    #mobile-menu a { font-size:1.5rem; font-weight:700; color:#1A1A2E; text-decoration:none; }
+    .body-prose p { color:#374151; line-height:1.8; font-size:1.02rem; margin-bottom:18px; }
+    .body-prose h3 { font-weight:800; font-size:1.35rem; color:#1A1A2E; margin-top:34px; margin-bottom:12px; letter-spacing:-0.01em; }
+    .body-prose ul { margin: 8px 0 18px 0; padding-left: 0; list-style: none; }
+    .body-prose ul li { color:#374151; line-height:1.75; font-size:1rem; margin-bottom:10px; padding-left:28px; position:relative; }
+    .body-prose ul li::before { content:""; position:absolute; left:6px; top:11px; width:8px; height:8px; border-radius:50%; background:#8B5CF6; }
+    .body-prose ul li strong { color:#1A1A2E; font-weight:700; }
+    .rating-star { color:#F59E0B; }
+    .faq-item { border-bottom:1px solid #E5E7EB; padding:16px 0; }
+    .faq-item h3 { font-weight:700; font-size:1.05rem; color:#1A1A2E; margin-bottom:8px; }
+    .faq-item p { color:#6B7280; font-size:.95rem; line-height:1.7; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Service","serviceType":"AC Filters & Seasonal Maintenance","name":"AC Filters & Seasonal Maintenance",
+    "description":"Monthly HVAC filter replacement, condensate line flushing, evaporator coil checks, weatherstripping, hurricane prep, and seasonal home maintenance for residential homes.",
+    "url":"https://mybotbestagent-maker.github.io/gold-hands-membership/services/hvac.html",
+    "image":"https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg",
+    "provider":{"@type":"LocalBusiness","@id":"https://mybotbestagent-maker.github.io/gold-hands-membership/#business","name":"Gold Hands Home Maintenance","telephone":"(737) 530-8110","priceRange":"$49–$199/mo","address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"}},
+    "areaServed":[{"@type":"City","name":"Miami, FL"},{"@type":"City","name":"Austin, TX"},{"@type":"City","name":"Atlanta, GA"},{"@type":"City","name":"Philadelphia, PA"},{"@type":"City","name":"Charlotte, NC"},{"@type":"City","name":"Washington, DC"},{"@type":"City","name":"Chicago, IL"},{"@type":"City","name":"Raleigh, NC"}]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How often should I really change my AC filter?","acceptedAnswer":{"@type":"Answer","text":"Every 30–60 days for most homes; every 30 days for homes with pets, smokers, or in high-pollen markets. In Miami's humid summer your filter loads up faster than the ASHRAE textbook says — we've pulled filters that were essentially solid grey felt after 6 weeks. A clogged filter forces your AC to work harder, which is the #1 cause of premature compressor failure."}},
+      {"@type":"Question","name":"What's a condensate line and why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Your AC's evaporator coil pulls humidity out of the air. That water has to drain somewhere — through a small PVC line called the condensate line. In hot/humid climates these lines clog with algae and biofilm. A clogged condensate line trips a float switch (best case) or floods your ceiling (worst case). We flush these with a vinegar-based treatment monthly for member homes."}},
+      {"@type":"Question","name":"Can you replace a thermostat?","acceptedAnswer":{"@type":"Answer","text":"Yes — including smart thermostats like Nest, Ecobee, and Honeywell T-series. The two issues we always check first: (1) does your existing wiring include a C wire? Most smart thermostats need one for power. (2) Is your system high-voltage millivolt or low-voltage 24V? About 95% of modern systems are 24V and we install no problem; older boiler-only zones sometimes need an adapter."}},
+      {"@type":"Question","name":"Is a tune-up the same as a check-up?","acceptedAnswer":{"@type":"Answer","text":"No. Our member visits include filter swap, condensate flush, drain pan inspection, return-vent check, and a thermostat-cycle test. A full HVAC tune-up — where a tech opens the unit, measures refrigerant pressures, cleans coils, and checks compressor amperage — is licensed-HVAC scope and we coordinate that with a partner annually. We tell you when your system is due for one."}},
+      {"@type":"Question","name":"What's included in 'seasonal maintenance' beyond AC?","acceptedAnswer":{"@type":"Answer","text":"Spring: AC pre-season check, gutter clean, exterior caulk inspection. Summer: filter swap, condensate flush, ceiling-fan reverse for cooling. Fall: heat pre-season check, weatherstripping refresh, dryer vent clean (huge fire-prevention win). Winter: pipe insulation in cold-climate cities, gutter heat-cable test, bath fan check. We adjust the seasonal calendar to your specific climate and home — Miami's checklist is very different from Chicago's."}},
+      {"@type":"Question","name":"Will you do hurricane prep?","acceptedAnswer":{"@type":"Answer","text":"Yes — for our Miami, Tampa, and Atlantic-coast members. Pre-season we check hurricane shutters, garage door bracing, roof tie-downs, and outdoor anchor points; we secure or remove anything that could become a projectile. Post-storm we do priority damage assessment so insurance documentation is filed quickly. This is one of the highest-value pieces of the membership for hurricane-zone homeowners."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav id="navbar" class="w-full py-4 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="../index.html#how-it-works" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">How It Works</a>
+      <a href="../index.html#services" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Services</a>
+      <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Pricing</a>
+      <a href="../blog/index.html" class="text-sm font-medium text-gray-500 hover:text-purple-700 transition-colors">Blog</a>
+      <a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a>
+      <a href="#pricing" class="btn-primary" style="padding:10px 24px;font-size:.875rem;">Get Started</a>
+    </div>
+    <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.add('open')"><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-6 h-0.5 rounded" style="background:#6B21A8;"></span><span class="block w-4 h-0.5 rounded" style="background:#6B21A8;"></span></button>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <button class="absolute top-6 right-6 text-3xl" style="color:#6B21A8;background:none;border:none;cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="../index.html#how-it-works" onclick="document.getElementById('mobile-menu').classList.remove('open')">How It Works</a>
+  <a href="../index.html#services" onclick="document.getElementById('mobile-menu').classList.remove('open')">Services</a>
+  <a href="#pricing" onclick="document.getElementById('mobile-menu').classList.remove('open')">Pricing</a>
+  <a href="../blog/index.html" onclick="document.getElementById('mobile-menu').classList.remove('open')">Blog</a>
+  <a href="tel:+17375308110" style="color:#6B21A8;font-size:1.1rem;">📞 (737) 530-8110</a>
+  <a href="#pricing" class="btn-primary" onclick="document.getElementById('mobile-menu').classList.remove('open')">Get Started</a>
+</div>
+
+<section id="hero">
+  <div style="position:absolute;width:480px;height:480px;top:-120px;right:-80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;width:320px;height:320px;bottom:60px;left:-60px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-5xl mx-auto w-full relative z-10 text-center">
+    <div class="reveal mb-5"><span class="section-label">❄️ Service</span></div>
+    <h1 class="hero-title reveal mb-6" style="transition-delay:0.1s;">AC Filters &amp; Seasonal Maintenance —<br/><span class="accent">Done Right, First Time.</span></h1>
+    <p class="reveal mb-8 text-lg mx-auto" style="transition-delay:0.2s;color:#6B7280;max-width:680px;line-height:1.7;">Filter swaps, condensate flushes, weatherstripping, hurricane prep — the boring scheduled work that prevents the big repair bill. Done on a calendar, not in a crisis.</p>
+    <div class="reveal flex items-center justify-center gap-4 mb-8" style="transition-delay:0.25s;"><div class="flex items-center gap-2"><span class="rating-star">★★★★★</span><span class="font-bold text-sm" style="color:#1A1A2E;">4.9/5</span><span class="text-xs" style="color:#6B7280;">· 500+ homeowners</span></div></div>
+    <div class="reveal flex flex-wrap gap-4 justify-center" style="transition-delay:0.3s;"><a href="#pricing" class="btn-primary">View Membership Plans</a><a href="tel:+17375308110" class="btn-secondary">📞 (737) 530-8110</a></div>
+    <p class="reveal mt-6 text-sm" style="transition-delay:0.35s;color:#6B7280;">⚡ Same-day response · Vetted, insured techs · 8 cities</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal mb-10"><span class="section-label">The Math</span><h2 class="text-3xl md:text-4xl font-black mt-4 mb-6" style="letter-spacing:-0.03em;color:#1A1A2E;">Skipped filter changes are why AC compressors die at year 7 instead of year 15.</h2></div>
+
+    <div class="body-prose reveal delay-100">
+      <p>HVAC is the most expensive system in your home and the easiest one to neglect. A new central AC unit runs $7,000–$14,000 installed. Properly maintained, that unit lasts 12–18 years. Neglected, the same unit dies in 6–9. The single biggest predictor of HVAC lifespan is whether somebody changes the filter on a schedule. We are that somebody.</p>
+
+      <h3>The DIY pitfalls we see every week</h3>
+      <ul>
+        <li><strong>"I changed it last month" filters that have been there 4 months.</strong> Filter neglect is the most common HVAC mistake we encounter, and homeowners genuinely don't realize how much time has passed. By the time the airflow noticeably drops, the coil already has months of dust accumulated on it. We log every filter change in member records so there's no guessing.</li>
+        <li><strong>Wrong-MERV filters that strangle the system.</strong> A higher MERV rating sounds better, but a MERV-13 filter in a system designed for MERV-8 chokes the airflow and forces the blower motor to work harder. We size to your unit's spec, not to the marketing on the package. The right MERV for most residential systems is 8–11; MERV-13 is for HEPA-grade applications with the right blower.</li>
+        <li><strong>Outdoor condenser units packed with leaves and grass clippings.</strong> The fins on the outdoor unit need clear airflow on all sides — typically 24 inches of clearance. We've pulled grocery-bags' worth of debris out of condensers and seen efficiency jump 30% from a 5-minute cleanup. In Miami, we also clean salt-air corrosion off the fins with a fin-friendly cleaner.</li>
+        <li><strong>Condensate lines clogged with algae, water dripping inside.</strong> The PVC line that drains your AC's condensate clogs over time with biofilm and algae — especially in humid markets. The tell-tale signs: water spots on the ceiling below an attic air handler, or a "safety pan" full of standing water. We flush condensate lines with a vinegar treatment monthly.</li>
+        <li><strong>Doors weatherstripping shot, AC running 30% harder than it needs to.</strong> A standard exterior door has a weatherstrip seal around three sides. After 6–8 years it compresses and stops sealing. The result is a small constant air leak that adds 10–30% to your monthly bill. Replacement is a 15-minute job per door. We catch these on seasonal walk-throughs.</li>
+      </ul>
+
+      <h3>Tools and skills required</h3>
+      <p>Real seasonal maintenance needs: the right size filter (and tracking what size that is — there are 30+ common sizes), a wet/dry vacuum for condensate-line flushing, fin-comb for bent condenser fins, a coil-safe cleaner, a digital thermometer for measuring delta-T across the coil (15–20°F is healthy; anything outside that range is a refrigerant or airflow issue), weatherstripping in V-strip and rolled-vinyl varieties, calk and caulk gun, and a logbook of what was done when. The skill part is reading the system's symptoms — knowing whether short-cycling is a thermostat issue, an oversized unit, or low refrigerant — and knowing when to escalate to a licensed HVAC tech for refrigerant work.</p>
+
+      <h3>3 typical jobs we handle (with pricing context)</h3>
+      <ul>
+        <li><strong>Monthly member visit: 1–2 filters swapped, condensate line flushed, outdoor unit cleared, thermostat cycle tested.</strong> 30–45 minutes. Included in Silver and Gold member visits at no added cost. Filters billed at cost (~$8–$25 depending on size).</li>
+        <li><strong>Seasonal switchover: full weatherstripping audit on 4 exterior doors + caulk refresh on 6 windows + dryer vent cleanout.</strong> 90 minutes. Members $160–$220; non-members $240–$320. Recommended twice a year.</li>
+        <li><strong>Pre-hurricane / pre-cold-snap home prep (Miami, Tampa: hurricane shutter test + roof tie-down check; Chicago, DC, Philly: pipe insulation + heat-cable test).</strong> 60 minutes. Included in Gold; Silver/Bronze $120–$160.</li>
+      </ul>
+
+      <h3>Why a membership beats one-off pricing for this category</h3>
+      <p>This is the category that makes the whole membership economically obvious. A single skipped filter season can cost you a $1,200 evaporator coil cleaning, or worse, a $7,000 compressor replacement. A clogged condensate line can flood a ceiling and turn into a $5,000–$12,000 insurance claim. A failed weatherstrip can quietly add $300–$600 a year to your power bill. The Bronze plan ($49/mo) is roughly the cost of a single one-off HVAC service call — but you get monthly oversight that prevents the calls. Silver and Gold members effectively never have to think about routine maintenance again.</p>
+
+      <h3>Code, licensing, and refrigerant work</h3>
+      <p>We are explicit about scope here. Anything that involves opening the refrigerant loop — recharging, leak repair, compressor replacement, coil replacement — is licensed HVAC work in every state we serve. The EPA Section 608 certification is required by federal law to handle refrigerant. We don't do that work; we coordinate with a licensed HVAC partner for it. What we do is the entire scope around it: filters, condensate, drainage, airflow, thermostats, blower motor checks, weatherstripping, and seasonal walk-throughs. Done right, this work prevents 90% of the calls that send people to a licensed tech in the first place.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">Member Story</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">From a Silver member in West Atlanta.</h2></div>
+    <div class="testimonial-card reveal" style="padding:36px;">
+      <div class="stars mb-4">★★★★★</div>
+      <p class="mb-6" style="color:#374151;font-size:1.05rem;line-height:1.75;font-style:italic;">"Last summer my upstairs AC was running constantly and the bill kept climbing. The Gold Hands tech showed up for a regular visit, swapped a filter that was honestly disgusting, flushed the condensate line — which had basically zero flow — and found that one of the upstairs return vents had a piece of plywood blocking it from when the previous owners had renovated. Three small things, took him maybe 45 minutes, and the AC stopped short-cycling that same day. The next month's power bill dropped about 60 bucks. The membership paid for itself in three months."</p>
+      <div class="flex items-center gap-3"><div class="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);color:white;">DW</div><div><p class="font-semibold text-base" style="color:#1A1A2E;">Member of Gold Hands</p><p class="text-sm" style="color:#9CA3AF;">West Midtown, Atlanta · Silver Member</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section id="pricing" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <span class="section-label">Membership Plans</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4" style="letter-spacing:-0.03em;color:#1A1A2E;">Filters changed.<br class="hidden md:block"/>Plus everything else, every month.</h2>
+      <p class="text-lg max-w-xl mx-auto mb-8" style="color:#6B7280;">No hidden fees. No long-term contracts. Cancel anytime.</p>
+      <div class="toggle-wrap reveal"><button class="toggle-btn active" id="toggle-monthly" onclick="setPricingMode('monthly')">Monthly</button><button class="toggle-btn" id="toggle-annual" onclick="setPricingMode('annual')">Annual <span class="annual-badge">Save 2 months</span></button></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-start mt-12">
+      <div class="pricing-card reveal delay-100">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥉</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#92400E;">Bronze</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-bronze"><sup>$</sup><span class="num">49</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Quarterly check-ups including filter swap and condensate flush.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 check-up visit per quarter</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free estimates on all work</div>
+        </div>
+        <a href="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_hvac" target="_blank" id="btn-bronze" data-monthly="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_hvac" data-annual="https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_hvac" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Bronze</button></a>
+      </div>
+      <div class="pricing-card popular reveal delay-200">
+        <div class="popular-badge">✦ Most Popular</div>
+        <div class="flex items-center gap-2 mb-3 mt-2"><span class="text-lg">🥈</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#6B21A8;">Silver</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-silver"><sup>$</sup><span class="num">99</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#6B7280;">Monthly visits — filter, condensate, weatherstripping, seasonal prep.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 visit per month (minor fixes included)</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>12-hour priority response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full home audit on sign-up</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 emergency visit per quarter</div>
+        </div>
+        <a href="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_hvac" target="_blank" id="btn-silver" data-monthly="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_hvac" data-annual="https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_hvac" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Silver</button></a>
+      </div>
+      <div class="pricing-card reveal delay-300">
+        <div class="flex items-center gap-2 mb-3"><span class="text-lg">🥇</span><span class="text-sm font-bold tracking-widest uppercase" style="color:#B45309;">Gold</span></div>
+        <div class="flex items-end gap-1 mb-1"><span class="price-amount" id="price-gold"><sup>$</sup><span class="num">199</span></span><span class="mb-2 text-sm font-medium" style="color:#9CA3AF;">/mo</span></div>
+        <p class="text-sm mb-6" style="color:#9CA3AF;">Twice-monthly + hurricane prep + emergency dispatch.</p>
+        <div class="mb-8">
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 visits per month</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20% discount on all labor</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4-hour emergency response</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>$100 monthly service credit</div>
+          <div class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>VIP dedicated 24/7 support line</div>
+        </div>
+        <a href="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_hvac" target="_blank" id="btn-gold" data-monthly="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_hvac" data-annual="https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_hvac" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Gold</button></a>
+      </div>
+    </div>
+    <p class="text-center text-sm mt-8 reveal" style="color:#9CA3AF;">All plans include a 30-day money-back guarantee. No setup fees. Cancel anytime.</p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6 bg-alt">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10 reveal"><span class="section-label">FAQ</span><h2 class="text-3xl md:text-4xl font-black mt-4" style="letter-spacing:-0.03em;color:#1A1A2E;">HVAC &amp; Seasonal Questions</h2></div>
+    <div class="reveal">
+      <div class="faq-item"><h3>How often should I really change my AC filter?</h3><p>Every 30–60 days for most homes; every 30 days for homes with pets, smokers, or in high-pollen markets. In Miami's humid summer your filter loads up faster than the ASHRAE textbook says — we've pulled filters that were essentially solid grey felt after 6 weeks. A clogged filter forces your AC to work harder, which is the #1 cause of premature compressor failure.</p></div>
+      <div class="faq-item"><h3>What's a condensate line and why does it matter?</h3><p>Your AC's evaporator coil pulls humidity out of the air. That water has to drain somewhere — through a small PVC line called the condensate line. In hot/humid climates these lines clog with algae and biofilm. A clogged condensate line trips a float switch (best case) or floods your ceiling (worst case). We flush these with a vinegar-based treatment monthly for member homes.</p></div>
+      <div class="faq-item"><h3>Can you replace a thermostat?</h3><p>Yes — including smart thermostats like Nest, Ecobee, and Honeywell T-series. The two issues we always check first: (1) does your existing wiring include a C wire? Most smart thermostats need one for power. (2) Is your system high-voltage millivolt or low-voltage 24V? About 95% of modern systems are 24V and we install no problem; older boiler-only zones sometimes need an adapter.</p></div>
+      <div class="faq-item"><h3>Is a tune-up the same as a check-up?</h3><p>No. Our member visits include filter swap, condensate flush, drain pan inspection, return-vent check, and a thermostat-cycle test. A full HVAC tune-up — where a tech opens the unit, measures refrigerant pressures, cleans coils, and checks compressor amperage — is licensed-HVAC scope and we coordinate that with a partner annually. We tell you when your system is due for one.</p></div>
+      <div class="faq-item"><h3>What's included in 'seasonal maintenance' beyond AC?</h3><p>Spring: AC pre-season check, gutter clean, exterior caulk inspection. Summer: filter swap, condensate flush, ceiling-fan reverse for cooling. Fall: heat pre-season check, weatherstripping refresh, dryer vent clean (huge fire-prevention win). Winter: pipe insulation in cold-climate cities, gutter heat-cable test, bath fan check. We adjust the seasonal calendar to your specific climate and home — Miami's checklist is very different from Chicago's.</p></div>
+      <div class="faq-item"><h3>Will you do hurricane prep?</h3><p>Yes — for our Miami, Tampa, and Atlantic-coast members. Pre-season we check hurricane shutters, garage door bracing, roof tie-downs, and outdoor anchor points; we secure or remove anything that could become a projectile. Post-storm we do priority damage assessment so insurance documentation is filed quickly. This is one of the highest-value pieces of the membership for hurricane-zone homeowners.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-xs font-semibold tracking-widest uppercase mb-5" style="color:#9CA3AF;">Other Services We Handle</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-8" style="letter-spacing:-0.03em;color:#1A1A2E;">One team. Every job in your home.</h2>
+    <div class="flex flex-wrap justify-center gap-3 reveal">
+      <a href="tv-mounting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">📺 TV Mounting &amp; Furniture Assembly</a>
+      <a href="drywall.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🧱 Drywall &amp; Minor Repairs</a>
+      <a href="plumbing.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🚿 Plumbing Fixes</a>
+      <a href="painting.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">🎨 Painting &amp; Touch-Ups</a>
+      <a href="electrical.html" class="text-sm px-4 py-2 rounded-full" style="background:#F8F5FF;border:1px solid #DDD6FE;color:#6B21A8;font-weight:600;text-decoration:none;display:inline-block;">💡 Electrical &amp; Lighting</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<footer class="py-16 px-6" style="background:#F8F5FF;border-top:1px solid #EDE9FE;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1"><a href="../index.html" class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#6B21A8,#8B5CF6);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg></div><span class="font-black text-lg tracking-tight" style="color:#1A1A2E;">Gold<span style="color:#8B5CF6;">Hands</span></span></a><p class="text-sm mb-4" style="color:#6B7280;line-height:1.7;">Premium home maintenance membership. One trusted team across 8 cities.</p><a href="tel:+17375308110" class="text-sm font-semibold" style="color:#6B21A8;">📞 (737) 530-8110</a></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Services</h4><ul class="space-y-2"><li><a href="tv-mounting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">TV Mounting</a></li><li><a href="drywall.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Drywall</a></li><li><a href="plumbing.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Plumbing</a></li><li><a href="painting.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Painting</a></li><li><a href="electrical.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Electrical</a></li><li><a href="hvac.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">HVAC &amp; AC</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Membership</h4><ul class="space-y-2"><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥉 Bronze – $49/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥈 Silver – $99/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">🥇 Gold – $199/mo</a></li><li><a href="#pricing" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Annual Plans</a></li></ul></div>
+      <div><h4 class="font-bold text-xs mb-4" style="color:#6B21A8;letter-spacing:0.1em;text-transform:uppercase;">Cities</h4><ul class="space-y-2"><li><a href="../cities/miami.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Miami, FL</a></li><li><a href="../cities/austin.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Austin, TX</a></li><li><a href="../cities/atlanta.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Atlanta, GA</a></li><li><a href="../cities/philadelphia.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Philadelphia, PA</a></li><li><a href="../cities/charlotte.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Charlotte, NC</a></li><li><a href="../cities/washington-dc.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Washington, DC</a></li><li><a href="../cities/chicago.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Chicago, IL</a></li><li><a href="../cities/raleigh.html" style="color:#6B7280;text-decoration:none;font-size:0.875rem;">Raleigh, NC</a></li></ul></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8" style="border-top:1px solid #EDE9FE;"><p class="text-sm" style="color:#9CA3AF;">© 2024 Handyman Gold Hands LLC. All rights reserved.</p><div class="flex items-center gap-3"><a href="../privacy.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Privacy</a><a href="../terms.html" style="color:#9CA3AF;font-size:.8rem;text-decoration:none;">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+  let pricingMode = 'monthly';
+  const prices = { monthly: { bronze: 49, silver: 99, gold: 199 }, annual: { bronze: 490, silver: 990, gold: 1990 } };
+  const stripeLinks = {
+    bronze: { monthly: 'https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P?utm_source=service_hvac', annual: 'https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S?utm_source=service_hvac' },
+    silver: { monthly: 'https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q?utm_source=service_hvac', annual: 'https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T?utm_source=service_hvac' },
+    gold:   { monthly: 'https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R?utm_source=service_hvac', annual: 'https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U?utm_source=service_hvac' }
+  };
+  function setPricingMode(mode) {
+    pricingMode = mode;
+    document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
+    document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
+    ['bronze','silver','gold'].forEach(tier => {
+      const el = document.getElementById('price-' + tier);
+      const numEl = el ? el.querySelector('.num') : null;
+      if (numEl) numEl.textContent = prices[mode][tier].toLocaleString();
+      const btn = document.getElementById('btn-' + tier);
+      if (btn) btn.href = stripeLinks[tier][mode];
+    });
+    document.querySelectorAll('.price-amount + span').forEach(span => { span.textContent = mode === 'monthly' ? '/mo' : '/yr'; });
+  }
+</script>
+</body>
+</html>
