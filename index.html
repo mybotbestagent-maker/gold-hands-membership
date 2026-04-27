@@ -494,19 +494,30 @@
         </div>
       </div>
 
-      <!-- Right: Hero — Real photo -->
+      <!-- Right: Hero — 30-sec supercut from @handyman_gold_hands Reels -->
       <div class="flex items-center justify-center relative float-anim mt-8 md:mt-0">
-        <!-- Main photo -->
+        <!-- Main video card -->
         <div style="position:relative;width:100%;max-width:520px;">
-          <!-- Photo container with rounded corners and shadow -->
-          <div style="border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(107,33,168,0.18);position:relative;">
-            <img 
-              src="https://mybotbestagent-maker.github.io/gold-hands-membership/hero.jpg"
-              alt="Gold Hands handyman ready for any home repair"
-              style="width:100%;height:auto;display:block;"
-            />
+          <!-- Video container with rounded corners and shadow -->
+          <div style="border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(107,33,168,0.18);position:relative;aspect-ratio:9/16;background:#1A1A2E;">
+            <video
+              id="hero-video"
+              src="hero.mp4"
+              poster="hero-video-poster.jpg"
+              autoplay muted loop playsinline preload="metadata"
+              style="width:100%;height:100%;display:block;object-fit:cover;"
+              aria-label="Real Gold Hands repairs in progress"
+            ></video>
             <!-- Purple overlay gradient at bottom -->
-            <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(107,33,168,0.3),transparent);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(107,33,168,0.3),transparent);pointer-events:none;"></div>
+            <!-- Unmute button (autoplay must start muted; user can opt-in to sound) -->
+            <button
+              id="hero-unmute-btn"
+              type="button"
+              onclick="(function(b){var v=document.getElementById('hero-video');v.muted=!v.muted;b.innerHTML=v.muted?'🔇 Unmute':'🔊 Mute';if(!v.muted){v.play().catch(function(){});}})(this)"
+              style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.92);border:none;border-radius:100px;padding:7px 14px;font-size:13px;font-weight:700;color:#1A1A2E;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);backdrop-filter:blur(6px);z-index:3;"
+              aria-label="Toggle sound"
+            >🔇 Unmute</button>
           </div>
 
           <!-- Floating badge — Rating -->
