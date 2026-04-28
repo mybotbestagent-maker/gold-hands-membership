@@ -510,14 +510,6 @@
             ></video>
             <!-- Purple overlay gradient at bottom -->
             <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(107,33,168,0.3),transparent);pointer-events:none;"></div>
-            <!-- Unmute button (autoplay must start muted; user can opt-in to sound) -->
-            <button
-              id="hero-unmute-btn"
-              type="button"
-              onclick="(function(b){var v=document.getElementById('hero-video');v.muted=!v.muted;b.innerHTML=v.muted?'🔇 Unmute':'🔊 Mute';if(!v.muted){v.play().catch(function(){});}})(this)"
-              style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.92);border:none;border-radius:100px;padding:7px 14px;font-size:13px;font-weight:700;color:#1A1A2E;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);backdrop-filter:blur(6px);z-index:3;"
-              aria-label="Toggle sound"
-            >🔇 Unmute</button>
           </div>
 
           <!-- Floating badge — Rating -->
@@ -948,7 +940,7 @@
       <div class="toggle-wrap reveal">
         <button class="toggle-btn active" id="toggle-monthly" onclick="setPricingMode('monthly')">Monthly</button>
         <button class="toggle-btn" id="toggle-annual" onclick="setPricingMode('annual')">
-          Annual <span class="annual-badge">Save 30%</span>
+          Annual <span class="annual-badge">Save 1 month</span>
         </button>
       </div>
     </div>
@@ -981,7 +973,7 @@
           <div style="font-weight:700;margin-bottom:4px;"><span class="stack-label">Total annual value:</span> <s style="color:#9CA3AF;" class="stack-strike">$890</s> <span class="stack-pay">$588</span></div>
           <div style="color:#9CA3AF;" class="stack-save">You save $302 vs. paying per visit</div>
         </div>
-        <a href="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P" target="_blank" id="btn-bronze" data-monthly="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P" data-annual="https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Bronze</button></a>
+        <a href="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P" target="_blank" id="btn-bronze" data-monthly="https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P" data-annual="https://buy.stripe.com/8x26oH3bm83b7Vb1np9sk0Y" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Bronze</button></a>
       </div>
 
       <!-- SILVER — MOST POPULAR -->
@@ -1011,7 +1003,7 @@
           <div style="font-weight:700;margin-bottom:4px;"><span class="stack-label">Total annual value:</span> <s style="color:#9CA3AF;" class="stack-strike">$1,990</s> <span class="stack-pay">$1,188</span></div>
           <div style="color:#9CA3AF;" class="stack-save">You save $802 vs. paying per visit</div>
         </div>
-        <a href="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q" target="_blank" id="btn-silver" data-monthly="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q" data-annual="https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Silver</button></a>
+        <a href="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q" target="_blank" id="btn-silver" data-monthly="https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q" data-annual="https://buy.stripe.com/dRmaEX3bmabj0sJ8PR9sk0Z" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Silver</button></a>
       </div>
 
       <!-- GOLD -->
@@ -1041,7 +1033,7 @@
           <div style="font-weight:700;margin-bottom:4px;"><span class="stack-label">Total annual value:</span> <s style="color:#9CA3AF;" class="stack-strike">$3,780</s> <span class="stack-pay">$2,388</span></div>
           <div style="color:#9CA3AF;" class="stack-save">You save $1,392 vs. paying per visit</div>
         </div>
-        <a href="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R" target="_blank" id="btn-gold" data-monthly="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R" data-annual="https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Gold</button></a>
+        <a href="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R" target="_blank" id="btn-gold" data-monthly="https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R" data-annual="https://buy.stripe.com/7sY4gzfY82IR5N37LN9sk10" style="display:block;text-decoration:none;"><button type="button" style="width:100%;" class="btn-primary">Get Started with Gold</button></a>
       </div>
 
     </div>
@@ -1419,7 +1411,7 @@ function submitLeadMagnet(e){
           <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </button>
         <div class="faq-answer" id="faq-8-answer">
-          Yes! All three tiers available as annual plans — saves you ~30% (the equivalent of 3-4 months free). Bronze annual is $407/yr (vs $49/mo × 12 = $588), Silver annual is $825/yr (vs $1,188), Gold annual is $1,657/yr (vs $2,388). Toggle monthly/annual on the pricing section above. Prorated refund policy applies. Note: Stripe adds a 4% processing fee on top at checkout.
+          Yes! All three tiers available as annual plans — pay 11 months upfront, get 12 (= 1 month free, ~8% off). Bronze annual is $539/yr (vs $49/mo × 12 = $588), Silver annual is $1,089/yr (vs $1,188), Gold annual is $2,189/yr (vs $2,388). Toggle monthly/annual on the pricing section above. Prorated refund policy applies. Note: Stripe adds a 4% processing fee on top at checkout.
         </div>
       </div>
 
@@ -1711,9 +1703,9 @@ function submitLeadMagnet(e){
     document.getElementById('toggle-monthly').classList.toggle('active', mode === 'monthly');
     document.getElementById('toggle-annual').classList.toggle('active', mode === 'annual');
     const stripeLinks = {
-      bronze: { monthly: 'https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P', annual: 'https://buy.stripe.com/14A14ndQ0erz8Zf6HJ9sk0S' },
-      silver: { monthly: 'https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q', annual: 'https://buy.stripe.com/3cI5kDh2c2IR0sJ0jl9sk0T' },
-      gold:   { monthly: 'https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R', annual: 'https://buy.stripe.com/28E00jbHS1EN6R70jl9sk0U' }
+      bronze: { monthly: 'https://buy.stripe.com/7sY8wP27i3MV0sJeab9sk0P', annual: 'https://buy.stripe.com/8x26oH3bm83b7Vb1np9sk0Y' },
+      silver: { monthly: 'https://buy.stripe.com/eVq6oHbHS5V35N3d679sk0Q', annual: 'https://buy.stripe.com/dRmaEX3bmabj0sJ8PR9sk0Z' },
+      gold:   { monthly: 'https://buy.stripe.com/9B67sLh2c83bgrH9TV9sk0R', annual: 'https://buy.stripe.com/7sY4gzfY82IR5N37LN9sk10' }
     };
     ['bronze','silver','gold'].forEach(tier => {
       const el = document.getElementById('price-' + tier);
@@ -1732,9 +1724,9 @@ function submitLeadMagnet(e){
     // Sync the value-stack block (label / strike / pay / save lines) with toggle.
     // Numbers come from real Stripe prices: monthly × 12 (gross) vs annual base.
     const stackData = {
-      bronze: { strike: '$890',   monthlyPay: '$588',  annualPay: '$407',  monthlySave: '$302', annualSave: '$483 (~30% off)' },
-      silver: { strike: '$1,990', monthlyPay: '$1,188', annualPay: '$825',  monthlySave: '$802', annualSave: '$1,165 (~30% off)' },
-      gold:   { strike: '$3,780', monthlyPay: '$2,388', annualPay: '$1,657', monthlySave: '$1,392', annualSave: '$2,123 (~30% off)' },
+      bronze: { strike: '$890',   monthlyPay: '$588',  annualPay: '$539',  monthlySave: '$302', annualSave: '$351 (1 month free)' },
+      silver: { strike: '$1,990', monthlyPay: '$1,188', annualPay: '$1,089', monthlySave: '$802', annualSave: '$901 (1 month free)' },
+      gold:   { strike: '$3,780', monthlyPay: '$2,388', annualPay: '$2,189', monthlySave: '$1,392', annualSave: '$1,591 (1 month free)' },
     };
     ['bronze','silver','gold'].forEach(tier => {
       const stack = document.getElementById('stack-' + tier);
