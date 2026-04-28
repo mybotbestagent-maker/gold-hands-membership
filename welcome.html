@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome to Gold Hands — You're In</title>
+<meta name="robots" content="noindex" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{font-family:'Inter',sans-serif;color:#1A1A2E;background:#F8F5FF;-webkit-font-smoothing:antialiased;}
+  .nav{background:#fff;border-bottom:1px solid #EDE9FE;padding:16px 24px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5;}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6B21A8,#8B5CF6);display:flex;align-items:center;justify-content:center;}
+  .nav-logo-text{font-weight:900;font-size:18px;color:#1A1A2E;}
+  .nav-logo-text span{color:#8B5CF6;}
+
+  .hero{background:linear-gradient(135deg,#6B21A8 0%,#1E1B4B 100%);color:#fff;padding:64px 24px 80px;text-align:center;}
+  .hero-tag{display:inline-block;background:#F59E0B;color:#1A1A2E;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800;padding:6px 16px;border-radius:100px;margin-bottom:18px;}
+  .hero h1{font-size:36px;font-weight:900;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px;}
+  .hero h1 span{color:#F59E0B;}
+  .hero p{font-size:17px;color:#E9D5FF;max-width:560px;margin:0 auto;line-height:1.6;}
+
+  .container{max-width:680px;margin:0 auto;padding:0 24px 80px;}
+  .card{background:#fff;border-radius:20px;padding:32px 28px;box-shadow:0 8px 32px rgba(107,33,168,0.08);margin-top:-40px;position:relative;z-index:2;}
+
+  .timeline-step{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid #F3E8FF;}
+  .timeline-step:last-child{border-bottom:0;}
+  .step-num{flex:0 0 44px;height:44px;border-radius:50%;background:#F3E8FF;color:#6B21A8;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;}
+  .step-num.active{background:#10B981;color:#fff;}
+  .step-time{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#F59E0B;font-weight:800;margin-bottom:4px;}
+  .step-title{font-size:17px;font-weight:800;color:#1A1A2E;margin-bottom:4px;}
+  .step-body{font-size:14px;color:#6B7280;line-height:1.6;}
+
+  .secondary-card{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:1px solid #F59E0B;border-radius:16px;padding:22px 24px;margin-top:20px;}
+  .secondary-card h3{font-size:17px;font-weight:800;margin-bottom:6px;color:#451A03;}
+  .secondary-card p{color:#451A03;font-size:14px;margin-bottom:14px;}
+  .btn{display:inline-block;background:#1A1A2E;color:#fff;padding:12px 22px;border-radius:100px;text-decoration:none;font-weight:800;font-size:14px;}
+  .btn-secondary{background:#fff;color:#1A1A2E;border:1.5px solid #1A1A2E;}
+
+  .footer{padding:24px 24px 48px;text-align:center;color:#9CA3AF;font-size:13px;}
+  .footer a{color:#6B21A8;text-decoration:none;font-weight:600;}
+
+  .important-callout{background:#F0FDF4;border-left:4px solid #10B981;padding:14px 16px;border-radius:0 12px 12px 0;margin-top:14px;font-size:14px;color:#166534;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9"/><path d="M17.64 15L22 10.64"/><path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 00-3.94-1.64H9l.92.82A6.18 6.18 0 0112 8.4v1.56l2 2h2.47l2.26 1.91"/></svg>
+    </div>
+    <span class="nav-logo-text">Gold<span>Hands</span></span>
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-tag">🎉 You're a member</div>
+  <h1>Welcome to <span>Gold Hands</span>.<br/>Your home is in good hands now.</h1>
+  <p>Payment confirmed. Here's exactly what happens next — and what you can do while you wait.</p>
+</section>
+
+<div class="container">
+
+  <div class="card">
+    <h2 style="font-size:22px;font-weight:900;margin-bottom:18px;color:#1A1A2E;">What happens next:</h2>
+
+    <div class="timeline-step">
+      <div class="step-num active">✓</div>
+      <div>
+        <div class="step-time">DONE · NOW</div>
+        <div class="step-title">Membership confirmed</div>
+        <div class="step-body">You're in. Your billing is set up, and we just got your details — name, address, phone, email. Welcome aboard.</div>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-time">WITHIN 24 HOURS</div>
+        <div class="step-title">A real human will call you</div>
+        <div class="step-body">
+          Our dispatcher will phone the number you provided to: introduce your <strong>dedicated handyman</strong> (Silver/Gold), confirm the address, and book your <strong>first 60-min visit</strong> at a time that works for you. Usually within the same week.
+        </div>
+        <div class="important-callout">
+          <strong>📞 Make sure your phone is reachable.</strong> If we miss you, we'll text and email — but a quick call gets you on the schedule fastest.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-time">FIRST VISIT (~3-7 DAYS)</div>
+        <div class="step-title">Full home audit + minor fixes</div>
+        <div class="step-body">
+          Your handyman walks every room with you (~90 minutes the first time), runs the 12-point Health Score, fixes anything quick on the spot, and leaves a written report of what's working / what's wearing / what to watch.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-time">EVERY MONTH AFTER</div>
+        <div class="step-title">Same handyman. Same day.</div>
+        <div class="step-body">
+          From here on it runs itself. Same handyman, same time of month. He learns your home. You don't open Yelp. You text us anything that breaks — we just handle it.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secondary-card">
+    <h3>While you wait — preview the Health Score</h3>
+    <p>The 12-point checklist your handyman will run on your first visit. Read it now so you know what to expect (or run it yourself today).</p>
+    <a href="home-health-score.html" target="_blank" class="btn">📄 Open the Health Score</a>
+  </div>
+
+  <div class="secondary-card" style="background:#F3E8FF;border-color:#8B5CF6;">
+    <h3 style="color:#581C87;">Need to reach us before the call?</h3>
+    <p style="color:#581C87;">If something's already broken or urgent — call or text us directly. We have your account on file, just mention you just signed up.</p>
+    <a href="tel:+17375308110" class="btn">📞 (737) 530-8110</a>
+    <a href="mailto:hello@handymangoldhands.com" class="btn btn-secondary" style="margin-left:8px;">✉ Email</a>
+  </div>
+
+  <p style="text-align:center;color:#6B7280;font-size:13px;margin-top:32px;">
+    Questions about your membership? Reply to your Stripe receipt email or call <a href="tel:+17375308110" style="color:#6B21A8;font-weight:600;">(737) 530-8110</a>.<br/>
+    We aim to call new members within 4 business hours during normal hours (8am–6pm local).
+  </p>
+
+</div>
+
+<footer class="footer">
+  <p><strong>Gold Hands</strong> · Miami · Austin · Atlanta · Philadelphia · Charlotte · Washington DC · Chicago · Tampa · Raleigh</p>
+  <p style="margin-top:6px;">© 2026 Handyman Gold Hands LLC · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+</footer>
+
+</body>
+</html>
