@@ -141,11 +141,28 @@
       <span class="section-label">Newsletter</span>
       <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" style="color:#1A1A2E;letter-spacing:-0.02em;">Get monthly home-maintenance tips.</h2>
       <p class="mb-8" style="color:#6B7280;line-height:1.7;">One email a month. Climate-specific tasks for your city, no spam, unsubscribe anytime.</p>
-      <form action="#" method="post" style="display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;">
+      <form id="newsletter-form" onsubmit="return submitNewsletter(event)" style="display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;">
         <input type="email" name="email" required placeholder="you@email.com" class="form-input" style="flex:1;min-width:200px;" />
         <button type="submit" class="btn-primary" style="flex-shrink:0;">Subscribe</button>
       </form>
+      <p id="newsletter-ok" style="display:none;color:#047857;font-weight:600;margin-top:14px;">✓ Subscribed — check your inbox.</p>
       <p class="text-xs mt-4" style="color:#9CA3AF;">By subscribing, you agree to receive occasional updates from Gold Hands. We never share your email.</p>
+      <script>
+      function submitNewsletter(e){
+        e.preventDefault();
+        var f=document.getElementById('newsletter-form');
+        var em=f.email.value.trim();
+        if(!em) return false;
+        fetch('https://23-94-149-88.sslip.io/gh-lead/subscribe',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({email:em,source:'blog-newsletter'})
+        }).catch(function(){});
+        f.style.display='none';
+        document.getElementById('newsletter-ok').style.display='block';
+        return false;
+      }
+      </script>
     </div>
   </div>
 </section>
