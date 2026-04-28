@@ -1871,8 +1871,8 @@ function submitLeadMagnet(e){
       _subject: 'New Gold Hands Membership Lead',
     };
 
-    // Send to Formspree
-    fetch('https://formspree.io/f/xdknbgqy', {
+    // Send to our own VPS endpoint (formerly Formspree). Lands in Dispatch Hub Telegram + persisted to gh_contacts.jsonl.
+    fetch('https://23-94-149-88.sslip.io/gh-lead/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
